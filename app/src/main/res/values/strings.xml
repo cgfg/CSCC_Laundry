@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CSCC_LaundryApp</string>
+    <string name="maintenance_issue"></string>
 </resources>
