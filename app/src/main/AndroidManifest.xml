@@ -23,17 +23,6 @@
         <activity android:name=".PopupMachineSelect"
             android:theme="@style/PopupTheme">
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".Maintenance">
-        <!--<intent-filter>-->
-            <!--<action android:name="android.intent.action.MAIN" />-->
-
-            <!--<category android:name="android.intent.category.LAUNCHER" />-->
-        <!--</intent-filter>-->
-        </activity>
-        <activity android:name=".Settings"></activity>
-=======
->>>>>>> origin/master
     </application>
 
 </manifest>

@@ -23,13 +23,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Select One Problem"
-<<<<<<< HEAD
-        android:textSize="18dp" />
-=======
         android:textSize="22dp"
         android:paddingTop="20dp"
         android:paddingBottom="10dp" />
->>>>>>> origin/master
 
     <RadioGroup
         android:layout_width="match_parent"
@@ -42,11 +38,7 @@
             android:text="Problem 1"
             android:id="@+id/maintenance_radioButton1"
             android:onClick="onRadioButtonClicked"
-<<<<<<< HEAD
-            android:textSize="16dp" />
-=======
             android:textSize="20dp" />
->>>>>>> origin/master
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -54,11 +46,7 @@
             android:text="Problem 2"
             android:id="@+id/maintenance_radioButton2"
             android:onClick="onRadioButtonClicked"
-<<<<<<< HEAD
-            android:textSize="16dp" />
-=======
             android:textSize="20dp" />
->>>>>>> origin/master
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -66,11 +54,7 @@
             android:text="Problem 3"
             android:id="@+id/maintenance_radioButton3"
             android:onClick="onRadioButtonClicked"
-<<<<<<< HEAD
-            android:textSize="16dp" />
-=======
             android:textSize="20dp" />
->>>>>>> origin/master
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -78,11 +62,8 @@
             android:text="Other"
             android:id="@+id/maintenance_radioButton4"
             android:onClick="onRadioButtonClicked"
-<<<<<<< HEAD
-            android:textSize="16dp" />
-=======
             android:textSize="20dp" />
->>>>>>> origin/master
+
     </RadioGroup>
 
     <EditText
@@ -96,13 +77,9 @@
         android:minLines="2"
         android:allowUndo="true"
         android:hint="Description of the issue"
-<<<<<<< HEAD
-        android:layout_weight="0" />
-=======
         android:layout_weight="0"
         android:textSize="20dp"
         android:paddingTop="10dp" />
->>>>>>> origin/master
 
     <LinearLayout
         android:orientation="horizontal"
@@ -119,25 +96,17 @@
             android:text="Submit"
             android:id="@+id/maintenance_button_submit"
             android:clickable="true"
-<<<<<<< HEAD
-            android:onClick="onSubmitButtonClicked" />
-=======
             android:onClick="onSubmitButtonClicked"
             android:textSize="20dp" />
->>>>>>> origin/master
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
             android:id="@+id/maintenance_button_cancel"
-<<<<<<< HEAD
-            android:clickable="true" />
-=======
             android:clickable="true"
             android:onClick="onCancelButtonClicked"
             android:textSize="20dp" />
->>>>>>> origin/master
     </LinearLayout>
 
 </LinearLayout>

@@ -1,9 +1,6 @@
 package team1_5115.cscc_laundryapp;
 
-<<<<<<< HEAD
-=======
 import android.content.Intent;
->>>>>>> origin/master
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
@@ -39,12 +36,8 @@ public class PopupMachineSelect extends MainStatus{
     redirect user to maintenance screen
      */
     public void clickMaintenanceRequest(View view) {
-<<<<<<< HEAD
-
-=======
         Intent i = new Intent(this, Maintenance.class);
         //[TODO] pass machine id/name to the maintenance screen
         startActivity(i);
->>>>>>> origin/master
     }
 }

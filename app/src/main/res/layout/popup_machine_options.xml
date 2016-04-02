@@ -18,13 +18,9 @@
         android:text="Maintenance Request"
         android:id="@+id/maintenanceButtonPopup"
         android:layout_below="@+id/useButtonPopup"
-<<<<<<< HEAD
-        android:layout_centerHorizontal="true" />
-=======
         android:layout_centerHorizontal="true"
         android:clickable="true"
         android:onClick="clickMaintenanceRequest" />
->>>>>>> origin/master
 
     <TextView
         android:layout_width="wrap_content"
