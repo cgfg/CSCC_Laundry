@@ -1,216 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="team1_5115.cscc_laundryapp.Settings"
-    android:clickable="true"
-    android:contextClickable="false">
+    android:columnCount="2">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Profile"
-        android:id="@+id/textView2"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
+        android:text="Profile:"
+        android:textSize="20sp"
+        android:layout_columnSpan="2"
+        android:layout_gravity="left"
+        android:paddingLeft="20dp"
+        android:paddingTop="20dp" />
+
+    <TextView
+        android:id="@+id/firstName"
+        android:text="@string/firstName"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="First Name"
-        android:ems="10"
-        android:id="@+id/editText"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:id="@+id/firstNameEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textNoSuggestions|textPersonName"
+        android:layout_marginTop="10dp"
+        android:text="@string/firstNameText" />
+
+
+    <TextView
+        android:id="@+id/lastName"
+        android:text="@string/lastName"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Last Name"
-        android:ems="10"
-        android:id="@+id/editText6"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/editText"
-        android:layout_alignStart="@+id/editText" />
+        android:id="@+id/lastNameEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textNoSuggestions|textPersonName"
+        android:layout_marginTop="10dp"
+        android:text="@string/lastNameText" />
+
+    <TextView
+        android:id="@+id/email"
+        android:text="@string/email"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:ems="10"
-        android:id="@+id/editText7"
-        android:text="E-mail"
-        android:layout_below="@+id/editText6"
-        android:layout_alignLeft="@+id/editText6"
-        android:layout_alignStart="@+id/editText6" />
+        android:id="@+id/emailEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textEmailAddress|textNoSuggestions"
+        android:text="@string/emailText"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/phoneNum"
+        android:text="@string/phoneNum"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:ems="10"
-        android:id="@+id/editText8"
-        android:text="Change Password"
-        android:layout_below="@+id/textView4"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2" />
+        android:id="@+id/phoneNumEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textNoSuggestions|phone"
+        android:text="@string/phoneNumText"
+        android:layout_marginTop="10dp" />
+
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="First Name"
-        android:id="@+id/textView"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Last Name"
-        android:id="@+id/textView3"
-        android:layout_above="@+id/editText7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="E-mail"
-        android:id="@+id/textView4"
-        android:layout_alignBottom="@+id/editText7"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Password"
-        android:id="@+id/textView5"
-        android:layout_alignBottom="@+id/editText8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
+        android:id="@+id/buildingNum"
+        android:text="@string/buildingNum"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="phone"
-        android:ems="10"
-        android:id="@+id/editText2"
-        android:layout_below="@+id/editText8"
-        android:layout_toEndOf="@+id/textView3"
-        android:text="Phone"
-        android:layout_alignLeft="@+id/editText7"
-        android:layout_alignStart="@+id/editText7" />
+        android:id="@+id/buildingNumEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textNoSuggestions|text"
+        android:text="@string/buildingNumText"
+        android:layout_marginTop="10dp" />
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Phone #"
-        android:id="@+id/textView6"
-        android:textStyle="bold"
-        android:layout_alignBottom="@+id/editText2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:id="@+id/apartNum"
+        android:text="@string/apartNum"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp"/>
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/editText3"
-        android:layout_below="@+id/textView6"
-        android:layout_alignLeft="@+id/editText2"
-        android:layout_alignStart="@+id/editText2"
-        android:text="Building #" />
+        android:id="@+id/apartNumEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textNoSuggestions|text"
+        android:text="@string/apartNumText"
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:id="@+id/password"
+        android:text="@string/password"
+        android:layout_gravity="right"
+        android:layout_marginTop="10dp" />
 
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="numberSigned"
+        android:id="@+id/passwordEdit"
+        android:layout_gravity="left"
+        android:width="180dp"
+        android:background="@android:drawable/editbox_background_normal"
+        android:focusable="false"
+        android:inputType="textPassword|textNoSuggestions"
         android:ems="10"
-        android:id="@+id/editText4"
-        android:layout_below="@+id/editText3"
-        android:layout_alignLeft="@+id/editText3"
-        android:layout_alignStart="@+id/editText3"
-        android:text="Apartment #" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Building #"
-        android:id="@+id/textView7"
-        android:layout_alignBottom="@+id/editText3"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Apartment #"
-        android:id="@+id/textView8"
-        android:layout_alignBottom="@+id/editText4"
-        android:layout_alignLeft="@+id/textView6"
-        android:layout_alignStart="@+id/textView6"
-        android:textStyle="bold" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Payment"
-        android:id="@+id/textView9"
-        android:textStyle="bold"
-        android:layout_marginTop="41dp"
-        android:layout_below="@+id/textView8"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
-
-    <Spinner
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/spinner"
-        android:spinnerMode="dropdown"
-        android:layout_alignBottom="@+id/textView9"
-        android:layout_alignLeft="@+id/editText4"
-        android:layout_alignStart="@+id/editText4" />
+        android:layout_marginTop="10dp"
+        android:password="true"
+        android:text="@string/password" />
 
     <Button
+        style="?android:attr/buttonStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save"
-        android:id="@+id/button"
-        android:layout_alignWithParentIfMissing="false"
-        android:textSize="18dp"
-        android:textStyle="bold"
-        android:layout_alignParentBottom="true"
-        android:layout_alignLeft="@+id/spinner"
-        android:layout_alignStart="@+id/spinner"
-        android:layout_alignRight="@+id/spinner"
-        android:layout_alignEnd="@+id/spinner" />
+        android:text="Edit"
+        android:id="@+id/editButton"
+        android:layout_gravity="right"
+        android:minHeight="20dp"
+        android:onClick="clickEdit"
+        android:layout_marginTop="20dp" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="submit"
+        android:id="@+id/submitButton"
+        android:layout_gravity="left"
+        android:minHeight="20dp"
+        android:onClick="clickSubmit"
+        android:layout_marginTop="20dp" />
 
-</RelativeLayout>
+</GridLayout>
