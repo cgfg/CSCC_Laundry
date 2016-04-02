@@ -9,8 +9,153 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="team1_5115.cscc_laundryapp.MainStatus">
 
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dryer1Button"
+        android:clickable="true"
+        android:src="@drawable/abc_scrubber_control_off_mtrl_alpha"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_marginTop="23dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dryer2Button"
+        android:clickable="true"
+        android:src="@drawable/abc_scrubber_control_off_mtrl_alpha"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_above="@+id/dryer4Button"
+        android:layout_toRightOf="@+id/dryer1Button"
+        android:layout_toEndOf="@+id/dryer1Button"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dryer3Button"
+        android:clickable="true"
+        android:src="@drawable/abc_scrubber_control_off_mtrl_alpha"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/dryer1Button"
+        android:layout_alignLeft="@+id/dryer1Button"
+        android:layout_alignStart="@+id/dryer1Button"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dryer4Button"
+        android:clickable="true"
+        android:src="@drawable/abc_scrubber_control_off_mtrl_alpha"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/dryer1Button"
+        android:layout_alignLeft="@+id/dryer2Button"
+        android:layout_alignStart="@+id/dryer2Button"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/washer1Button"
+        android:clickable="true"
+        android:src="@drawable/abc_btn_check_to_on_mtrl_000"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/washer2Button"
+        android:layout_alignStart="@+id/washer2Button" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/washer2Button"
+        android:clickable="true"
+        android:src="@drawable/abc_btn_check_to_on_mtrl_000"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/washer1Button"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/washer3Button"
+        android:clickable="true"
+        android:src="@drawable/abc_btn_check_to_on_mtrl_000"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/washer2Button"
+        android:layout_alignLeft="@+id/washer2Button"
+        android:layout_alignStart="@+id/washer2Button"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/washer4Button"
+        android:clickable="true"
+        android:src="@drawable/abc_btn_check_to_on_mtrl_000"
+        android:maxWidth="100dp"
+        android:maxHeight="100dp"
+        android:scaleType="fitCenter"
+        android:adjustViewBounds="true"
+        android:layout_below="@+id/washer3Button"
+        android:layout_alignLeft="@+id/washer3Button"
+        android:layout_alignStart="@+id/washer3Button"
+        android:onClick="machineClickHandler"
+        android:tint="#aed581" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!" />
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Dryers"
+        android:id="@+id/textView2"
+        android:layout_above="@+id/dryer2Button"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:text="Washers"
+        android:id="@+id/textView3"
+        android:layout_above="@+id/washer1Button"
+        android:layout_alignLeft="@+id/washer1Button"
+        android:layout_alignStart="@+id/washer1Button" />
+
 </RelativeLayout>
