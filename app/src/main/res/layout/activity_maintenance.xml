@@ -10,6 +10,7 @@
     tools:context="team1_5115.cscc_laundryapp.Maintenance"
     android:visibility="visible"
     android:orientation="vertical"
+    android:id="@+id/maintenance_page"
     android:weightSum="1">
 
     <TextView
@@ -82,13 +83,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Submit"
-            android:id="@+id/maintenance_button_submit" />
+            android:id="@+id/maintenance_button_submit"
+            android:clickable="true"
+            android:onClick="onSubmitButtonClicked" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cancel"
-            android:id="@+id/maintenance_button_cancel"/>
+            android:id="@+id/maintenance_button_cancel"
+            android:clickable="true" />
     </LinearLayout>
 
 </LinearLayout>
