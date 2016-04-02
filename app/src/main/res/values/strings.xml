@@ -1,5 +1,10 @@
 <resources>
+<<<<<<< HEAD
     <string name="app_name">CSCC_LaundryApp</string>
 
 
+=======
+    <string name="app_name">CSCC Laundry</string>
+    <string name="maintenance_issue"></string>
+>>>>>>> origin/master
 </resources>
