@@ -18,6 +18,18 @@
         <activity android:name=".Login" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".Maintenance" />
+        <activity android:name=".Settings"/>
+
+        <activity android:name=".PopupMachineSelect"
+            android:theme="@style/PopupTheme">
+        </activity>
+        <activity android:name=".Maintenance">
+        <!--<intent-filter>-->
+            <!--<action android:name="android.intent.action.MAIN" />-->
+
+            <!--<category android:name="android.intent.category.LAUNCHER" />-->
+        <!--</intent-filter>-->
+        </activity>
         <activity android:name=".Settings"></activity>
     </application>
 
