@@ -5,7 +5,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Maintenance extends AppCompatActivity {
@@ -46,8 +48,16 @@ public class Maintenance extends AppCompatActivity {
     }
 
     public void onSubmitButtonClicked(View view) {
+        //check if there is radio button selected
+        RadioGroup rg = (RadioGroup) findViewById(R.id.maintenance_radioGroup);
+        String message;
+        if (rg.getCheckedRadioButtonId() < 0) {
+            message = "Please select one problem";
+        } else {
+            message = "A maintenance request has been sent.";
+        }
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setMessage("A maintenance request has been sent.")
+        builder.setMessage(message)
                 .setCancelable(false)
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
@@ -56,6 +66,8 @@ public class Maintenance extends AppCompatActivity {
                 });
         AlertDialog alert = builder.create();
         alert.show();
-
+        EditText description = (EditText) findViewById(R.id.maintenance_editText);
+        description.setText("");
+        rg.clearCheck();
     }
 }

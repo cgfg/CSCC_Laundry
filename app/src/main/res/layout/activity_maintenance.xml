@@ -27,7 +27,8 @@
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/maintenance_radioGroup">
 
         <RadioButton
             android:layout_width="wrap_content"
@@ -72,7 +73,7 @@
         android:editable="true"
         android:minLines="2"
         android:allowUndo="true"
-        android:hint="&quot;Description of the issue&quot;"
+        android:hint="Description of the issue"
         android:layout_weight="0" />
 
     <LinearLayout
