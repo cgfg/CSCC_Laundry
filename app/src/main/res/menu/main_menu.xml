@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app_name="http://schemas.android.com/apk/res-auto" >
+    <item android:id="@+id/payment"
+        android:icon="@drawable/ic_payment_24dp"
+        android:title="@string/payment"
+        app_name:showAsAction="ifRoom"/>
     <item android:id="@+id/settings"
         android:icon="@drawable/ic_settings_24dp"
         android:title="@string/settings"
-        app_name:showAsAction="always"/>
+        app_name:showAsAction="ifRoom"/>
 </menu>

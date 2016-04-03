@@ -36,6 +36,8 @@ public class MainStatus extends AppCompatActivity {
             case R.id.settings:
                 gotoSettingsScreen();
                 return true;
+            case R.id.payment:
+                gotoPaymentScreen();
             default:
                 return super.onOptionsItemSelected(item);
         }
@@ -43,6 +45,11 @@ public class MainStatus extends AppCompatActivity {
 
     public void gotoSettingsScreen(){
         Intent intent = new Intent(this, Settings.class);
+        startActivity(intent);
+    }
+
+    public void gotoPaymentScreen(){
+        Intent intent = new Intent(this, Payment.class);
         startActivity(intent);
     }
 }
