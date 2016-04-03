@@ -1,14 +1,19 @@
 package team1_5115.cscc_laundryapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import java.lang.ref.SoftReference;
 
 public class Payment extends AppCompatActivity {
 
@@ -79,8 +84,30 @@ public class Payment extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                moneyValue += (selectedAddValue - selectedDeductValue);
-                blanceValue.setText("Balance: " + Integer.toString(moneyValue) + " $");
+                StringBuilder message = new StringBuilder();
+                if(selectedAddValue > 0){
+                    message.append("Add ").append(selectedAddValue).append(" $ to your account");
+                }
+                if(selectedDeductValue > 0){
+                    if(selectedAddValue > 0) message.append(" and ");
+                    message.append("Deduct ").append(selectedDeductValue).append(" $ from your account");
+                }
+                if(selectedAddValue == 0 && selectedDeductValue == 0){
+                    message.append("Please add or deduct some money");
+                }
+                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                builder.setMessage(message)
+                        .setCancelable(true)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                                moneyValue += (selectedAddValue - selectedDeductValue);
+                                blanceValue.setText("Balance: " + Integer.toString(moneyValue) + " $");
+                                selectedAddValue = selectedDeductValue = 0;
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
     }

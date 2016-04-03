@@ -77,10 +77,11 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="submit"
+        android:text="update"
         android:id="@+id/submitMoney"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="20dp"
+        android:minHeight="30dp"
         android:background="@drawable/button_background"/>
 
 </LinearLayout>
