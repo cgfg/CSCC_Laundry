@@ -31,11 +31,11 @@ public class Payment extends AppCompatActivity {
         adapter1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner1.setAdapter(adapter1);
 
-        final Spinner spinner2 = (Spinner) findViewById(R.id.moneyChoices2);
-        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
-                R.array.moneyChoices2, android.R.layout.simple_spinner_item);
-        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner2.setAdapter(adapter2);
+//        final Spinner spinner2 = (Spinner) findViewById(R.id.moneyChoices2);
+//        ArrayAdapter<CharSequence> adapter2 = ArrayAdapter.createFromResource(this,
+//                R.array.moneyChoices2, android.R.layout.simple_spinner_item);
+//        adapter2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+//        spinner2.setAdapter(adapter2);
 
         final TextView blanceValue = (TextView)findViewById(R.id.balanceValue);
         String[] str = blanceValue.getText().toString().split(" ");
@@ -60,24 +60,24 @@ public class Payment extends AppCompatActivity {
             }
         });
 
-        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
-
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                String value = spinner2.getSelectedItem().toString();
-                switch(value){
-                    case "2$": selectedDeductValue = 2; break;
-                    case "3$": selectedDeductValue = 3; break;
-                    case "5$": selectedDeductValue = 5; break;
-                    default: selectedDeductValue = 0; break;
-                }
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
-        });
+//        spinner2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener(){
+//
+//            @Override
+//            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+//                String value = spinner2.getSelectedItem().toString();
+//                switch(value){
+//                    case "2$": selectedDeductValue = 2; break;
+//                    case "3$": selectedDeductValue = 3; break;
+//                    case "5$": selectedDeductValue = 5; break;
+//                    default: selectedDeductValue = 0; break;
+//                }
+//            }
+//
+//            @Override
+//            public void onNothingSelected(AdapterView<?> parent) {
+//
+//            }
+//        });
 
         Button button = (Button)findViewById(R.id.submitMoney);
         assert button != null;
