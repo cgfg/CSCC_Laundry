@@ -4,33 +4,33 @@
     android:background="#bdbdbd">
 
     <Button
+        android:id="@+id/useButtonPopup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Use Machine"
-        android:id="@+id/useButtonPopup"
-        android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:width="200dp"
         android:clickable="true"
-        android:width="200dp" />
+        android:text="Use Machine" />
 
     <Button
+        android:id="@+id/maintenanceButtonPopup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Maintenance Request"
-        android:id="@+id/maintenanceButtonPopup"
         android:layout_below="@+id/useButtonPopup"
         android:layout_centerHorizontal="true"
+        android:width="200dp"
         android:clickable="true"
         android:onClick="clickMaintenanceRequest"
-        android:width="200dp" />
+        android:text="Maintenance Request" />
 
     <TextView
+        android:id="@+id/machineOptionsText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Washer 3"
-        android:id="@+id/textView"
         android:layout_above="@+id/useButtonPopup"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:text="Washer 3"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
 </RelativeLayout>

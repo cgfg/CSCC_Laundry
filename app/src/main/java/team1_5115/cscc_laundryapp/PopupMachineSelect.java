@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.TextView;
 
 /**
  * Created by Adam on 4/1/2016.
@@ -12,16 +13,24 @@ public class PopupMachineSelect extends MainStatus{
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.popup_machine_options);
-
         DisplayMetrics dm = new DisplayMetrics();
         getWindowManager().getDefaultDisplay().getMetrics(dm);
-
         int width = dm.widthPixels;
         int height = dm.heightPixels;
-
         getWindow().setLayout((int) (width * .75),(int) (height * .35));
+        Bundle extras = getIntent().getExtras();
+        String machineId;
+        if (extras.containsKey("dryerId")) {
+            machineId = "Dryer " + extras.getInt("dryerId");
+        } else if (extras.containsKey("washerId")) {
+            machineId = "Washer " + extras.getInt("washerId");
+        } else {
+            machineId = "X";
+        }
+        TextView machineOptionsText = (TextView) findViewById(R.id.machineOptionsText);
+        if (machineOptionsText != null)
+            machineOptionsText.setText(machineId);
     }
 
     /* called when user presses 'Use Machine' button from popup window
