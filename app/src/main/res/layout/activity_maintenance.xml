@@ -35,7 +35,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Problem 1"
+            android:text="Incomplete cycle"
             android:id="@+id/maintenance_radioButton1"
             android:onClick="onRadioButtonClicked"
             android:textSize="20dp" />
@@ -43,7 +43,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Problem 2"
+            android:text="Error message on screen"
             android:id="@+id/maintenance_radioButton2"
             android:onClick="onRadioButtonClicked"
             android:textSize="20dp" />
@@ -51,16 +51,8 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Problem 3"
-            android:id="@+id/maintenance_radioButton3"
-            android:onClick="onRadioButtonClicked"
-            android:textSize="20dp" />
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Other"
-            android:id="@+id/maintenance_radioButton4"
+            android:id="@+id/maintenance_radioButton3"
             android:onClick="onRadioButtonClicked"
             android:textSize="20dp" />
 
