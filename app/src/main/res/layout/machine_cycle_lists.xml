@@ -2,20 +2,18 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="#cce6ff">
+    android:background="#99ccff">
 
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/cycle_radioGroup"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_centerInParent="true">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="30min"
+            android:text="30 min"
             android:id="@+id/cycle_radioButton1"
             android:onClick="onCycleRadioButtonClicked"
             android:textSize="20dp" />
@@ -23,7 +21,7 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="45min"
+            android:text="45 min"
             android:id="@+id/cycle_radioButton2"
             android:onClick="onCycleRadioButtonClicked"
             android:textSize="20dp" />
@@ -31,10 +29,11 @@
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="60min"
+            android:text="60 min"
             android:id="@+id/cycle_radioButton3"
             android:onClick="onCycleRadioButtonClicked"
             android:textSize="20dp" />
+
     </RadioGroup>
 
     <Button
