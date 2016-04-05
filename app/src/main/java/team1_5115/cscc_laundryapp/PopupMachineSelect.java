@@ -1,7 +1,5 @@
 package team1_5115.cscc_laundryapp;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -12,7 +10,6 @@ import android.widget.Button;
 import android.widget.PopupWindow;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
-import android.widget.Toast;
 import android.widget.TextView;
 
 /**
@@ -21,6 +18,7 @@ import android.widget.TextView;
 public class PopupMachineSelect extends MainStatus {
     public static int totalTime = 0;
     public static int deductMoney = 0;
+    private String machineId = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,13 +30,12 @@ public class PopupMachineSelect extends MainStatus {
         int height = dm.heightPixels;
         getWindow().setLayout((int) (width * .75),(int) (height * .35));
         Bundle extras = getIntent().getExtras();
-        String machineId;
         if (extras.containsKey("dryerId")) {
             machineId = "Dryer " + extras.getInt("dryerId");
         } else if (extras.containsKey("washerId")) {
             machineId = "Washer " + extras.getInt("washerId");
         } else {
-            machineId = "X";
+            machineId = "Unknown";
         }
         TextView machineOptionsText = (TextView) findViewById(R.id.machineOptionsText);
         if (machineOptionsText != null)
@@ -60,7 +57,7 @@ public class PopupMachineSelect extends MainStatus {
      */
     public void clickMaintenanceRequest(View view) {
         Intent i = new Intent(this, Maintenance.class);
-        //[TODO] pass machine id/name to the maintenance screen
+        i.putExtra("MachineId", machineId);
         startActivity(i);
         finish();
     }
