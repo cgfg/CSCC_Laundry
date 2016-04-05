@@ -67,7 +67,7 @@ public class PopupMachineSelect extends MainStatus {
 
     public void popUpCycleOptions() {
         View popUpView = getLayoutInflater().inflate(R.layout.machine_cycle_lists, null);
-        PopupWindow popUp = new PopupWindow(popUpView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT, true);
+        PopupWindow popUp = new PopupWindow(popUpView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
         popUp.showAtLocation(popUpView, Gravity.CENTER, 0, 0);
         Button button = (Button) popUpView.findViewById(R.id.cycle_button_submit);
         final RadioGroup radioGroup = (RadioGroup) popUpView.findViewById(R.id.cycle_radioGroup);
