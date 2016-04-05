@@ -18,11 +18,11 @@
         <activity android:name=".Login" />
         <activity android:name=".CreateAccount" />
         <activity android:name=".Maintenance" />
-        <activity android:name=".Settings"/>
-        <activity android:name=".Payment"/>
-        <activity android:name=".PopupMachineSelect"
-            android:theme="@style/PopupTheme">
-        </activity>
+        <activity android:name=".Settings" />
+        <activity android:name=".Payment" />
+        <activity
+            android:name=".PopupMachineSelect"
+            android:theme="@style/PopupTheme"></activity>
     </application>
 
 </manifest>
