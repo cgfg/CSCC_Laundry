@@ -10,7 +10,8 @@
         android:id="@+id/useButtonPopup"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:clickable="true" />
+        android:clickable="true"
+        android:width="200dp" />
 
     <Button
         android:layout_width="wrap_content"
@@ -20,13 +21,14 @@
         android:layout_below="@+id/useButtonPopup"
         android:layout_centerHorizontal="true"
         android:clickable="true"
-        android:onClick="clickMaintenanceRequest" />
+        android:onClick="clickMaintenanceRequest"
+        android:width="200dp" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Machine &lt;X>"
+        android:text="Washer 3"
         android:id="@+id/textView"
         android:layout_above="@+id/useButtonPopup"
         android:layout_centerHorizontal="true" />
