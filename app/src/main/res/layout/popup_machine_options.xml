@@ -12,7 +12,6 @@
         android:width="200dp"
         android:clickable="true"
         android:onClick="clickUseMachine"
-        android:width="200dp" />
         android:text="Use Machine" />
 
     <Button
