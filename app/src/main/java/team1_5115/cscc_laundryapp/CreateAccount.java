@@ -16,7 +16,6 @@ public class CreateAccount extends AppCompatActivity {
     public void onButtonClick(View v){
 
         if(v.getId() == R.id.button2 ){
-
             Intent i = new Intent(this, Login.class);
             startActivity(i);
         }
