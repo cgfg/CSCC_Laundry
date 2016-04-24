@@ -25,7 +25,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Washer"
+                android:text="Washers"
                 android:id="@+id/textView3"
                 android:paddingBottom="15dp"
                 android:paddingTop="15dp"
@@ -52,7 +52,9 @@
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:nestedScrollingEnabled="false"
+                        android:onClick="onMachineClicked" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -64,7 +66,9 @@
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:nestedScrollingEnabled="false"
+                        android:onClick="onMachineClicked" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -76,7 +80,9 @@
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:nestedScrollingEnabled="false"
+                        android:onClick="onMachineClicked" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -88,7 +94,9 @@
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:typeface="normal"
+                        android:nestedScrollingEnabled="false"
+                        android:onClick="onMachineClicked" />
                 </TableRow>
 
                 <TableRow
@@ -180,7 +188,9 @@
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
-                            android:layout_column="0" />
+                            android:layout_column="0"
+                            android:nestedScrollingEnabled="false"
+                            android:onClick="onMachineClicked" />
 
                         <Button
                             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -193,7 +203,9 @@
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
-                            android:layout_column="1" />
+                            android:layout_column="1"
+                            android:nestedScrollingEnabled="false"
+                            android:onClick="onMachineClicked" />
 
                     </TableRow>
 
@@ -233,7 +245,9 @@
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
-                            android:layout_column="0" />
+                            android:layout_column="0"
+                            android:nestedScrollingEnabled="false"
+                            android:onClick="onMachineClicked" />
 
                         <Button
                             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -246,7 +260,9 @@
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
-                            android:layout_column="1" />
+                            android:layout_column="1"
+                            android:nestedScrollingEnabled="false"
+                            android:onClick="onMachineClicked" />
                     </TableRow>
 
                     <TableRow

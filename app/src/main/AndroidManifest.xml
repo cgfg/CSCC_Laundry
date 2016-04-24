@@ -22,7 +22,8 @@
         <activity android:name=".Payment" />
         <activity
             android:name=".PopupMachineSelect"
-            android:theme="@style/PopupTheme"></activity>
+            android:theme="@style/PopupTheme" />
+        <activity android:name=".SelectedMachineActivity"></activity>
     </application>
 
 </manifest>
