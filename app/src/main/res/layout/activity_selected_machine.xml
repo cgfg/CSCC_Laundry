@@ -25,7 +25,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Washers"
-                android:id="@+id/textView6"
+                android:id="@+id/elected_machine_type"
                 android:paddingBottom="15dp"
                 android:paddingTop="15dp"
                 android:textSize="25dp"
@@ -43,51 +43,47 @@
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
                         android:text="1"
-                        android:id="@+id/button4"
+                        android:id="@+id/selected_machine1"
                         android:background="@mipmap/ic_launcher"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:shadowColor="@color/button_material_dark" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
                         android:text="2"
-                        android:id="@+id/button5"
+                        android:id="@+id/selected_machine2"
                         android:background="@mipmap/ic_launcher"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:shadowColor="@color/button_material_dark" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
                         android:text="3"
-                        android:id="@+id/button6"
+                        android:id="@+id/selected_machine3"
                         android:background="@mipmap/ic_launcher"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:shadowColor="@color/button_material_dark" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
-                        android:layout_width="80dp"
-                        android:layout_height="80dp"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
                         android:text="4"
-                        android:id="@+id/button7"
+                        android:id="@+id/selected_machine4"
                         android:background="@mipmap/ic_launcher"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark"
-                        android:typeface="normal" />
+                        android:shadowColor="@color/button_material_dark" />
                 </TableRow>
 
                 <TableRow
@@ -97,28 +93,28 @@
                     android:gravity="center" >
 
                     <TextView
-                        android:layout_width="80dp"
+                        android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="1min"
                         android:id="@+id/textView7"
                         android:gravity="center" />
 
                     <TextView
-                        android:layout_width="80dp"
+                        android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="2min"
                         android:id="@+id/textView8"
                         android:gravity="center" />
 
                     <TextView
-                        android:layout_width="80dp"
+                        android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Free"
                         android:id="@+id/textView9"
                         android:gravity="center" />
 
                     <TextView
-                        android:layout_width="80dp"
+                        android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="broken"
                         android:id="@+id/textView10"
@@ -131,47 +127,47 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:gravity="center"
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="60dp"
-            android:layout_marginRight="60dp">
+            android:gravity="top|center"
+            android:layout_marginTop="50dp"
+            android:layout_marginLeft="80dp"
+            android:layout_marginRight="80dp">
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Select Cycle"
+                android:text="SELECT CYCLE"
                 android:id="@+id/selected_cycle_button"
-                style="@android:style/TextAppearance.Holo.Widget"
-                android:shadowRadius="10"
-                android:padding="20dp"
+                style="@android:style/Widget.Holo"
+                android:shadowRadius="0"
                 android:layout_margin="10dp"
                 android:textColor="#ffffff"
-                android:shadowColor="#8c96cc"
-                android:background="@drawable/my_round_button" />
+                android:shadowColor="#CCCCCB"
+                android:background="@drawable/my_round_button_background_on"
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="MAINTENANCE"
                 android:id="@+id/maintenance_button"
-                style="@android:style/TextAppearance.Holo.Widget"
-                android:padding="20dp"
+                style="@android:style/Widget.Holo"
                 android:layout_margin="10dp"
                 android:textColor="#ffffff"
-                android:shadowColor="#8c96cc"
-                android:background="@drawable/my_round_button" />
+                android:shadowColor="#CCCCCB"
+                android:background="@drawable/my_round_button_background_on"
+                android:textSize="15dp" />
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="NOTIFY USER"
                 android:id="@+id/notify_user_button"
-                style="@android:style/TextAppearance.Holo.Widget"
-                android:padding="20dp"
+                style="@android:style/Widget.Holo"
                 android:layout_margin="10dp"
                 android:textColor="#ffffff"
-                android:shadowColor="#8c96cc"
-                android:background="@drawable/my_round_button" />
+                android:shadowColor="#CCCCCB"
+                android:background="@drawable/my_round_button_background_off"
+                android:textSize="15dp" />
         </LinearLayout>
 
     </LinearLayout>
