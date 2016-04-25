@@ -142,7 +142,7 @@
                 android:layout_margin="10dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_on"
+                android:background="@drawable/my_round_button_background_2"
                 android:textSize="15dp" />
 
             <Button
@@ -154,8 +154,9 @@
                 android:layout_margin="10dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_on"
-                android:textSize="15dp" />
+                android:background="@drawable/my_round_button_background_2"
+                android:textSize="15dp"
+                android:onClick="onMaintenanceSelected" />
 
             <Button
                 android:layout_width="match_parent"
@@ -166,7 +167,7 @@
                 android:layout_margin="10dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_off"
+                android:background="@drawable/my_round_button_background_1"
                 android:textSize="15dp" />
         </LinearLayout>
 

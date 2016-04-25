@@ -14,7 +14,7 @@ public class Maintenance extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_maintenance);
+        setContentView(R.layout.activity_maintenance);
 //        Bundle extras = getIntent().getExtras();
 //        if (extras.containsKey("MachineId")) {
 //            machineId = extras.getString("MachineId");
