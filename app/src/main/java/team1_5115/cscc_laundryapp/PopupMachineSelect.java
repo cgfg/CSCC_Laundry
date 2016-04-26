@@ -23,25 +23,26 @@ public class PopupMachineSelect extends MainStatus {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.popup_machine_options);
-        DisplayMetrics dm = new DisplayMetrics();
-        getWindowManager().getDefaultDisplay().getMetrics(dm);
-        int width = dm.widthPixels;
-        int height = dm.heightPixels;
-        getWindow().setLayout((int) (width * .75),(int) (height * .35));
-        Bundle extras = getIntent().getExtras();
-        if (extras.containsKey("dryerId")) {
-            machineId = "Dryer " + extras.getInt("dryerId");
-        } else if (extras.containsKey("washerId")) {
-            machineId = "Washer " + extras.getInt("washerId");
-        } else {
-            machineId = "Unknown";
-        }
-        TextView machineOptionsText = (TextView) findViewById(R.id.machineOptionsText);
-        if (machineOptionsText != null)
-            machineOptionsText.setText(machineId);
+        setContentView(R.layout.activity_cycle_select);
 
-        getWindow().setLayout((int) (width * .75), (int) (height * .35));
+//        DisplayMetrics dm = new DisplayMetrics();
+//        getWindowManager().getDefaultDisplay().getMetrics(dm);
+//        int width = dm.widthPixels;
+//        int height = dm.heightPixels;
+//        getWindow().setLayout((int) (width * .75),(int) (height * .35));
+//        Bundle extras = getIntent().getExtras();
+//        if (extras.containsKey("dryerId")) {
+//            machineId = "Dryer " + extras.getInt("dryerId");
+//        } else if (extras.containsKey("washerId")) {
+//            machineId = "Washer " + extras.getInt("washerId");
+//        } else {
+//            machineId = "Unknown";
+//        }
+//        TextView machineOptionsText = (TextView) findViewById(R.id.machineOptionsText);
+//        if (machineOptionsText != null)
+//            machineOptionsText.setText(machineId);
+//
+//        getWindow().setLayout((int) (width * .75), (int) (height * .35));
     }
 
     /* called when user presses 'Use Machine' button from popup window
@@ -63,7 +64,7 @@ public class PopupMachineSelect extends MainStatus {
     }
 
     public void popUpCycleOptions() {
-        View popUpView = getLayoutInflater().inflate(R.layout.machine_cycle_lists, null);
+        View popUpView = getLayoutInflater().inflate(R.layout.activity_cycle_select, null);
         PopupWindow popUp = new PopupWindow(popUpView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
         popUp.showAtLocation(popUpView, Gravity.CENTER, 0, 0);
         Button button = (Button) popUpView.findViewById(R.id.cycle_button_submit);
