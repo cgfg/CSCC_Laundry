@@ -1,49 +1,63 @@
 package team1_5115.cscc_laundryapp;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.EditText;
+import android.support.v7.app.AppCompatActivity;
+import android.widget.ExpandableListView;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class Settings extends AppCompatActivity {
+
+    List<String> groupList;
+    ExpandableListView expListView;
+    Map<String, List<Integer>> childList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_settings);
+        setContentView(R.layout.settings_main);
+
+        createGroupList();
+        createChildList();
+
+        expListView = (ExpandableListView) findViewById(R.id.expandableListView);
+        final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
+                this, groupList, childList);
+        expListView.setAdapter(expListAdapter);
+
+
+        //setGroupIndicatorToRight();
+
+//        expListView.setOnChildClickListener(new ExpandableListView.OnChildClickListener() {
+//
+//            public boolean onChildClick(ExpandableListView parent, View v,
+//                                        int groupPosition, int childPosition, long id) {
+//                final String selected = (String) expListAdapter.getChild(
+//                        groupPosition, childPosition);
+//                Toast.makeText(getBaseContext(), selected, Toast.LENGTH_LONG)
+//                        .show();
+//
+//                return true;
+//            }
+//        });
     }
 
-    public void clickEdit(View view){
-        EditText editText = (EditText)findViewById(R.id.firstNameEdit);
-        editText.setFocusableInTouchMode(true);
-        editText = (EditText)findViewById(R.id.lastNameEdit);
-        editText.setFocusableInTouchMode(true);
-        editText = (EditText)findViewById(R.id.emailEdit);
-        editText.setFocusableInTouchMode(true);
-        editText = (EditText)findViewById(R.id.phoneNumEdit);
-        editText.setFocusableInTouchMode(true);
-        editText = (EditText)findViewById(R.id.buildingNumEdit);
-        editText.setFocusableInTouchMode(true);
-        editText = (EditText)findViewById(R.id.apartNumEdit);
-        editText.setFocusableInTouchMode(true);
-        editText = (EditText)findViewById(R.id.passwordEdit);
-        editText.setFocusableInTouchMode(true);
+    private void createGroupList(){
+        groupList = new ArrayList<>();
+        groupList.add("Account Setting");
+        groupList.add("Notifications");
     }
 
-    public void clickSubmit(View view){
-        EditText editText = (EditText)findViewById(R.id.firstNameEdit);
-        editText.setFocusable(false);
-        editText = (EditText)findViewById(R.id.lastNameEdit);
-        editText.setFocusable(false);
-        editText = (EditText)findViewById(R.id.emailEdit);
-        editText.setFocusable(false);
-        editText = (EditText)findViewById(R.id.phoneNumEdit);
-        editText.setFocusable(false);
-        editText = (EditText)findViewById(R.id.buildingNumEdit);
-        editText.setFocusable(false);
-        editText = (EditText)findViewById(R.id.apartNumEdit);
-        editText.setFocusable(false);
-        editText = (EditText)findViewById(R.id.passwordEdit);
-        editText.setFocusable(false);
+    private void createChildList(){
+        childList = new HashMap<>();
+        for(String groupName : groupList){
+            childList.put(groupName, new ArrayList<Integer>());
+        }
+        childList.get("Account Setting").add(R.layout.child_item_act_setting);
+        childList.get("Notifications").add(R.layout.child_item_notification);
     }
+
 }
