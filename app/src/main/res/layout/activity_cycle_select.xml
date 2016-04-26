@@ -206,14 +206,29 @@
                 android:layout_width="20px"
                 android:layout_height="15dp" />
 
-            <Switch
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Super Cycle"
-                android:id="@+id/switch1"
-                android:checked="false"
-                android:textSize="22dp" />
+                android:columnCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Super Cycle"
+                    android:textSize="22dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <ToggleButton
+                    android:text="Super Cycle"
+                    android:id="@+id/chkState3"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/toggle_on_off_selector"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_gravity="center_vertical|right" />
+            </GridLayout>
 
             <View
                 android:id="@+id/hDottedLine"
