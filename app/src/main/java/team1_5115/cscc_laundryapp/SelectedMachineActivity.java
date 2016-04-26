@@ -17,4 +17,9 @@ public class SelectedMachineActivity extends AppCompatActivity {
         Intent intent = new Intent(SelectedMachineActivity.this, Maintenance.class);
         startActivity(intent);
     }
+
+    public void onCycleSelected(View view) {
+        Intent intent = new Intent(SelectedMachineActivity.this, PopupMachineSelect.class);
+        startActivity(intent);
+    }
 }
