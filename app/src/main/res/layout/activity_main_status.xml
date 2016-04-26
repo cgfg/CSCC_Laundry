@@ -8,8 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="team1_5115.cscc_laundryapp.MainStatus"
-    android:clickable="false"
-    android:background="@drawable/backg">
+    android:clickable="false">
 
     <LinearLayout
         android:orientation="vertical"
