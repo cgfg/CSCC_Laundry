@@ -18,7 +18,7 @@ public class Settings extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.settings_main);
+        /*setContentView(R.layout.settings_main);
 
         createGroupList();
         createChildList();
@@ -26,7 +26,7 @@ public class Settings extends AppCompatActivity {
         expListView = (ExpandableListView) findViewById(R.id.expandableListView);
         final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
                 this, groupList, childList);
-        expListView.setAdapter(expListAdapter);
+        expListView.setAdapter(expListAdapter);*/
 
 
         //setGroupIndicatorToRight();
@@ -57,7 +57,7 @@ public class Settings extends AppCompatActivity {
             childList.put(groupName, new ArrayList<Integer>());
         }
         childList.get("Account Setting").add(R.layout.child_item_act_setting);
-        childList.get("Notifications").add(R.layout.child_item_notification);
+        //childList.get("Notifications").add(R.layout.child_item_notification);
     }
 
 }
