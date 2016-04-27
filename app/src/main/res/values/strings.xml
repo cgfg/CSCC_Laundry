@@ -19,5 +19,8 @@
         <item>30$</item>
     </string-array>
 
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="confirmMaintenance">Please enter your passcode to confirm and submit the request to maintenance</string>
 
 </resources>
