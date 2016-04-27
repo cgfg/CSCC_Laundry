@@ -133,7 +133,7 @@
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
-                        android:text="broken"
+                        android:text="Broken"
                         android:id="@+id/main_washer4_text"
                         android:gravity="center" />
                 </TableRow>
@@ -288,7 +288,7 @@
                         <TextView
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
-                            android:text="Free"
+                            android:text="Broken"
                             android:id="@+id/main_dryer4_text"
                             android:gravity="center" />
                     </TableRow>

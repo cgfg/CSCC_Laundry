@@ -49,10 +49,11 @@
                         android:layout_height="85dp"
                         android:text="1"
                         android:id="@+id/selected_machine1"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -60,10 +61,11 @@
                         android:layout_height="85dp"
                         android:text="2"
                         android:id="@+id/selected_machine2"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -71,21 +73,22 @@
                         android:layout_height="85dp"
                         android:text="3"
                         android:id="@+id/selected_machine3"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_free"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
-                        android:text="4"
                         android:id="@+id/selected_machine4"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_broken"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -118,7 +121,7 @@
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
-                        android:text="broken"
+                        android:text="Broken"
                         android:id="@+id/textView10"
                         android:gravity="center" />
                 </TableRow>
