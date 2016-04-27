@@ -97,7 +97,6 @@
             android:layout_height="fill_parent"
             android:gravity="bottom|center"
             android:weightSum="2"
-            android:layout_marginTop="10dp"
             android:baselineAligned="false">
 
             <Button
@@ -109,14 +108,16 @@
                 android:background="@drawable/my_round_button_background_3"
                 android:textColor="#5c5c5c"
                 android:layout_weight="0.9"
-                android:onClick="onSubmitButtonClicked"
-                android:layout_marginBottom="10dp" />
+                android:onClick="onCancelButtonClicked"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
 
             <Space
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="0.2"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
 
             <Button
                 style="@android:style/Widget.Holo"
@@ -128,7 +129,8 @@
                 android:textColor="#DFE6FE"
                 android:layout_weight="0.9"
                 android:onClick="onIssueSubmitButtonClicked"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
         </TableRow>
     </LinearLayout>
 

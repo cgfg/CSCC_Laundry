@@ -8,6 +8,7 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Toast;
 
 public class Maintenance extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
     private String machineId = "";
@@ -17,7 +18,7 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
         setContentView(R.layout.activity_maintenance);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
-        transaction.add(R.id.maintenance_container, issueFragment, "issue_fragment");
+        transaction.add(R.id.maintenance_washer_container, issueFragment, "issue_fragment");
         transaction.commit();
 
     }
@@ -53,13 +54,14 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
         newFragment.setArguments(args);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
 
-        transaction.replace(R.id.maintenance_container, newFragment);
+        transaction.replace(R.id.maintenance_washer_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
     }
 
     public void onConfirmSubmitButtonClicked(View view) {
-
+        Toast.makeText(this.getBaseContext(), "A maintenance request has sent", Toast.LENGTH_LONG).show();
+        finish();
     }
 
     public void onCancelButtonClicked(View view) {
