@@ -98,7 +98,7 @@ tools:context="team1_5115.cscc_laundryapp.Login">
                 android:layout_height="match_parent"
                 android:id="@+id/imageView"
                 android:layout_gravity="bottom|left|right"
-                android:background="@drawable/CSCClogo"
+                android:background="@drawable/cscc_logo"
                 android:adjustViewBounds="false" />
 
         </FrameLayout>
