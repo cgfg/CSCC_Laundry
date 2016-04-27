@@ -195,7 +195,7 @@
                             android:typeface="normal"
                             android:layout_column="0"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked"
+                            android:onClick="onDryerClicked"
                             android:paddingTop="10dp" />
 
                         <Button
@@ -211,7 +211,7 @@
                             android:typeface="normal"
                             android:layout_column="1"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked"
+                            android:onClick="onDryerClicked"
                             android:paddingTop="10dp" />
 
                     </TableRow>
@@ -254,7 +254,7 @@
                             android:typeface="normal"
                             android:layout_column="0"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked"
+                            android:onClick="onDryerClicked"
                             android:paddingTop="10dp" />
 
                         <Button
@@ -269,7 +269,7 @@
                             android:typeface="normal"
                             android:layout_column="1"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked"
+                            android:onClick="onDryerClicked"
                             android:paddingTop="10dp" />
                     </TableRow>
 

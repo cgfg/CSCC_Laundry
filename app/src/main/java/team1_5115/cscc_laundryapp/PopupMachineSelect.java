@@ -12,9 +12,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 
-/**
- * Created by Adam on 4/1/2016.
- */
 public class PopupMachineSelect extends MainStatus {
     public static int totalTime = 0;
     public static int deductMoney = 0;

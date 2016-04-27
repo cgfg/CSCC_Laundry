@@ -170,7 +170,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="top|center"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="-10dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp">
 
@@ -180,6 +180,7 @@
                 android:text="Select Cycle"
                 android:id="@+id/maintenance_text_issue"
                 android:textSize="20dp"
+                android:layout_marginTop="10dp"
                 android:layout_gravity="left" />
 
             <RadioGroup
@@ -246,22 +247,40 @@
 
             </RadioGroup>
 
-            <Switch
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="15dp" />
+
+            <GridLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:text="Super Cycle"
-                android:id="@+id/switch1"
-                android:checked="false"
-                android:textSize="20dp" />
+                android:columnCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Super Cycle"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <ToggleButton
+                    android:text="Super Cycle"
+                    android:id="@+id/chkState3"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/toggle_on_off_selector"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_gravity="center_vertical|right" />
+            </GridLayout>
 
             <View
                 android:id="@+id/hDottedLine"
                 android:background="@drawable/dotted"
                 android:layout_width="match_parent"
-                android:layout_height="5dp"
+                android:layout_height="0dp"
                 android:layerType="software" />
-
 
     </LinearLayout>
         <TableRow
@@ -269,7 +288,7 @@
             android:layout_height="60dp"
             android:gravity="center"
             android:weightSum="2"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="0dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp">
 
@@ -298,6 +317,5 @@
                 android:textColor="#DFE6FE"
                 android:layout_weight="0.9" />
         </TableRow>
-
     </LinearLayout>
 </LinearLayout>

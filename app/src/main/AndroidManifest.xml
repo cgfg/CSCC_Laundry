@@ -20,10 +20,11 @@
         <activity android:name=".Maintenance" />
         <activity android:name=".Settings" />
         <activity android:name=".Payment" />
-        <activity
-            android:name=".PopupMachineSelect"
-            android:theme="@style/PopupTheme" />
+        <activity android:name=".PopupMachineSelect"/>
         <activity android:name=".SelectedMachineActivity"></activity>
+        <activity android:name=".SelectedDryerActivity"></activity>
+        <activity android:name=".MaintenanceDryer"></activity>
+        <activity android:name=".CycleSelectDryer"></activity>
     </application>
 
 </manifest>
