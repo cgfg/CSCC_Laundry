@@ -49,13 +49,14 @@
                         android:layout_height="85dp"
                         android:text="1"
                         android:id="@+id/main_washer_1"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -63,13 +64,14 @@
                         android:layout_height="85dp"
                         android:text="2"
                         android:id="@+id/main_washer_2"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -77,27 +79,28 @@
                         android:layout_height="85dp"
                         android:text="3"
                         android:id="@+id/main_washer_3"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_free"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
-                        android:text="4"
                         android:id="@+id/main_washer_4"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_broken"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -185,14 +188,15 @@
                             android:layout_height="85dp"
                             android:text="1"
                             android:id="@+id/main_dryer_1"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_busy"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="0"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onMachineClicked"
+                            android:paddingTop="10dp" />
 
                         <Button
                             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -200,14 +204,15 @@
                             android:layout_height="85dp"
                             android:text="2"
                             android:id="@+id/main_dryer_2"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_busy"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="1"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onMachineClicked"
+                            android:paddingTop="10dp" />
 
                     </TableRow>
 
@@ -242,29 +247,30 @@
                             android:layout_height="85dp"
                             android:text="3"
                             android:id="@+id/main_dryer_3"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_free"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="0"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onMachineClicked"
+                            android:paddingTop="10dp" />
 
                         <Button
                             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                             android:layout_width="85dp"
                             android:layout_height="85dp"
-                            android:text="4"
                             android:id="@+id/main_dryer_4"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_broken"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="1"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onMachineClicked"
+                            android:paddingTop="10dp" />
                     </TableRow>
 
                     <TableRow
