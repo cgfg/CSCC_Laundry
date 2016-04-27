@@ -30,14 +30,15 @@
 
             <RadioGroup
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="wrap_content"
+                android:id="@+id/maintenance_radio_group">
 
                 <RadioButton
                     style="@android:style/TextAppearance.Holo.Widget"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Improper water drainage"
-                    android:id="@+id/radioButton5"
+                    android:id="@+id/issues_1_radio"
                     android:checked="true"
                     android:button="@null"
                     android:background="@drawable/my_radio_button"
@@ -45,6 +46,7 @@
                     android:drawableRight="@drawable/abc_btn_radio_material"
                     android:drawableTint="#54D959"
                     android:layout_marginTop="0dp"
+                    android:onClick="onRadioButtonClicked"
                     android:textStyle="bold" />
 
                 <RadioButton
@@ -52,28 +54,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Error message"
-                    android:id="@+id/radioButton6"
+                    android:id="@+id/issues_2_radio"
                     android:checked="false"
                     android:background="@drawable/my_radio_button"
                     android:button="@null"
                     android:textSize="18dp"
                     android:drawableRight="@drawable/abc_btn_radio_material"
                     android:drawableTint="#54D959"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:onClick="onRadioButtonClicked" />
 
                 <RadioButton
                     style="@android:style/TextAppearance.Holo.Widget"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="Request refund"
-                    android:id="@+id/radioButton7"
+                    android:id="@+id/issues_3_radio"
                     android:checked="false"
                     android:button="@null"
                     android:background="@drawable/my_radio_button"
                     android:textSize="18dp"
                     android:drawableRight="@drawable/abc_btn_radio_material"
                     android:drawableTint="#54D959"
-                    android:layout_marginTop="5dp" />
+                    android:layout_marginTop="5dp"
+                    android:onClick="onRadioButtonClicked" />
 
                 <Space
                     android:layout_width="20px"
