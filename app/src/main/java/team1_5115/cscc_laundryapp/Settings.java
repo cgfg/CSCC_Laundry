@@ -49,6 +49,7 @@ public class Settings extends AppCompatActivity {
         groupList = new ArrayList<>();
         groupList.add("Account Setting");
         groupList.add("Notifications");
+        groupList.add("Preferences");
     }
 
     private void createChildList(){
@@ -58,6 +59,7 @@ public class Settings extends AppCompatActivity {
         }
         childList.get("Account Setting").add(R.layout.child_item_act_setting);
         childList.get("Notifications").add(R.layout.child_item_notification);
+        childList.get("Preferences").add(R.layout.child_preferences);
     }
 
 }

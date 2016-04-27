@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:columnCount="2">
+
+    <TextView
+        android:text="Family Messages"
+        android:padding="10dip"
+        android:textSize="18dp"
+        android:layout_width="wrap_content" />
+    <ToggleButton
+        android:id="@+id/chkState1"
+        android:layout_width="36dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="80dp"
+        android:background="@drawable/toggle_on_off_selector"
+        android:textOff=""
+        android:textOn="" />
+
+    <TextView
+        android:text="Member Messages"
+        android:padding="10dip"
+        android:textSize="18dp"
+        android:layout_width="wrap_content" />
+    <ToggleButton
+        android:text="Super Cycle"
+        android:id="@+id/chkState2"
+        android:layout_width="36dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="80dp"
+        android:background="@drawable/toggle_on_off_selector"
+        android:textOff=""
+        android:textOn="" />
+
+    <TextView
+        android:text="App Updates"
+        android:padding="10dip"
+        android:textSize="18dp"
+        android:layout_width="wrap_content" />
+    <ToggleButton
+        android:text="Super Cycle"
+        android:id="@+id/chkState3"
+        android:layout_width="36dp"
+        android:layout_height="18dp"
+        android:layout_marginLeft="80dp"
+        android:background="@drawable/toggle_on_off_selector"
+        android:textOff=""
+        android:textOn="" />
+
+</GridLayout>
