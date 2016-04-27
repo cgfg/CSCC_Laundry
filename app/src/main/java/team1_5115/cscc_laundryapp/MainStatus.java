@@ -21,6 +21,11 @@ public class MainStatus extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onDryerClicked(View view) {
+        Intent intent = new Intent(MainStatus.this,SelectedDryerActivity.class);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
