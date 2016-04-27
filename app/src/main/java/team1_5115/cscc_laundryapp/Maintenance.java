@@ -9,16 +9,23 @@ import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Maintenance extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
-    private String machineId = "";
+    int selectdMachineId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance);
+        Bundle extras = getIntent().getExtras();
+        if (extras.containsKey("id")) {
+            selectdMachineId = extras.getInt("id");
+            Button icon = (Button)findViewById(selectdMachineId);
+            icon.setAlpha(1);
+        }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
         transaction.add(R.id.maintenance_washer_container, issueFragment, "issue_fragment");
