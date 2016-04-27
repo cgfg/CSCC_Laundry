@@ -7,7 +7,8 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="team1_5115.cscc_laundryapp.SelectedDryerActivity">
+    tools:context="team1_5115.cscc_laundryapp.SelectedDryerActivity"
+    android:background="@drawable/back_dryer">
 
     <LinearLayout
         android:orientation="vertical"
@@ -15,7 +16,6 @@
         android:layout_height="match_parent"
         android:weightSum="2"
         android:id="@+id/linearLayout"
-        android:background="@drawable/back_dryer"
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true">
@@ -40,8 +40,7 @@
                 android:outlineProvider="background"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:layout_marginRight="15dp" />
+                android:layout_alignParentStart="true" />
 
             <TableLayout
                 android:layout_width="180dp"
