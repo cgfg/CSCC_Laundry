@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical">
 
 
@@ -10,12 +10,15 @@
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:text="Balance: 19 $"
+        android:textColor="#54D959"
+        android:textStyle="bold"
+        android:textSize="30dp"
         android:id="@+id/balanceValue"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:background="#b1e4f2"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:background="@drawable/my_radio_button_on"
         android:editable="true"/>
 
     <TextView
@@ -36,10 +39,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="Add Money:"
+            android:text="Value Added:"
             android:id="@+id/addMoney"
-            android:layout_gravity="right"
-            android:width="200dp"
+            android:layout_gravity="center"
             android:paddingLeft="80dp"/>
 
         <Spinner
@@ -49,41 +51,25 @@
             android:spinnerMode="dropdown"
             android:dropDownSelector="@drawable/abc_list_selector_holo_dark"
             android:dropDownWidth="wrap_content"
-            android:layout_gravity="left"
+            android:layout_gravity="center"
             android:layout_marginTop="1dp"
-            />
-
-        <!--<TextView-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
-            <!--android:text="Deduct Money:"-->
-            <!--android:id="@+id/deductMoney"-->
-            <!--android:layout_gravity="right"-->
-            <!--android:width="200dp"-->
-            <!--android:paddingLeft="50dp"/>-->
-
-        <!--<Spinner-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="wrap_content"-->
-            <!--android:id="@+id/moneyChoices2"-->
-            <!--android:spinnerMode="dropdown"-->
-            <!--android:dropDownSelector="@drawable/abc_list_selector_holo_dark"-->
-            <!--android:dropDownWidth="wrap_content"-->
-            <!--android:layout_gravity="left"-->
-            <!--android:layout_marginTop="1dp"/>-->
-
-
+            android:paddingBottom="5dp"
+            android:paddingTop="5dp"
+            android:minWidth="100dp"
+            android:foreground="@drawable/custom_add_money" />
 
     </GridLayout>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="update"
+        android:text="Update"
         android:id="@+id/submitMoney"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp"
-        android:minHeight="45dp" />
+        android:layout_marginTop="80dp"
+        android:background="@drawable/my_round_button_background_2"
+        style="@android:style/Widget.Holo"
+        android:textColor="#DFE6FE"
+        android:layout_weight="0.9" />
 
 </LinearLayout>

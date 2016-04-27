@@ -1,19 +1,15 @@
 package team1_5115.cscc_laundryapp;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
-
-import java.lang.ref.SoftReference;
 
 public class Payment extends AppCompatActivity {
 
@@ -47,9 +43,9 @@ public class Payment extends AppCompatActivity {
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 String value = spinner1.getSelectedItem().toString();
                 switch(value){
-                    case "10$": selectedAddValue = 10; break;
-                    case "20$": selectedAddValue = 20; break;
-                    case "30$": selectedAddValue = 30; break;
+                    case "10 $": selectedAddValue = 10; break;
+                    case "20 $": selectedAddValue = 20; break;
+                    case "30 $": selectedAddValue = 30; break;
                     default: selectedAddValue = 0; break;
                 }
             }

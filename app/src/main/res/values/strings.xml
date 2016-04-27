@@ -13,10 +13,9 @@
     <string name="phoneNumText">(123)4567890</string>
     <string name="manageAccount">Manage Account:</string>
     <string-array name="moneyChoices1">
-        <item>0$</item>
-        <item>10$</item>
-        <item>20$</item>
-        <item>30$</item>
+        <item>10 $</item>
+        <item>20 $</item>
+        <item>30 $</item>
     </string-array>
 
 

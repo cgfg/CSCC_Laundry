@@ -15,7 +15,8 @@
         android:layout_marginLeft="80dp"
         android:background="@drawable/toggle_on_off_selector"
         android:textOff=""
-        android:textOn="" />
+        android:textOn=""
+        android:checked="true" />
 
     <TextView
         android:text="Member Messages"
@@ -30,7 +31,8 @@
         android:layout_marginLeft="80dp"
         android:background="@drawable/toggle_on_off_selector"
         android:textOff=""
-        android:textOn="" />
+        android:textOn=""
+        android:checked="true"/>
 
     <TextView
         android:text="App Updates"
@@ -45,6 +47,7 @@
         android:layout_marginLeft="80dp"
         android:background="@drawable/toggle_on_off_selector"
         android:textOff=""
-        android:textOn="" />
+        android:textOn=""
+        android:checked="true"/>
 
 </GridLayout>
