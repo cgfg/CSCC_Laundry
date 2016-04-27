@@ -8,7 +8,8 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="team1_5115.cscc_laundryapp.MainStatus"
-    android:clickable="false">
+    android:clickable="false"
+    android:background="@drawable/back_g">
 
     <LinearLayout
         android:orientation="vertical"
@@ -48,13 +49,14 @@
                         android:layout_height="85dp"
                         android:text="1"
                         android:id="@+id/main_washer_1"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -62,13 +64,14 @@
                         android:layout_height="85dp"
                         android:text="2"
                         android:id="@+id/main_washer_2"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -76,27 +79,28 @@
                         android:layout_height="85dp"
                         android:text="3"
                         android:id="@+id/main_washer_3"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_free"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
-                        android:text="4"
                         android:id="@+id/main_washer_4"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_broken"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked" />
+                        android:onClick="onMachineClicked"
+                        android:paddingTop="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -129,7 +133,7 @@
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
-                        android:text="broken"
+                        android:text="Broken"
                         android:id="@+id/main_washer4_text"
                         android:gravity="center" />
                 </TableRow>
@@ -184,14 +188,15 @@
                             android:layout_height="85dp"
                             android:text="1"
                             android:id="@+id/main_dryer_1"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_busy"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="0"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onDryerClicked"
+                            android:paddingTop="10dp" />
 
                         <Button
                             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -199,14 +204,15 @@
                             android:layout_height="85dp"
                             android:text="2"
                             android:id="@+id/main_dryer_2"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_busy"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="1"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onDryerClicked"
+                            android:paddingTop="10dp" />
 
                     </TableRow>
 
@@ -241,29 +247,30 @@
                             android:layout_height="85dp"
                             android:text="3"
                             android:id="@+id/main_dryer_3"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_free"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="0"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onDryerClicked"
+                            android:paddingTop="10dp" />
 
                         <Button
                             style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                             android:layout_width="85dp"
                             android:layout_height="85dp"
-                            android:text="4"
                             android:id="@+id/main_dryer_4"
-                            android:background="@mipmap/ic_launcher"
+                            android:background="@drawable/d_broken"
                             android:elegantTextHeight="false"
                             android:textSize="30dp"
                             android:shadowColor="@color/button_material_dark"
                             android:typeface="normal"
                             android:layout_column="1"
                             android:nestedScrollingEnabled="false"
-                            android:onClick="onMachineClicked" />
+                            android:onClick="onDryerClicked"
+                            android:paddingTop="10dp" />
                     </TableRow>
 
                     <TableRow
@@ -281,7 +288,7 @@
                         <TextView
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
-                            android:text="Free"
+                            android:text="Broken"
                             android:id="@+id/main_dryer4_text"
                             android:gravity="center" />
                     </TableRow>

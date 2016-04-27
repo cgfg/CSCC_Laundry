@@ -14,7 +14,8 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:weightSum="2" >
+        android:weightSum="2"
+        android:id="@+id/maintenance_washer_container">
 
         <LinearLayout
             android:orientation="vertical"
@@ -48,10 +49,11 @@
                         android:layout_height="85dp"
                         android:text="1"
                         android:id="@+id/selected_machine1"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -59,10 +61,11 @@
                         android:layout_height="85dp"
                         android:text="2"
                         android:id="@+id/selected_machine2"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -70,21 +73,22 @@
                         android:layout_height="85dp"
                         android:text="3"
                         android:id="@+id/selected_machine3"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_free"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
-                        android:text="4"
                         android:id="@+id/selected_machine4"
-                        android:background="@mipmap/ic_launcher"
+                        android:background="@drawable/w_broken"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
-                        android:shadowColor="@color/button_material_dark" />
+                        android:shadowColor="@color/button_material_dark"
+                        android:paddingTop="10dp" />
                 </TableRow>
 
                 <TableRow
@@ -117,133 +121,14 @@
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
-                        android:text="broken"
+                        android:text="Broken"
                         android:id="@+id/textView10"
                         android:gravity="center" />
                 </TableRow>
             </TableLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="top|center"
-            android:layout_marginTop="15dp"
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Select Issues"
-                android:id="@+id/maintenance_text_issue"
-                android:textSize="20dp"
-                android:layout_gravity="left" />
-
-            <Space
-                android:layout_width="20px"
-                android:layout_height="5dp" />
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Improper water drainage"
-                    android:id="@+id/radioButton"
-                    android:checked="true"
-                    android:button="@null"
-                    android:background="@drawable/my_radio_button"
-                    android:textSize="18dp"
-                    android:drawableRight="@drawable/abc_btn_radio_material"
-                    android:drawableTint="#54D959"
-                    android:layout_marginTop="0dp"
-                    android:textStyle="bold"
-                    style="@android:style/TextAppearance.Holo.Widget" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Error message"
-                    android:id="@+id/radioButton2"
-                    android:checked="false"
-                    android:background="@drawable/my_radio_button"
-                    android:button="@null"
-                    android:textSize="18dp"
-                    android:drawableRight="@drawable/abc_btn_radio_material"
-                    android:drawableTint="#54D959"
-                    android:layout_marginTop="5dp"
-                    style="@android:style/TextAppearance.Holo.Widget" />
-
-                <RadioButton
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:text="Request refund"
-                    android:id="@+id/radioButton3"
-                    android:checked="false"
-                    android:button="@null"
-                    android:background="@drawable/my_radio_button"
-                    android:textSize="18dp"
-                    android:drawableRight="@drawable/abc_btn_radio_material"
-                    android:drawableTint="#54D959"
-                    android:layout_marginTop="5dp"
-                    style="@android:style/TextAppearance.Holo.Widget" />
-
-            </RadioGroup>
-
-            <Space
-                android:layout_width="20px"
-                android:layout_height="10dp" />
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:id="@+id/maintence_comment"
-                android:background="@drawable/my_edit_text_background"
-                android:hint="Additional Comments (Optional)"
-                android:textSize="15dp"
-                android:gravity="top"
-                style="@android:style/Widget.Holo.EditText" />
 
         </LinearLayout>
 
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:weightSum="2"
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp">
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cancel"
-                android:id="@+id/button4"
-                android:background="@drawable/my_round_button_background_3"
-                style="@android:style/Widget.Holo"
-                android:textColor="#5c5c5c"
-                android:layout_weight="0.9" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0.2" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Submit"
-                android:id="@+id/button5"
-                android:background="@drawable/my_round_button_background_2"
-                style="@android:style/Widget.Holo"
-                android:textColor="#DFE6FE"
-                android:layout_weight="0.9" />
-        </TableRow>
 
     </LinearLayout>
 

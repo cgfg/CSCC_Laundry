@@ -1,0 +1,137 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context=".MaintenanceIssueFragment"
+    android:id="@+id/maintenance_issue_fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Issues"
+                android:id="@+id/textView6"
+                android:textSize="20dp"
+                android:layout_gravity="left" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <RadioButton
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Improper water drainage"
+                    android:id="@+id/radioButton5"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/my_radio_button"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="0dp"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Error message"
+                    android:id="@+id/radioButton6"
+                    android:checked="false"
+                    android:background="@drawable/my_radio_button"
+                    android:button="@null"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="5dp" />
+
+                <RadioButton
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Request refund"
+                    android:id="@+id/radioButton7"
+                    android:checked="false"
+                    android:button="@null"
+                    android:background="@drawable/my_radio_button"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="5dp" />
+
+                <Space
+                    android:layout_width="20px"
+                    android:layout_height="10dp" />
+            </RadioGroup>
+
+            <EditText
+                style="@android:style/Widget.Holo.EditText"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:id="@+id/editText7"
+                android:background="@drawable/my_edit_text_background"
+                android:hint="Additional Comments (Optional)"
+                android:textSize="15dp"
+                android:gravity="top" />
+
+        </LinearLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom|center"
+            android:weightSum="2"
+            android:baselineAligned="false">
+
+            <Button
+                style="@android:style/Widget.Holo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/button6"
+                android:background="@drawable/my_round_button_background_3"
+                android:textColor="#5c5c5c"
+                android:layout_weight="0.9"
+                android:onClick="onCancelButtonClicked"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+
+            <Button
+                style="@android:style/Widget.Holo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/button7"
+                android:background="@drawable/my_round_button_background_2"
+                android:textColor="#DFE6FE"
+                android:layout_weight="0.9"
+                android:onClick="onIssueSubmitButtonClicked"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+        </TableRow>
+    </LinearLayout>
+
+</FrameLayout>
