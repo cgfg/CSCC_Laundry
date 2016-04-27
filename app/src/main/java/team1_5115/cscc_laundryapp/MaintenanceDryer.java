@@ -1,5 +1,6 @@
 package team1_5115.cscc_laundryapp;
 
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.app.AlertDialog;
@@ -41,6 +42,18 @@ public class MaintenanceDryer extends AppCompatActivity implements MaintenanceIs
     public void onConfirmSubmitButtonClicked(View view) {
         Toast.makeText(this.getBaseContext(), "A maintenance request has sent", Toast.LENGTH_LONG).show();
         finish();
+    }
+
+    public void onRadioButtonClicked(View view) {
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.maintenance_radio_group);
+        RadioButton radio_1 = (RadioButton) findViewById(R.id.issues_1_radio);
+        RadioButton radio_2 = (RadioButton) findViewById(R.id.issues_2_radio);
+        RadioButton radio_3 = (RadioButton) findViewById(R.id.issues_3_radio);
+        radio_1.setTypeface(null, Typeface.NORMAL);
+        radio_2.setTypeface(null, Typeface.NORMAL);
+        radio_3.setTypeface(null, Typeface.NORMAL);
+        RadioButton newRadio = (RadioButton) radioGroup.findViewById(view.getId());
+        newRadio.setTypeface(null, Typeface.BOLD);
     }
 
     public void onCancelButtonClicked(View view) {
