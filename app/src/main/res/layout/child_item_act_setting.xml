@@ -16,7 +16,9 @@
         android:id="@+id/username"
         android:text="@string/username"
         android:layout_gravity="right"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"/>
 
     <EditText
         android:id="@+id/usernameEdit"
@@ -27,24 +29,11 @@
         android:hint="@string/usernameText" />
 
     <TextView
-        android:id="@+id/email"
-        android:text="@string/email"
-        android:layout_gravity="right"
-        android:layout_marginTop="0dp" />
-
-    <EditText
-        android:id="@+id/emailEdit"
-        android:layout_gravity="left"
-        android:width="180dp"
-        android:inputType="textEmailAddress|textNoSuggestions"
-        android:hint="@string/emailText"
-        android:layout_marginTop="0dp" />
-
-    <TextView
         android:id="@+id/phoneNum"
         android:text="@string/phoneNum"
         android:layout_gravity="right"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:paddingRight="10dp"/>
 
     <EditText
         android:id="@+id/phoneNumEdit"
@@ -55,33 +44,48 @@
         android:layout_marginTop="0dp" />
 
     <TextView
-        android:id="@+id/password"
-        android:text="@string/password"
-        android:layout_gravity="right"
-        android:layout_marginTop="0dp" />
-
-    <EditText
-        android:id="@+id/passwordEdit"
-        android:layout_gravity="left"
-        android:width="180dp"
-        android:inputType="textPassword|textNoSuggestions"
-        android:ems="10"
-        android:layout_marginTop="0dp" />
-
-    <TextView
-        android:id="@+id/confirmPassword"
-        android:text="@string/confirmPassword"
+        android:id="@+id/email"
+        android:text="@string/email"
         android:layout_gravity="right"
         android:layout_marginTop="0dp"
-        android:paddingLeft="10dp"/>
+        android:paddingRight="10dp"/>
 
     <EditText
-        android:id="@+id/confirmPasswordEdit"
+        android:id="@+id/emailEdit"
         android:layout_gravity="left"
         android:width="180dp"
-        android:inputType="textPassword|textNoSuggestions"
-        android:ems="10"
+        android:inputType="textEmailAddress|textNoSuggestions"
+        android:hint="@string/emailText"
         android:layout_marginTop="0dp" />
+
+    <!--<TextView-->
+        <!--android:id="@+id/password"-->
+        <!--android:text="@string/password"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_marginTop="0dp" />-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/passwordEdit"-->
+        <!--android:layout_gravity="left"-->
+        <!--android:width="180dp"-->
+        <!--android:inputType="textPassword|textNoSuggestions"-->
+        <!--android:ems="10"-->
+        <!--android:layout_marginTop="0dp" />-->
+
+    <!--<TextView-->
+        <!--android:id="@+id/confirmPassword"-->
+        <!--android:text="@string/confirmPassword"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:paddingLeft="10dp"/>-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/confirmPasswordEdit"-->
+        <!--android:layout_gravity="left"-->
+        <!--android:width="180dp"-->
+        <!--android:inputType="textPassword|textNoSuggestions"-->
+        <!--android:ems="10"-->
+        <!--android:layout_marginTop="0dp" />-->
 
     <Button
         android:layout_width="wrap_content"

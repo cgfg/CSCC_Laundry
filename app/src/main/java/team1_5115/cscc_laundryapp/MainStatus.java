@@ -1,8 +1,11 @@
 package team1_5115.cscc_laundryapp;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -10,9 +13,10 @@ import android.view.View;
 
 public class MainStatus extends AppCompatActivity {
 
-    @Override
+    @SuppressLint("InlinedApi") @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setupActionBar();
         setContentView(R.layout.activity_main_status);
     }
 
@@ -57,5 +61,17 @@ public class MainStatus extends AppCompatActivity {
     public void gotoPaymentScreen(){
         Intent intent = new Intent(this, Payment.class);
         startActivity(intent);
+    }
+
+    private void setupActionBar(){
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayShowTitleEnabled(false);
+        actionBar.setDisplayUseLogoEnabled(false);
+        actionBar.setDisplayHomeAsUpEnabled(false);
+        actionBar.setDisplayShowCustomEnabled(true);
+        actionBar.setDisplayShowHomeEnabled(false);
+        ActionBar.LayoutParams lp1 = new ActionBar.LayoutParams(ActionBar.LayoutParams.MATCH_PARENT, ActionBar.LayoutParams.MATCH_PARENT);
+        View customNav = LayoutInflater.from(this).inflate(R.layout.main_screen_action_bar, null); // layout which contains your button.
+        actionBar.setCustomView(customNav, lp1);
     }
 }

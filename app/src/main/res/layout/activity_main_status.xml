@@ -10,7 +10,6 @@
     tools:context="team1_5115.cscc_laundryapp.MainStatus"
     android:clickable="false"
     android:background="@drawable/back_g">
-
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -315,7 +314,6 @@
                     android:gravity="center_horizontal"
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

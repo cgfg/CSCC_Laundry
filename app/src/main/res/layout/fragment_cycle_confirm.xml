@@ -56,9 +56,16 @@
                 android:text="Super Cycle"
                 android:textSize="22dp"
                 android:layout_marginTop="2dp"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="3dp"
                 android:textColor="#000000"
-                android:id="@+id/cycle_confirm_supercycle"/>
+                android:id="@+id/cycle_confirm_supercycle" />
+
+            <TextView
+                android:id="@+id/hDottedLine"
+                android:background="@drawable/dotted"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software" />
 
         </LinearLayout>
 

@@ -16,10 +16,16 @@
         android:id="@+id/balanceValue"
         android:layout_gravity="center_horizontal"
         android:textAlignment="center"
-        android:paddingTop="10dp"
+        android:paddingTop="30dp"
         android:paddingBottom="10dp"
-        android:background="@drawable/my_radio_button_on"
         android:editable="true"/>
+
+    <TextView
+        android:id="@+id/hDottedLine"
+        android:background="@drawable/dotted"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:layerType="software" />
 
     <GridLayout
         android:layout_width="match_parent"

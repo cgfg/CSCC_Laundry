@@ -1,12 +1,12 @@
 package team1_5115.cscc_laundryapp;
 
-import android.graphics.Typeface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.view.View;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ExpandableListView;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -49,6 +49,27 @@ public class Settings extends AppCompatActivity {
 //        });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.child_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent intent = new Intent(this, MainStatus.class);
+                startActivity(intent);
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void createGroupList(){
         groupList = new ArrayList<>();
         groupList.add("Account Setting");
@@ -65,17 +86,4 @@ public class Settings extends AppCompatActivity {
         childList.get("Preferences").add(R.layout.child_preferences);
         childList.get("Account Setting").add(R.layout.child_item_act_setting);
     }
-
-    public void onRadioButtonClicked(View view) {
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.maintenance_radio_group);
-        RadioButton radio_1 = (RadioButton) findViewById(R.id.issues_1_radio);
-        RadioButton radio_2 = (RadioButton) findViewById(R.id.issues_2_radio);
-        RadioButton radio_3 = (RadioButton) findViewById(R.id.issues_3_radio);
-        radio_1.setTypeface(null, Typeface.NORMAL);
-        radio_2.setTypeface(null, Typeface.NORMAL);
-        radio_3.setTypeface(null, Typeface.NORMAL);
-        RadioButton newRadio = (RadioButton) radioGroup.findViewById(view.getId());
-        newRadio.setTypeface(null, Typeface.BOLD);
-    }
-
 }
