@@ -22,13 +22,13 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/cycle_radioGroup">
+            android:id="@+id/preference_group">
 
             <RadioButton
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Whites"
-                android:id="@+id/radioButton"
+                android:id="@+id/preference1"
                 android:checked="true"
                 android:button="@null"
                 android:background="@drawable/my_radio_button"
@@ -43,7 +43,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Colors"
-                android:id="@+id/radioButton2"
+                android:id="@+id/preference2"
                 android:checked="false"
                 android:background="@drawable/my_radio_button"
                 android:button="@null"
@@ -57,7 +57,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Perm Press"
-                android:id="@+id/radioButton3"
+                android:id="@+id/preference3"
                 android:checked="false"
                 android:button="@null"
                 android:background="@drawable/my_radio_button"
@@ -71,7 +71,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Delicates"
-                android:id="@+id/radioButton4"
+                android:id="@+id/preference4"
                 android:checked="false"
                 android:button="@null"
                 android:background="@drawable/my_radio_button"

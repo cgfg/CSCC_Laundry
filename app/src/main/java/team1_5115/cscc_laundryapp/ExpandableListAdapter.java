@@ -11,6 +11,8 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import java.util.List;
@@ -82,8 +84,18 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         //To Do
     }
 
-    private void setPreferences(View convertView){
-        //To Do
+    private void setPreferences(final View convertView){
+        final RadioGroup radioGroup = (RadioGroup)convertView.findViewById(R.id.preference_group);
+        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup group, int checkedId) {
+                ((RadioButton)group.findViewById(R.id.preference1)).setTypeface(null, Typeface.NORMAL);
+                ((RadioButton)group.findViewById(R.id.preference2)).setTypeface(null, Typeface.NORMAL);
+                ((RadioButton)group.findViewById(R.id.preference3)).setTypeface(null, Typeface.NORMAL);
+                ((RadioButton)group.findViewById(R.id.preference4)).setTypeface(null, Typeface.NORMAL);
+                ((RadioButton)group.findViewById(checkedId)).setTypeface(null, Typeface.BOLD);
+            }
+        });
     }
 
     public int getChildrenCount(int groupPosition) {
