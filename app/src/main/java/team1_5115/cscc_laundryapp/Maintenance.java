@@ -2,20 +2,30 @@ package team1_5115.cscc_laundryapp;
 
 import android.app.FragmentManager;
 import android.content.DialogInterface;
+import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class Maintenance extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
-    private String machineId = "";
+    int selectdMachineId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance);
+        Bundle extras = getIntent().getExtras();
+        if (extras.containsKey("id")) {
+            selectdMachineId = extras.getInt("id");
+            Button icon = (Button)findViewById(selectdMachineId);
+            icon.setAlpha(1);
+        }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
         transaction.add(R.id.maintenance_washer_container, issueFragment, "issue_fragment");
@@ -24,27 +34,15 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
     }
 
     public void onRadioButtonClicked(View view) {
-        // Is the button now checked?
-//        boolean checked = ((RadioButton) view).isChecked();
-//
-//        // Check which radio button was clicked
-//        switch(view.getId()) {
-//            case R.id.maintenance_radioButton1:
-//                if (checked) {
-////                    Toast.makeText(this, "You selected Problem 1", Toast.LENGTH_SHORT).show();
-//                    break;
-//                }
-//            case R.id.maintenance_radioButton2:
-//                if (checked) {
-////                    Toast.makeText(this.getBaseContext(), "You selected Problem 2", Toast.LENGTH_LONG).show();
-//                    break;
-//                }
-//            case R.id.maintenance_radioButton3:
-//                if (checked) {
-////                    Toast.makeText(this.getBaseContext(),"You selected Other", Toast.LENGTH_LONG).show();
-//                    break;
-//                }
-//        }
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.maintenance_radio_group);
+        RadioButton radio_1 = (RadioButton) findViewById(R.id.issues_1_radio);
+        RadioButton radio_2 = (RadioButton) findViewById(R.id.issues_2_radio);
+        RadioButton radio_3 = (RadioButton) findViewById(R.id.issues_3_radio);
+        radio_1.setTypeface(null, Typeface.NORMAL);
+        radio_2.setTypeface(null, Typeface.NORMAL);
+        radio_3.setTypeface(null, Typeface.NORMAL);
+        RadioButton newRadio = (RadioButton) radioGroup.findViewById(view.getId());
+        newRadio.setTypeface(null, Typeface.BOLD);
     }
 
     public void onIssueSubmitButtonClicked(View view) {

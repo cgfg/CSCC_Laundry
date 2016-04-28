@@ -18,11 +18,13 @@ public class MainStatus extends AppCompatActivity {
 
     public void onMachineClicked(View view) {
         Intent intent = new Intent(MainStatus.this,SelectedMachineActivity.class);
+        intent.putExtra("id", view.getId());
         startActivity(intent);
     }
 
     public void onDryerClicked(View view) {
         Intent intent = new Intent(MainStatus.this,SelectedDryerActivity.class);
+        intent.putExtra("id", view.getId());
         startActivity(intent);
     }
 

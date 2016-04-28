@@ -48,47 +48,51 @@
                         android:layout_width="85dp"
                         android:layout_height="85dp"
                         android:text="1"
-                        android:id="@+id/selected_machine1"
+                        android:id="@+id/washer_1"
                         android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
                         android:text="2"
-                        android:id="@+id/selected_machine2"
+                        android:id="@+id/washer_2"
                         android:background="@drawable/w_busy"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
                         android:text="3"
-                        android:id="@+id/selected_machine3"
+                        android:id="@+id/washer_3"
                         android:background="@drawable/w_free"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
                         android:layout_width="85dp"
                         android:layout_height="85dp"
-                        android:id="@+id/selected_machine4"
+                        android:id="@+id/washer_4"
                         android:background="@drawable/w_broken"
                         android:elegantTextHeight="false"
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
                 </TableRow>
 
                 <TableRow
