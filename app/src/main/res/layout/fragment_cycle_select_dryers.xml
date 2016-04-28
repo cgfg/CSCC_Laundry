@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="0dp"
+    android:paddingTop="0dp"
+    tools:context="team1_5115.cscc_laundryapp.CycleSelectDryer"
+    android:id="@+id/cycle_select_dryer_container"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="205dp"
+            android:layout_weight="1"
+            android:layout_marginTop="0dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Dryers"
+                android:id="@+id/textView4"
+                android:paddingBottom="0dp"
+                android:paddingTop="0dp"
+                android:textSize="25dp"
+                android:typeface="normal"
+                android:outlineProvider="background"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TableLayout
+                android:layout_width="180dp"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:weightSum="1"
+                android:measureWithLargestChild="false"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/textView4"
+                android:layout_toEndOf="@+id/textView4">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:measureWithLargestChild="false"
+                    android:touchscreenBlocksFocus="false"
+                    android:nestedScrollingEnabled="false"
+                    android:weightSum="1"
+                    android:gravity="center_horizontal" >
+
+                    <Button
+                        style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:text="1"
+                        android:id="@+id/dryer_1"
+                        android:background="@drawable/d_busy"
+                        android:elegantTextHeight="false"
+                        android:textSize="30dp"
+                        android:shadowColor="@color/button_material_dark"
+                        android:typeface="normal"
+                        android:layout_column="0"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="10dp" />
+
+                    <Button
+                        style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:text="2"
+                        android:id="@+id/dryer_2"
+                        android:background="@drawable/d_busy"
+                        android:elegantTextHeight="false"
+                        android:textSize="30dp"
+                        android:shadowColor="@color/button_material_dark"
+                        android:typeface="normal"
+                        android:layout_column="1"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="10dp" />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:text="0min"
+                        android:id="@+id/dryer_1_text"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:text="1min"
+                        android:id="@+id/dryer_2_text"
+                        android:gravity="center" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal" >
+
+                    <Button
+                        style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:text="3"
+                        android:id="@+id/dryer_3"
+                        android:background="@drawable/d_free"
+                        android:elegantTextHeight="false"
+                        android:textSize="30dp"
+                        android:shadowColor="@color/button_material_dark"
+                        android:typeface="normal"
+                        android:layout_column="0"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="10dp" />
+
+                    <Button
+                        style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
+                        android:layout_width="85dp"
+                        android:layout_height="85dp"
+                        android:id="@+id/dryer_4"
+                        android:background="@drawable/d_broken"
+                        android:elegantTextHeight="false"
+                        android:textSize="30dp"
+                        android:shadowColor="@color/button_material_dark"
+                        android:typeface="normal"
+                        android:layout_column="1"
+                        android:nestedScrollingEnabled="false"
+                        android:paddingTop="10dp" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:text="Free"
+                        android:id="@+id/dryer_3_text"
+                        android:gravity="center" />
+
+                    <TextView
+                        android:layout_width="85dp"
+                        android:layout_height="wrap_content"
+                        android:text="Broken"
+                        android:id="@+id/dryer_4_text"
+                        android:gravity="center" />
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+
+    </LinearLayout>
+</LinearLayout>
