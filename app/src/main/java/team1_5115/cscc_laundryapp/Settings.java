@@ -57,9 +57,9 @@ public class Settings extends AppCompatActivity {
         for(String groupName : groupList){
             childList.put(groupName, new ArrayList<Integer>());
         }
-        childList.get("Account Setting").add(R.layout.child_item_act_setting);
         childList.get("Notifications").add(R.layout.child_item_notification);
         childList.get("Preferences").add(R.layout.child_preferences);
+        childList.get("Account Setting").add(R.layout.child_item_act_setting);
     }
 
 }

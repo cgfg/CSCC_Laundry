@@ -1,14 +1,16 @@
 package team1_5115.cscc_laundryapp;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import java.util.List;
@@ -51,44 +53,33 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     private void setAccountSetting(final View convertView){
-        Button edit = (Button)convertView.findViewById(R.id.editButton);
-        edit.setOnClickListener(new View.OnClickListener() {
+        Button bt = (Button)convertView.findViewById(R.id.saveButton);
+        bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                TextView et1 = ((TextView)convertView.findViewById(R.id.usernameEdit));
-                et1.setEnabled(true);
-                EditText et2 = ((EditText)convertView.findViewById(R.id.emailEdit));
-                et2.setEnabled(true);
-                EditText et3 = ((EditText)convertView.findViewById(R.id.phoneNumEdit));
-                et3.setEnabled(true);
-                EditText et4 = ((EditText)convertView.findViewById(R.id.passwordEdit));
-                et4.setEnabled(true);
-                EditText et5 = ((EditText)convertView.findViewById(R.id.confirmPasswordEdit));
-                et5.setEnabled(true);
-            }
-        });
-
-        Button submit = (Button)convertView.findViewById(R.id.submitButton);
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                TextView et1 = ((TextView) convertView.findViewById(R.id.usernameEdit));
-                et1.setEnabled(false);
-                EditText et2 = ((EditText)convertView.findViewById(R.id.emailEdit));
-                et2.setEnabled(false);
-                EditText et3 = ((EditText)convertView.findViewById(R.id.phoneNumEdit));
-                et3.setEnabled(false);
-                EditText et4 = ((EditText)convertView.findViewById(R.id.passwordEdit));
-                et4.setEnabled(false);
-                EditText et5 = ((EditText)convertView.findViewById(R.id.confirmPasswordEdit));
-                et5.setEnabled(false);
+                AlertDialog.Builder builder = new AlertDialog.Builder(convertView.getContext());
+                builder.setMessage("Your profile will be changed !")
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        });
+                AlertDialog dialog = builder.create();
+                dialog.setOnShowListener(new DialogInterface.OnShowListener() {
+                    @Override
+                    public void onShow(DialogInterface dialog) {
+                        Window view = ((AlertDialog)dialog).getWindow();
+                        view.setBackgroundDrawableResource(R.drawable.dialog_bk);
+                    }
+                });
+                dialog.show();
             }
         });
     }
 
     private void setNotifications(View convertView){
-//        TextView textView = (TextView) convertView.findViewById(R.id.textView11);
-//        textView.setText("notification");
+        //To Do
     }
 
     private void setPreferences(View convertView){
@@ -117,6 +108,11 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         if (convertView == null) {
             LayoutInflater infalInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = infalInflater.inflate(R.layout.settings_group_item, null);
+        }
+        if(isExpanded){
+            convertView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.settings_item_selected));
+        }else{
+            convertView.setBackgroundDrawable(context.getResources().getDrawable(R.drawable.settings_item_unselected));
         }
         TextView item = (TextView) convertView.findViewById(R.id.groupItem);
         item.setTypeface(null, Typeface.BOLD);
