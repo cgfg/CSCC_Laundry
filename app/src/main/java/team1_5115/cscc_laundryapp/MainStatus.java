@@ -3,13 +3,21 @@ package team1_5115.cscc_laundryapp;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.TextureView;
 import android.view.View;
+import android.widget.TextView;
+
+import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class MainStatus extends AppCompatActivity {
 
@@ -18,6 +26,30 @@ public class MainStatus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setupActionBar();
         setContentView(R.layout.activity_main_status);
+        ScheduledThreadPoolExecutor updateThreadPool = new ScheduledThreadPoolExecutor(1);
+        updateThreadPool.scheduleAtFixedRate(new updateMachineStatusCallable(), 0, 1, TimeUnit.SECONDS);
+
+    }
+
+    private class updateMachineStatusCallable implements Runnable {
+        Handler handler = new Handler();
+        @Override
+        public void run() {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    LaundryMachines laundryMachines = LaundryMachines.getInstance();
+                    TextView washer_text_1 = (TextView) findViewById(R.id.washer_text_1);
+                    TextView washer_text_2 = (TextView) findViewById(R.id.washer_text_2);
+                    TextView washer_text_3 = (TextView) findViewById(R.id.washer_text_3);
+                    TextView washer_text_4 = (TextView) findViewById(R.id.washer_text_4);
+                    washer_text_1.setText(laundryMachines.getWasherStatus(1));
+                    washer_text_2.setText(laundryMachines.getWasherStatus(2));
+                    washer_text_3.setText(laundryMachines.getWasherStatus(3));
+                    washer_text_4.setText(laundryMachines.getWasherStatus(4));
+                }
+            });
+        }
     }
 
     public void onMachineClicked(View view) {

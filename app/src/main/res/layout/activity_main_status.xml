@@ -113,28 +113,28 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="1min"
-                        android:id="@+id/main_washer1_text"
+                        android:id="@+id/washer_text_1"
                         android:gravity="center" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="2min"
-                        android:id="@+id/main_washer2_text"
+                        android:id="@+id/washer_text_2"
                         android:gravity="center" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Free"
-                        android:id="@+id/main_washer3_text"
+                        android:id="@+id/washer_text_3"
                         android:gravity="center" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Broken"
-                        android:id="@+id/main_washer4_text"
+                        android:id="@+id/washer_text_4"
                         android:gravity="center" />
                 </TableRow>
             </TableLayout>
