@@ -103,7 +103,7 @@
                 android:textColor="#DFE6FE"
                 android:layout_weight="0.9"
                 android:layout_marginBottom="5dp"
-                android:onClick="onConfirmSubmitButtonClicked" />
+                android:onClick="onWasherCycleConfirmButtonClicked" />
         </TableRow>
 
     </LinearLayout>

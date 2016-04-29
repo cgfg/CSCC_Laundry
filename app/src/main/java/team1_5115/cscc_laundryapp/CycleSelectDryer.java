@@ -22,6 +22,7 @@ import java.util.concurrent.TimeUnit;
 
 public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
     int selectedMachineId = 0;
+    private int button_id_num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +37,8 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
             selectedMachineId = extras.getInt("id");
             Button icon = (Button)findViewById(selectedMachineId);
             icon.setAlpha(1);
+
+            button_id_num = Integer.parseInt(icon.getTag().toString());
         }
         // TODO: get dynamic transparency to work for dryers
 //        Bundle extras = getIntent().getExtras();
@@ -135,6 +138,19 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         radio_4.setTypeface(null, Typeface.NORMAL);
         RadioButton newRadio = (RadioButton) radioGroup.findViewById(view.getId());
         newRadio.setTypeface(null, Typeface.BOLD);
+    }
+
+    public void onDryerCycleConfirmButtonClicked(View view) {
+        // update the status time and icon
+        LaundryMachines laundryMachines = LaundryMachines.getInstance();
+        if (laundryMachines.setDryerTimer(button_id_num, Long.valueOf(3600000)) == false) {
+            Toast.makeText(this.getBaseContext(), "Tracking Request Failed", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(this.getBaseContext(), "Tracking Washer " + button_id_num, Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(CycleSelectDryer.this, MainStatus.class);
+            startActivity(intent);
+        }
     }
 
     public void onIssueSubmitButtonClicked(View view) {

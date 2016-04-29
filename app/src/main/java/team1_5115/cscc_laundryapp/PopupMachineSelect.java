@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -23,6 +24,7 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
     public static int totalTime = 0;
     public static int deductMoney = 0;
     private int selectedMachineId = 0;
+    private int button_id_num;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +39,8 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
             selectedMachineId = extras.getInt("id");
             Button icon = (Button) findViewById(selectedMachineId);
             icon.setAlpha(1);
+
+            button_id_num = Integer.parseInt(icon.getTag().toString());
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         CycleSelectFragment issueFragment = new CycleSelectFragment();
@@ -115,6 +119,7 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
         }
     }
 
+
     public void onRadioButtonClicked(View view) {
         RadioGroup radioGroup = (RadioGroup) findViewById(R.id.cycle_radio_group);
         RadioButton radio_1 = (RadioButton) findViewById(R.id.cycle_1_radio);
@@ -139,6 +144,19 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
         transaction.replace(R.id.cycle_select_washer_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    public void onWasherCycleConfirmButtonClicked(View view) {
+        // update the status time and icon
+        LaundryMachines laundryMachines = LaundryMachines.getInstance();
+        if (laundryMachines.setWasherTimer(button_id_num, Long.valueOf(2400000)) == false) {
+            Toast.makeText(this.getBaseContext(), "Tracking Request Failed", Toast.LENGTH_LONG).show();
+        }
+        else {
+            Toast.makeText(this.getBaseContext(), "Tracking Washer " + button_id_num, Toast.LENGTH_LONG).show();
+            Intent intent = new Intent(PopupMachineSelect.this, MainStatus.class);
+            startActivity(intent);
+        }
     }
 
     public void onConfirmSubmitButtonClicked(View view) {
