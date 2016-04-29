@@ -15,7 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class PopupMachineSelect extends MainStatus implements CycleSelectFragment.OnFragmentInteractionListener {
+public class PopupMachineSelect extends MainStatus implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
     public static int totalTime = 0;
     public static int deductMoney = 0;
     private int selectedMachineId = 0;
