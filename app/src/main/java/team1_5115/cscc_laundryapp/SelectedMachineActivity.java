@@ -67,6 +67,14 @@ public class SelectedMachineActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onQuickStartSelected(View view){
+        Intent intent = new Intent(SelectedMachineActivity.this, PopupMachineSelect.class);
+        Bundle extras = new Bundle();
+        extras.putInt("id", selectdMachineId);
+
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

@@ -34,7 +34,8 @@
                 android:outlineProvider="background"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:textColor="@color/background_floating_material_dark" />
 
             <TableLayout
                 android:layout_width="180dp"
@@ -99,14 +100,16 @@
                         android:layout_height="wrap_content"
                         android:text="0min"
                         android:id="@+id/main_dryer1_text"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="1min"
                         android:id="@+id/main_dryer2_text"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
                 </TableRow>
 
                 <TableRow
@@ -157,14 +160,16 @@
                         android:layout_height="wrap_content"
                         android:text="Free"
                         android:id="@+id/main_dryer3_text"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Broken"
                         android:id="@+id/main_dryer4_text"
-                        android:gravity="center" />
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
                 </TableRow>
             </TableLayout>
         </RelativeLayout>
@@ -185,7 +190,8 @@
                 android:id="@+id/maintenance_text_issue"
                 android:textSize="20dp"
                 android:layout_marginTop="10dp"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                android:textColor="@color/background_floating_material_dark" />
 
             <RadioGroup
                 android:layout_width="match_parent"
