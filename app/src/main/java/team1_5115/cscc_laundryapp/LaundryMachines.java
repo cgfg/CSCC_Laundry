@@ -48,6 +48,30 @@ public class LaundryMachines {
         washer_timers[3] = null;
     }
 
+    // return the correct washer drawable for a given washer
+    public String getWasherStatusIcon(int washerId) {
+        switch (getWasherStatus(washerId)) {
+            case "FREE":
+                return "@drawable/w_free";
+            case "REPAIR":
+                return "@drawable/w_broken";
+            default:
+                return "@drawable/w_busy";
+        }
+    }
+
+    // return the correct washer drawable for a given washer
+    public String getDryerStatusIcon(int dryerId) {
+        switch (getDryerStatus(dryerId)) {
+            case "FREE":
+                return "@drawable/d_free";
+            case "REPAIR":
+                return "@drawable/d_broken";
+            default:
+                return "@drawable/d_busy";
+        }
+    }
+
     public String getWasherStatus(int washerId) {
         if (washerId >0 && washerId <= 4) {
             return washer_status[washerId - 1];
