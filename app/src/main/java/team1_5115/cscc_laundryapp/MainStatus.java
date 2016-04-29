@@ -63,6 +63,106 @@ public class MainStatus extends AppCompatActivity {
                     dryer_text_3.setText(laundryMachines.getDryerStatus(3));
                     dryer_text_4.setText(laundryMachines.getDryerStatus(4));
 
+                    // washer icons
+                    Button washer_button_1 = (Button) findViewById(R.id.washer_1);
+                    Button washer_button_2 = (Button) findViewById(R.id.washer_2);
+                    Button washer_button_3 = (Button) findViewById(R.id.washer_3);
+                    Button washer_button_4 = (Button) findViewById(R.id.washer_4);
+                    switch (laundryMachines.getWasherStatusIcon(1)) {
+                        case "w_free":
+                            washer_button_1.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_1.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_1.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getWasherStatusIcon(2)) {
+                        case "w_free":
+                            washer_button_2.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_2.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_2.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getWasherStatusIcon(3)) {
+                        case "w_free":
+                            washer_button_3.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_3.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_3.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getWasherStatusIcon(4)) {
+                        case "w_free":
+                            washer_button_4.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_4.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_4.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+
+                    // dryer icons
+                    Button dryer_button_1 = (Button) findViewById(R.id.dryer_1);
+                    Button dryer_button_2 = (Button) findViewById(R.id.dryer_2);
+                    Button dryer_button_3 = (Button) findViewById(R.id.dryer_3);
+                    Button dryer_button_4 = (Button) findViewById(R.id.dryer_4);
+                    switch (laundryMachines.getDryerStatusIcon(1)) {
+                        case "d_free":
+                            dryer_button_1.setBackgroundResource(R.drawable.d_free);
+                            break;
+                        case "d_broken":
+                            dryer_button_1.setBackgroundResource(R.drawable.d_broken);
+                            break;
+                        default:
+                            dryer_button_1.setBackgroundResource(R.drawable.d_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getDryerStatusIcon(2)) {
+                        case "d_free":
+                            dryer_button_2.setBackgroundResource(R.drawable.d_free);
+                            break;
+                        case "d_broken":
+                            dryer_button_2.setBackgroundResource(R.drawable.d_broken);
+                            break;
+                        default:
+                            dryer_button_2.setBackgroundResource(R.drawable.d_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getDryerStatusIcon(3)) {
+                        case "d_free":
+                            dryer_button_3.setBackgroundResource(R.drawable.d_free);
+                            break;
+                        case "d_broken":
+                            dryer_button_3.setBackgroundResource(R.drawable.d_broken);
+                            break;
+                        default:
+                            dryer_button_3.setBackgroundResource(R.drawable.d_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getDryerStatusIcon(4)) {
+                        case "d_free":
+                            dryer_button_4.setBackgroundResource(R.drawable.d_free);
+                            break;
+                        case "d_broken":
+                            dryer_button_4.setBackgroundResource(R.drawable.d_broken);
+                            break;
+                        default:
+                            dryer_button_4.setBackgroundResource(R.drawable.d_busy);
+                            break;
+                    }
+
 //                    // washer icons
 //                    Button washer_button_1 = (Button) findViewById(R.id.washer_1);
 //                    Button washer_button_2 = (Button) findViewById(R.id.washer_2);
@@ -72,7 +172,7 @@ public class MainStatus extends AppCompatActivity {
 //                    washer_button_2.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(2)));
 //                    washer_button_3.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(3)));
 //                    washer_button_4.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(4)));
-//
+
 //                    // dryer icons
 //                    Button dryer_button_1 = (Button) findViewById(R.id.dryer_1);
 //                    Button dryer_button_2 = (Button) findViewById(R.id.dryer_2);

@@ -60,6 +60,56 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
                     washer_text_2.setText(laundryMachines.getWasherStatus(2));
                     washer_text_3.setText(laundryMachines.getWasherStatus(3));
                     washer_text_4.setText(laundryMachines.getWasherStatus(4));
+
+                    // washer icons
+                    Button washer_button_1 = (Button) findViewById(R.id.washer_1);
+                    Button washer_button_2 = (Button) findViewById(R.id.washer_2);
+                    Button washer_button_3 = (Button) findViewById(R.id.washer_3);
+                    Button washer_button_4 = (Button) findViewById(R.id.washer_4);
+                    switch (laundryMachines.getWasherStatusIcon(1)) {
+                        case "w_free":
+                            washer_button_1.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_1.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_1.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getWasherStatusIcon(2)) {
+                        case "w_free":
+                            washer_button_2.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_2.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_2.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getWasherStatusIcon(3)) {
+                        case "w_free":
+                            washer_button_3.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_3.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_3.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
+                    switch (laundryMachines.getWasherStatusIcon(4)) {
+                        case "w_free":
+                            washer_button_4.setBackgroundResource(R.drawable.w_free);
+                            break;
+                        case "w_broken":
+                            washer_button_4.setBackgroundResource(R.drawable.w_broken);
+                            break;
+                        default:
+                            washer_button_4.setBackgroundResource(R.drawable.w_busy);
+                            break;
+                    }
                 }
             });
         }

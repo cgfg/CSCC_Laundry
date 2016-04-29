@@ -52,11 +52,11 @@ public class LaundryMachines {
     public String getWasherStatusIcon(int washerId) {
         switch (getWasherStatus(washerId)) {
             case "FREE":
-                return "@drawable/w_free";
+                return "w_free";
             case "REPAIR":
-                return "@drawable/w_broken";
+                return "w_broken";
             default:
-                return "@drawable/w_busy";
+                return "w_busy";
         }
     }
 
@@ -64,11 +64,11 @@ public class LaundryMachines {
     public String getDryerStatusIcon(int dryerId) {
         switch (getDryerStatus(dryerId)) {
             case "FREE":
-                return "@drawable/d_free";
+                return "d_free";
             case "REPAIR":
-                return "@drawable/d_broken";
+                return "d_broken";
             default:
-                return "@drawable/d_busy";
+                return "d_busy";
         }
     }
 
