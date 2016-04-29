@@ -20,7 +20,7 @@ public class SelectedMachineActivity extends AppCompatActivity {
         if (extras.containsKey("id")) {
             selectdMachineId = extras.getInt("id");
             Button icon = (Button)findViewById(selectdMachineId);
-            icon.setAlpha(1);
+            if (icon != null) icon.setAlpha(1);
         }
     }
 

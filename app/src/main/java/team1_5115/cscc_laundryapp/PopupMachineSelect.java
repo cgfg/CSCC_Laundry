@@ -15,16 +15,19 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class PopupMachineSelect extends AppCompatActivity implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener{
-    int selectdMachineId = 0;
+public class PopupMachineSelect extends MainStatus implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
+    public static int totalTime = 0;
+    public static int deductMoney = 0;
+    private int selectedMachineId = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fragment_cycle_select_washers);
         Bundle extras = getIntent().getExtras();
         if (extras.containsKey("id")) {
-            selectdMachineId = extras.getInt("id");
-            Button icon = (Button)findViewById(selectdMachineId);
+            selectedMachineId = extras.getInt("id");
+            Button icon = (Button)findViewById(selectedMachineId);
             icon.setAlpha(1);
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();

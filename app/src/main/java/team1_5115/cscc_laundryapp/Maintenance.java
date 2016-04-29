@@ -31,7 +31,6 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
         transaction.add(R.id.maintenance_washer_container, issueFragment, "issue_fragment");
         transaction.commit();
-
     }
 
     public void onRadioButtonClicked(View view) {

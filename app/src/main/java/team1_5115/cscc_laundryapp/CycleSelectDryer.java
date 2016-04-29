@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.widget.Button;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -15,10 +16,17 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
-    int selectdMachineId = 0;
+    int selectedMachineId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_cycle_select_dryer);
+        Bundle extras = getIntent().getExtras();
+        if (extras.containsKey("id")) {
+            selectedMachineId = extras.getInt("id");
+            Button icon = (Button)findViewById(selectedMachineId);
+            icon.setAlpha(1);
+        }
         setContentView(R.layout.fragment_cycle_select_dryers);
         // TODO: get dynamic transparency to work for dryers
 //        Bundle extras = getIntent().getExtras();

@@ -19,17 +19,19 @@ public class SelectedDryerActivity extends AppCompatActivity {
         if (extras.containsKey("id")) {
             selectdMachineId = extras.getInt("id");
             Button icon = (Button)findViewById(selectdMachineId);
-            icon.setAlpha(1);
+            if (icon != null) icon.setAlpha(1);
         }
     }
 
     public void onMaintenanceSelected(View view) {
         Intent intent = new Intent(SelectedDryerActivity.this, MaintenanceDryer.class);
+        intent.putExtra("id", selectdMachineId);
         startActivity(intent);
     }
 
     public void onCycleSelected(View view) {
         Intent intent = new Intent(SelectedDryerActivity.this, CycleSelectDryer.class);
+        intent.putExtra("id", selectdMachineId);
         startActivity(intent);
     }
 
