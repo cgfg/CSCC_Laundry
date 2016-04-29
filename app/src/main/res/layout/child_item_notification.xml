@@ -7,7 +7,8 @@
         android:text="Family Messages"
         android:padding="10dip"
         android:textSize="18dp"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:textColor="@color/background_floating_material_dark" />
     <ToggleButton
         android:id="@+id/chkState1"
         android:layout_width="36dp"
@@ -22,7 +23,8 @@
         android:text="Member Messages"
         android:padding="10dip"
         android:textSize="18dp"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:textColor="@color/background_floating_material_dark" />
     <ToggleButton
         android:text="Super Cycle"
         android:id="@+id/chkState2"
@@ -38,7 +40,8 @@
         android:text="App Updates"
         android:padding="10dip"
         android:textSize="18dp"
-        android:layout_width="wrap_content" />
+        android:layout_width="wrap_content"
+        android:textColor="@color/background_floating_material_dark" />
     <ToggleButton
         android:text="Super Cycle"
         android:id="@+id/chkState3"

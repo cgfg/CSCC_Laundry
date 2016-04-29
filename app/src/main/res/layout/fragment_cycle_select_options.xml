@@ -25,7 +25,8 @@
                 android:text="Select Cycle"
                 android:id="@+id/maintenance_text_issue"
                 android:textSize="20dp"
-                android:layout_gravity="left" />
+                android:layout_gravity="left"
+                android:textColor="@color/background_floating_material_dark" />
 
             <Space
                 android:layout_width="20px"
