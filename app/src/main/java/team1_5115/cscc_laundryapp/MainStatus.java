@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
@@ -13,6 +14,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import java.util.concurrent.Executor;
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.ThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class MainStatus extends AppCompatActivity {
 
@@ -22,6 +27,41 @@ public class MainStatus extends AppCompatActivity {
         setupActionBar();
         setContentView(R.layout.activity_main_status);
         loadBalanceValue(this);
+        // start threads to update machine status
+        ScheduledThreadPoolExecutor updateThreadPool = new ScheduledThreadPoolExecutor(1);
+        updateThreadPool.scheduleAtFixedRate(new updateMachineStatusCallable(), 0, 1, TimeUnit.SECONDS);
+
+    }
+
+    private class updateMachineStatusCallable implements Runnable {
+        Handler handler = new Handler();
+        @Override
+        public void run() {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    LaundryMachines laundryMachines = LaundryMachines.getInstance();
+                    // washers
+                    TextView washer_text_1 = (TextView) findViewById(R.id.washer_text_1);
+                    TextView washer_text_2 = (TextView) findViewById(R.id.washer_text_2);
+                    TextView washer_text_3 = (TextView) findViewById(R.id.washer_text_3);
+                    TextView washer_text_4 = (TextView) findViewById(R.id.washer_text_4);
+                    washer_text_1.setText(laundryMachines.getWasherStatus(1));
+                    washer_text_2.setText(laundryMachines.getWasherStatus(2));
+                    washer_text_3.setText(laundryMachines.getWasherStatus(3));
+                    washer_text_4.setText(laundryMachines.getWasherStatus(4));
+                    // dryers
+                    TextView dryer_text_1 = (TextView) findViewById(R.id.dryer_text_1);
+                    TextView dryer_text_2 = (TextView) findViewById(R.id.dryer_text_2);
+                    TextView dryer_text_3 = (TextView) findViewById(R.id.dryer_text_3);
+                    TextView dryer_text_4 = (TextView) findViewById(R.id.dryer_text_4);
+                    dryer_text_1.setText(laundryMachines.getDryerStatus(1));
+                    dryer_text_2.setText(laundryMachines.getDryerStatus(2));
+                    dryer_text_3.setText(laundryMachines.getDryerStatus(3));
+                    dryer_text_4.setText(laundryMachines.getDryerStatus(4));
+                }
+            });
+        }
     }
 
     public void onMachineClicked(View view) {

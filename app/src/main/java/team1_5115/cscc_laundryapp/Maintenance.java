@@ -1,9 +1,12 @@
 package team1_5115.cscc_laundryapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -13,7 +16,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class Maintenance extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
     int selectdMachineId = 0;
@@ -21,6 +28,10 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance);
+        // start threads to update machine status
+        ScheduledThreadPoolExecutor updateThreadPool = new ScheduledThreadPoolExecutor(1);
+        updateThreadPool.scheduleAtFixedRate(new updateMachineStatusCallable(), 0, 1, TimeUnit.SECONDS);
+
         Bundle extras = getIntent().getExtras();
         if (extras.containsKey("id")) {
             selectdMachineId = extras.getInt("id");
@@ -31,6 +42,27 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
         transaction.add(R.id.maintenance_washer_container, issueFragment, "issue_fragment");
         transaction.commit();
+    }
+
+    private class updateMachineStatusCallable implements Runnable {
+        Handler handler = new Handler();
+        @Override
+        public void run() {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    LaundryMachines laundryMachines = LaundryMachines.getInstance();
+                    TextView washer_text_1 = (TextView) findViewById(R.id.washer_text_1);
+                    TextView washer_text_2 = (TextView) findViewById(R.id.washer_text_2);
+                    TextView washer_text_3 = (TextView) findViewById(R.id.washer_text_3);
+                    TextView washer_text_4 = (TextView) findViewById(R.id.washer_text_4);
+                    washer_text_1.setText(laundryMachines.getWasherStatus(1));
+                    washer_text_2.setText(laundryMachines.getWasherStatus(2));
+                    washer_text_3.setText(laundryMachines.getWasherStatus(3));
+                    washer_text_4.setText(laundryMachines.getWasherStatus(4));
+                }
+            });
+        }
     }
 
     public void onRadioButtonClicked(View view) {
@@ -90,6 +122,20 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void resetPassword(View view) {
+        String message = "A new password has sent to your email address";
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setCancelable(true)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 }

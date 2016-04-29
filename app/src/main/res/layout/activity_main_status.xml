@@ -31,7 +31,8 @@
                 android:paddingTop="15dp"
                 android:textSize="25dp"
                 android:typeface="normal"
-                android:outlineProvider="background" />
+                android:outlineProvider="background"
+                android:textColor="@color/background_floating_material_dark" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -99,7 +100,8 @@
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
                         android:onClick="onMachineClicked"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:text="4" />
                 </TableRow>
 
                 <TableRow
@@ -112,29 +114,33 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="1min"
-                        android:id="@+id/main_washer1_text"
-                        android:gravity="center" />
+                        android:id="@+id/washer_text_1"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="2min"
-                        android:id="@+id/main_washer2_text"
-                        android:gravity="center" />
+                        android:id="@+id/washer_text_2"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Free"
-                        android:id="@+id/main_washer3_text"
-                        android:gravity="center" />
+                        android:id="@+id/washer_text_3"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Broken"
-                        android:id="@+id/main_washer4_text"
-                        android:gravity="center" />
+                        android:id="@+id/washer_text_4"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
                 </TableRow>
             </TableLayout>
         </LinearLayout>
@@ -164,7 +170,8 @@
                     android:paddingTop="15dp"
                     android:textSize="25dp"
                     android:typeface="normal"
-                    android:outlineProvider="background" />
+                    android:outlineProvider="background"
+                    android:textColor="@color/background_floating_material_dark" />
 
                 <TableLayout
                     android:layout_width="match_parent"
@@ -224,15 +231,17 @@
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:text="0min"
-                            android:id="@+id/main_dryer1_text"
-                            android:gravity="center" />
+                            android:id="@+id/dryer_text_1"
+                            android:gravity="center"
+                            android:textColor="@color/background_floating_material_dark" />
 
                         <TextView
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:text="1min"
-                            android:id="@+id/main_dryer2_text"
-                            android:gravity="center" />
+                            android:id="@+id/dryer_text_2"
+                            android:gravity="center"
+                            android:textColor="@color/background_floating_material_dark" />
                     </TableRow>
 
                     <TableRow
@@ -282,15 +291,17 @@
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:text="Free"
-                            android:id="@+id/main_dryer3_text"
-                            android:gravity="center" />
+                            android:id="@+id/dryer_text_3"
+                            android:gravity="center"
+                            android:textColor="@color/background_floating_material_dark" />
 
                         <TextView
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:text="Broken"
-                            android:id="@+id/main_dryer4_text"
-                            android:gravity="center" />
+                            android:id="@+id/dryer_text_4"
+                            android:gravity="center"
+                            android:textColor="@color/background_floating_material_dark" />
                     </TableRow>
                 </TableLayout>
             </LinearLayout>
@@ -314,7 +325,8 @@
                     android:autoText="false"
                     android:gravity="center_horizontal"
                     android:paddingTop="15dp"
-                    android:paddingBottom="15dp" />
+                    android:paddingBottom="15dp"
+                    android:textColor="@color/background_floating_material_dark" />
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

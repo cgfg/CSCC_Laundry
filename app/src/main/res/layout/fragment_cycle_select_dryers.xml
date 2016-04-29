@@ -37,7 +37,8 @@
                 android:outlineProvider="background"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
+                android:layout_alignParentStart="true"
+                android:textColor="@color/background_floating_material_dark" />
 
             <TableLayout
                 android:layout_width="180dp"
@@ -71,7 +72,8 @@
                         android:typeface="normal"
                         android:layout_column="0"
                         android:nestedScrollingEnabled="false"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -86,7 +88,8 @@
                         android:typeface="normal"
                         android:layout_column="1"
                         android:nestedScrollingEnabled="false"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
 
                 </TableRow>
 
@@ -99,15 +102,17 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="0min"
-                        android:id="@+id/dryer_1_text"
-                        android:gravity="center" />
+                        android:id="@+id/dryer_text_1"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="1min"
-                        android:id="@+id/dryer_2_text"
-                        android:gravity="center" />
+                        android:id="@+id/dryer_text_2"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
                 </TableRow>
 
                 <TableRow
@@ -128,7 +133,8 @@
                         android:typeface="normal"
                         android:layout_column="0"
                         android:nestedScrollingEnabled="false"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:alpha="0.2" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -142,7 +148,9 @@
                         android:typeface="normal"
                         android:layout_column="1"
                         android:nestedScrollingEnabled="false"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:text="4"
+                        android:alpha="0.2" />
                 </TableRow>
 
                 <TableRow
@@ -154,15 +162,17 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Free"
-                        android:id="@+id/dryer_3_text"
-                        android:gravity="center" />
+                        android:id="@+id/dryer_text_3"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Broken"
-                        android:id="@+id/dryer_4_text"
-                        android:gravity="center" />
+                        android:id="@+id/dryer_text_4"
+                        android:gravity="center"
+                        android:textColor="@color/background_floating_material_dark" />
                 </TableRow>
             </TableLayout>
         </RelativeLayout>
