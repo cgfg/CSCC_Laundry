@@ -26,6 +26,7 @@ public class MainStatus extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setupActionBar();
         setContentView(R.layout.activity_main_status);
+        // start threads to update machine status
         ScheduledThreadPoolExecutor updateThreadPool = new ScheduledThreadPoolExecutor(1);
         updateThreadPool.scheduleAtFixedRate(new updateMachineStatusCallable(), 0, 1, TimeUnit.SECONDS);
 
