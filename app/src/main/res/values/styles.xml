@@ -8,8 +8,9 @@
         <!-- Support library compatibility -->
         <item name="actionBarStyle">@style/MyActionBar</item>
         <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorActionBar</item>
         <item name="colorAccent">@color/colorAccent</item>
+
     </style>
 
     <style name="PopupTheme" parent="Theme.AppCompat.Light.NoActionBar" >
