@@ -1,5 +1,6 @@
 package team1_5115.cscc_laundryapp;
 
+import java.util.Arrays;
 import java.util.Timer;
 import android.os.CountDownTimer;
 /**
@@ -11,6 +12,8 @@ public class LaundryMachines {
     private CountDownTimer[] washer_timers = new CountDownTimer[4];
     private String[] dryer_status = new String[4];
     private CountDownTimer[] dryer_timers = new CountDownTimer[4];
+    public Boolean userTrackedWashers[] = new Boolean[4];
+    public Boolean userTrackedDryers[] = new Boolean[4];
     LaundryMachines() {
         washer_status[0] = "10 min";
         washer_status[1] = "15 min";
@@ -93,6 +96,7 @@ public class LaundryMachines {
     public Boolean setWasherTimer(int washerId, Long time){
         final int id = washerId-1;
         if (id >= 0 && id < 4 && washer_timers[id] == null) {
+            userTrackedWashers[id] = true;
             washer_timers[washerId] = new CountDownTimer(time, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
@@ -115,6 +119,7 @@ public class LaundryMachines {
     public Boolean setDryerTimer(int dryerId, Long time){
         final int id = dryerId-1;
         if (id >= 0 && id < 4 && washer_timers[id] == null) {
+            userTrackedDryers[id] = true;
             washer_timers[id] = new CountDownTimer(time, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
@@ -132,6 +137,10 @@ public class LaundryMachines {
             return false;
         }
     }
+
+//    public Boolean[] getMyLoadsText() {
+//        return userTrackedMachines;
+//    }
 
     public static LaundryMachines getInstance(){
         if (machines == null) {

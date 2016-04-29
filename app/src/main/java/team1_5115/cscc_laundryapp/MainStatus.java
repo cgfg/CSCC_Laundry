@@ -163,6 +163,27 @@ public class MainStatus extends AppCompatActivity {
                             break;
                     }
 
+                    // update My Loads area
+                    TextView myLoads_text = (TextView) findViewById(R.id.my_loads_text);
+                    for (int i=0; i < 4; i++) {
+                        if (laundryMachines.userTrackedWashers[i] != null) {
+                            if (laundryMachines.userTrackedWashers[i] == true) {
+                                String formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");
+                                myLoads_text.setText(formattedText);
+                            }
+                        }
+                    }
+//                    for (int i=0; i < 4; i++) {
+//                        if (laundryMachines.userTrackedWashers[i] != null) {
+//                            if (laundryMachines.userTrackedDryers[i] == true) {
+//                                String formattedText = ("Dryer " + i + ": " + laundryMachines.getDryerStatus(1 + i) + "\n");
+//                                myLoads_text.setText(formattedText);
+//                            }
+//                        }
+//                    }
+
+//                    myLoads_text.setText(laundryMachines.userTrackedMachines);
+
 //                    // washer icons
 //                    Button washer_button_1 = (Button) findViewById(R.id.washer_1);
 //                    Button washer_button_2 = (Button) findViewById(R.id.washer_2);
