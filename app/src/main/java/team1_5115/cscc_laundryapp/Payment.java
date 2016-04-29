@@ -1,8 +1,10 @@
 package team1_5115.cscc_laundryapp;
 
 import android.app.AlertDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -27,6 +29,7 @@ public class Payment extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_payment);
+        loadBalanceVal(this);
         final Spinner spinner1 = (Spinner) findViewById(R.id.moneyChoices1);
         ArrayAdapter<CharSequence> adapter1 = ArrayAdapter.createFromResource(this,
                 R.array.moneyChoices1, android.R.layout.simple_spinner_item);
@@ -73,7 +76,7 @@ public class Payment extends AppCompatActivity {
                     message.append("Please add value or reset the balance.");
                     isRest = false;
                 }
-                AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
+                final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setMessage(message)
                         .setCancelable(true)
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
@@ -84,6 +87,7 @@ public class Payment extends AppCompatActivity {
                                     moneyValue += selectedAddValue;
                                 }
                                 dialog.dismiss();
+                                writeToPreferenceFile(builder.getContext());
                                 blanceValue.setText("Balance: " + Float.toString(moneyValue) + " $");
                             }
                         });
@@ -119,5 +123,19 @@ public class Payment extends AppCompatActivity {
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    private void writeToPreferenceFile(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("balanceVal", Float.toString(moneyValue));
+        editor.commit();
+    }
+
+    private void loadBalanceVal(Context context){
+        SharedPreferences sharedPref = context.getSharedPreferences(getString(R.string.preference_file_key),Context.MODE_PRIVATE);
+        String balanceVal = sharedPref.getString("balanceVal", "");
+        TextView textView = (TextView)findViewById(R.id.balanceValue);
+        textView.setText(String.format("Balance: %s $", balanceVal));
     }
 }

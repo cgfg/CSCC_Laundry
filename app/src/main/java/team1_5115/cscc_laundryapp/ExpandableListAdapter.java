@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,9 +12,11 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.ToggleButton;
 
 import java.util.List;
 import java.util.Map;
@@ -93,7 +96,25 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 ((RadioButton)group.findViewById(R.id.preference2)).setTypeface(null, Typeface.NORMAL);
                 ((RadioButton)group.findViewById(R.id.preference3)).setTypeface(null, Typeface.NORMAL);
                 ((RadioButton)group.findViewById(R.id.preference4)).setTypeface(null, Typeface.NORMAL);
-                ((RadioButton)group.findViewById(checkedId)).setTypeface(null, Typeface.BOLD);
+                RadioButton checkedButton = (RadioButton) group.findViewById(checkedId);
+                checkedButton.setTypeface(null, Typeface.BOLD);
+
+                Context context = convertView.getContext();
+                SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putString("clothesType", checkedButton.getText().toString());
+                editor.commit();
+            }
+        });
+
+        final ToggleButton toggleButton = (ToggleButton) convertView.findViewById(R.id.preference5);
+        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                Context context = convertView.getContext();
+                SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = sharedPref.edit();
+                editor.putBoolean("isSuperCycle", isChecked);
             }
         });
     }
