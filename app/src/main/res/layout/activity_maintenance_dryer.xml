@@ -107,14 +107,14 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="0min"
-                        android:id="@+id/main_dryer1_text"
+                        android:id="@+id/dryer_text_1"
                         android:gravity="center" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="1min"
-                        android:id="@+id/main_dryer2_text"
+                        android:id="@+id/dryer_text_2"
                         android:gravity="center" />
                 </TableRow>
 
@@ -171,14 +171,14 @@
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Free"
-                        android:id="@+id/main_dryer3_text"
+                        android:id="@+id/dryer_text_3"
                         android:gravity="center" />
 
                     <TextView
                         android:layout_width="85dp"
                         android:layout_height="wrap_content"
                         android:text="Broken"
-                        android:id="@+id/main_dryer4_text"
+                        android:id="@+id/dryer_text_4"
                         android:gravity="center" />
                 </TableRow>
             </TableLayout>

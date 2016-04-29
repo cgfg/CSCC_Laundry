@@ -40,6 +40,7 @@ public class MainStatus extends AppCompatActivity {
                 @Override
                 public void run() {
                     LaundryMachines laundryMachines = LaundryMachines.getInstance();
+                    // washers
                     TextView washer_text_1 = (TextView) findViewById(R.id.washer_text_1);
                     TextView washer_text_2 = (TextView) findViewById(R.id.washer_text_2);
                     TextView washer_text_3 = (TextView) findViewById(R.id.washer_text_3);
@@ -48,6 +49,15 @@ public class MainStatus extends AppCompatActivity {
                     washer_text_2.setText(laundryMachines.getWasherStatus(2));
                     washer_text_3.setText(laundryMachines.getWasherStatus(3));
                     washer_text_4.setText(laundryMachines.getWasherStatus(4));
+                    // dryers
+                    TextView dryer_text_1 = (TextView) findViewById(R.id.dryer_text_1);
+                    TextView dryer_text_2 = (TextView) findViewById(R.id.dryer_text_2);
+                    TextView dryer_text_3 = (TextView) findViewById(R.id.dryer_text_3);
+                    TextView dryer_text_4 = (TextView) findViewById(R.id.dryer_text_4);
+                    dryer_text_1.setText(laundryMachines.getDryerStatus(1));
+                    dryer_text_2.setText(laundryMachines.getDryerStatus(2));
+                    dryer_text_3.setText(laundryMachines.getDryerStatus(3));
+                    dryer_text_4.setText(laundryMachines.getDryerStatus(4));
                 }
             });
         }

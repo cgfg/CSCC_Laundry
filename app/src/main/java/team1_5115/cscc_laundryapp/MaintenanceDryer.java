@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -15,7 +16,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.concurrent.ScheduledThreadPoolExecutor;
+import java.util.concurrent.TimeUnit;
 
 public class MaintenanceDryer extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
     int selectdMachineId = 0;
@@ -23,6 +28,10 @@ public class MaintenanceDryer extends AppCompatActivity implements MaintenanceIs
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_dryer);
+        // start threads to update machine status
+        ScheduledThreadPoolExecutor updateThreadPool = new ScheduledThreadPoolExecutor(1);
+        updateThreadPool.scheduleAtFixedRate(new updateMachineStatusCallable(), 0, 1, TimeUnit.SECONDS);
+
         Bundle extras = getIntent().getExtras();
         if (extras.containsKey("id")) {
             selectdMachineId = extras.getInt("id");
@@ -33,6 +42,28 @@ public class MaintenanceDryer extends AppCompatActivity implements MaintenanceIs
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
         transaction.add(R.id.maintenance_dryer_container, issueFragment, "dryer_fragment");
         transaction.commit();
+    }
+
+    private class updateMachineStatusCallable implements Runnable {
+        Handler handler = new Handler();
+        @Override
+        public void run() {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    LaundryMachines laundryMachines = LaundryMachines.getInstance();
+                    // dryers
+                    TextView dryer_text_1 = (TextView) findViewById(R.id.dryer_text_1);
+                    TextView dryer_text_2 = (TextView) findViewById(R.id.dryer_text_2);
+                    TextView dryer_text_3 = (TextView) findViewById(R.id.dryer_text_3);
+                    TextView dryer_text_4 = (TextView) findViewById(R.id.dryer_text_4);
+                    dryer_text_1.setText(laundryMachines.getDryerStatus(1));
+                    dryer_text_2.setText(laundryMachines.getDryerStatus(2));
+                    dryer_text_3.setText(laundryMachines.getDryerStatus(3));
+                    dryer_text_4.setText(laundryMachines.getDryerStatus(4));
+                }
+            });
+        }
     }
 
     public void onIssueSubmitButtonClicked(View view) {
