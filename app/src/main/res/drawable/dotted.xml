@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android"
-    android:shape="line">
-
-    <stroke
-        android:dashGap="3dp"
-        android:dashWidth="8dp"
-        android:height="2px"
-        android:color="#000000" />
-
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item>
+        <shape android:shape="line">
+            <stroke
+                android:dashGap="2dp"
+                android:dashWidth="2dp"
+                android:width="2dp"
+                android:color="#000000" />
+        </shape>
+    </item>
+</layer-list>

@@ -240,7 +240,7 @@
                     android:layout_gravity="center_vertical|right" />
             </GridLayout>
 
-            <View
+            <TextView
                 android:id="@+id/hDottedLine"
                 android:background="@drawable/dotted"
                 android:layout_width="match_parent"

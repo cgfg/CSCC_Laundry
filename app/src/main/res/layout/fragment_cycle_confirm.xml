@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CycleConfirmFragment">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="You have selected Washer 3 with the cycle:"
+                android:id="@+id/cycle_confirm_selected_machine"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="left"/>
+            <TextView
+                style="@android:style/TextAppearance.Holo.Widget"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Delicates"
+                android:checked="true"
+                android:background="@drawable/my_radio_button"
+                android:drawableTint="#54D959"
+                android:textSize="18dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textStyle="bold"
+                android:id="@+id/cycle_confirm_which_cycle"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="without"
+                android:textSize="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="left"
+                android:id="@+id/cycle_confirm_with_without"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Super Cycle"
+                android:textSize="22dp"
+                android:layout_marginTop="2dp"
+                android:layout_marginBottom="3dp"
+                android:textColor="#000000"
+                android:id="@+id/cycle_confirm_supercycle" />
+
+            <TextView
+                android:id="@+id/hDottedLine"
+                android:background="@drawable/dotted"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software" />
+
+        </LinearLayout>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:weightSum="2"
+            android:gravity="bottom|center">
+
+            <Button
+                style="@android:style/Widget.Holo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/button4"
+                android:background="@drawable/my_round_button_background_3"
+                android:textColor="#5c5c5c"
+                android:layout_weight="0.9"
+                android:onClick="onCancelButtonClicked"
+                android:layout_marginBottom="5dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                style="@android:style/Widget.Holo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm"
+                android:id="@+id/button5"
+                android:background="@drawable/my_round_button_background_2"
+                android:textColor="#DFE6FE"
+                android:layout_weight="0.9"
+                android:layout_marginBottom="5dp"
+                android:onClick="onConfirmSubmitButtonClicked" />
+        </TableRow>
+
+    </LinearLayout>
+</FrameLayout>

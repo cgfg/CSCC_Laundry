@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:columnCount="2">
 
     <TextView
@@ -16,101 +16,91 @@
         android:id="@+id/username"
         android:text="@string/username"
         android:layout_gravity="right"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="0dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="10dp"/>
 
     <EditText
         android:id="@+id/usernameEdit"
         android:layout_gravity="left"
         android:width="180dp"
-        android:background="@android:drawable/editbox_background_normal"
         android:inputType="textNoSuggestions|textPersonName"
-        android:layout_marginTop="10dp"
-        android:text="@string/usernameText" />
-
-    <TextView
-        android:id="@+id/email"
-        android:text="@string/email"
-        android:layout_gravity="right"
-        android:layout_marginTop="10dp" />
-
-    <EditText
-        android:id="@+id/emailEdit"
-        android:layout_gravity="left"
-        android:width="180dp"
-        android:background="@android:drawable/editbox_background_normal"
-        android:inputType="textEmailAddress|textNoSuggestions"
-        android:text="@string/emailText"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="0dp"
+        android:hint="@string/usernameText" />
 
     <TextView
         android:id="@+id/phoneNum"
         android:text="@string/phoneNum"
         android:layout_gravity="right"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="0dp"
+        android:paddingRight="10dp"/>
 
     <EditText
         android:id="@+id/phoneNumEdit"
         android:layout_gravity="left"
         android:width="180dp"
-        android:background="@android:drawable/editbox_background_normal"
         android:inputType="textNoSuggestions|phone"
-        android:text="@string/phoneNumText"
-        android:layout_marginTop="10dp" />
+        android:hint="@string/phoneNumText"
+        android:layout_marginTop="0dp" />
 
     <TextView
-        android:id="@+id/password"
-        android:text="@string/password"
+        android:id="@+id/email"
+        android:text="@string/email"
         android:layout_gravity="right"
-        android:layout_marginTop="10dp" />
+        android:layout_marginTop="0dp"
+        android:paddingRight="10dp"/>
 
     <EditText
-        android:id="@+id/passwordEdit"
+        android:id="@+id/emailEdit"
         android:layout_gravity="left"
         android:width="180dp"
-        android:background="@android:drawable/editbox_background_normal"
-        android:inputType="textPassword|textNoSuggestions"
-        android:ems="10"
-        android:layout_marginTop="10dp"
-        android:password="true"
-        android:text="@string/password" />
+        android:inputType="textEmailAddress|textNoSuggestions"
+        android:hint="@string/emailText"
+        android:layout_marginTop="0dp" />
 
-    <TextView
-        android:id="@+id/confirmPassword"
-        android:text="@string/confirmPassword"
-        android:layout_gravity="right"
-        android:layout_marginTop="10dp" />
+    <!--<TextView-->
+        <!--android:id="@+id/password"-->
+        <!--android:text="@string/password"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_marginTop="0dp" />-->
 
-    <EditText
-        android:id="@+id/confirmPasswordEdit"
-        android:layout_gravity="left"
-        android:width="180dp"
-        android:background="@android:drawable/editbox_background_normal"
-        android:inputType="textPassword|textNoSuggestions"
-        android:ems="10"
-        android:layout_marginTop="10dp"
-        android:password="true"
-        android:text="@string/password" />
+    <!--<EditText-->
+        <!--android:id="@+id/passwordEdit"-->
+        <!--android:layout_gravity="left"-->
+        <!--android:width="180dp"-->
+        <!--android:inputType="textPassword|textNoSuggestions"-->
+        <!--android:ems="10"-->
+        <!--android:layout_marginTop="0dp" />-->
 
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="87dp"
-        android:layout_height="wrap_content"
-        android:text="Edit"
-        android:id="@+id/editButton"
-        android:layout_gravity="right"
-        android:minHeight="20dp"
-        android:onClick="clickEdit"
-        android:layout_marginTop="20dp" />
+    <!--<TextView-->
+        <!--android:id="@+id/confirmPassword"-->
+        <!--android:text="@string/confirmPassword"-->
+        <!--android:layout_gravity="right"-->
+        <!--android:layout_marginTop="0dp"-->
+        <!--android:paddingLeft="10dp"/>-->
+
+    <!--<EditText-->
+        <!--android:id="@+id/confirmPasswordEdit"-->
+        <!--android:layout_gravity="left"-->
+        <!--android:width="180dp"-->
+        <!--android:inputType="textPassword|textNoSuggestions"-->
+        <!--android:ems="10"-->
+        <!--android:layout_marginTop="0dp" />-->
 
     <Button
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="87dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="submit"
-        android:id="@+id/submitButton"
-        android:layout_gravity="left"
-        android:minHeight="20dp"
-        android:onClick="clickSubmit"
-        android:layout_marginTop="20dp" />
+        android:text="Save"
+        android:layout_column="1"
+        android:id="@+id/saveButton"
+        android:layout_gravity="right"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        android:background="@drawable/my_round_button_background_2"
+        style="@android:style/Widget.Holo"
+        android:textColor="#DFE6FE" />
+
 
 </GridLayout>

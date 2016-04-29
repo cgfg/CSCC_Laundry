@@ -1,7 +1,11 @@
 package team1_5115.cscc_laundryapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
@@ -45,6 +49,27 @@ public class Settings extends AppCompatActivity {
 //        });
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.child_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.home:
+                Intent intent = new Intent(this, MainStatus.class);
+                startActivity(intent);
+                this.finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
     private void createGroupList(){
         groupList = new ArrayList<>();
         groupList.add("Account Setting");
@@ -57,9 +82,8 @@ public class Settings extends AppCompatActivity {
         for(String groupName : groupList){
             childList.put(groupName, new ArrayList<Integer>());
         }
-        childList.get("Account Setting").add(R.layout.child_item_act_setting);
         childList.get("Notifications").add(R.layout.child_item_notification);
         childList.get("Preferences").add(R.layout.child_preferences);
+        childList.get("Account Setting").add(R.layout.child_item_act_setting);
     }
-
 }

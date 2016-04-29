@@ -1,0 +1,180 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    tools:context=".CycleSelectFragment"
+    android:id="@+id/cycle_options_fragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select Cycle"
+                android:id="@+id/maintenance_text_issue"
+                android:textSize="20dp"
+                android:layout_gravity="left" />
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="5dp" />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cycle_radio_group">
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Whites"
+                    android:checked="true"
+                    android:button="@null"
+                    android:background="@drawable/my_radio_button"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="0dp"
+                    android:textStyle="bold"
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:onClick="onRadioButtonClicked"
+                    android:id="@+id/cycle_1_radio"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Colors"
+                    android:checked="false"
+                    android:background="@drawable/my_radio_button"
+                    android:button="@null"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="5dp"
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:onClick="onRadioButtonClicked"
+                    android:id="@+id/cycle_2_radio"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Perm Press"
+                    android:checked="false"
+                    android:button="@null"
+                    android:background="@drawable/my_radio_button"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="5dp"
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:onClick="onRadioButtonClicked"
+                    android:id="@+id/cycle_3_radio"/>
+
+                <RadioButton
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Delicates"
+                    android:checked="false"
+                    android:button="@null"
+                    android:background="@drawable/my_radio_button"
+                    android:textSize="18dp"
+                    android:drawableRight="@drawable/abc_btn_radio_material"
+                    android:drawableTint="#54D959"
+                    android:layout_marginTop="5dp"
+                    style="@android:style/TextAppearance.Holo.Widget"
+                    android:onClick="onRadioButtonClicked"
+                    android:id="@+id/cycle_4_radio" />
+
+            </RadioGroup>
+
+            <Space
+                android:layout_width="20px"
+                android:layout_height="15dp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:columnCount="2">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Super Cycle"
+                    android:textSize="20dp"
+                    android:textStyle="bold"
+                    android:textColor="#000000" />
+
+                <ToggleButton
+                    android:text="Super Cycle"
+                    android:id="@+id/chkState3"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/toggle_on_off_selector"
+                    android:textOff=""
+                    android:textOn=""
+                    android:layout_gravity="center_vertical|right" />
+            </GridLayout>
+
+            <View
+                android:id="@+id/hDottedLine"
+                android:background="@drawable/dotted"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:layerType="software" />
+
+        </LinearLayout>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:gravity="bottom|center"
+            android:weightSum="2"
+            android:baselineAligned="false">
+
+            <Button
+                style="@android:style/Widget.Holo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cancel"
+                android:id="@+id/button6"
+                android:background="@drawable/my_round_button_background_3"
+                android:textColor="#5c5c5c"
+                android:layout_weight="0.9"
+                android:onClick="onCancelButtonClicked"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+
+            <Space
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.2"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+
+            <Button
+                style="@android:style/Widget.Holo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Submit"
+                android:id="@+id/button7"
+                android:background="@drawable/my_round_button_background_2"
+                android:textColor="#DFE6FE"
+                android:layout_weight="0.9"
+                android:onClick="onIssueSubmitButtonClicked"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp" />
+        </TableRow>
+
+    </LinearLayout>
+</FrameLayout>
