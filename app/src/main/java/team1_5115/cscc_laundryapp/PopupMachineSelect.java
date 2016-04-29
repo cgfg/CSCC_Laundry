@@ -35,15 +35,16 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
         Bundle extras = getIntent().getExtras();
         if (extras.containsKey("id")) {
             selectedMachineId = extras.getInt("id");
-            Button icon = (Button)findViewById(selectedMachineId);
+            Button icon = (Button) findViewById(selectedMachineId);
             icon.setAlpha(1);
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         CycleSelectFragment issueFragment = new CycleSelectFragment();
         transaction.add(R.id.cycle_select_washer_container, issueFragment, "issue_fragment");
         transaction.commit();
+    }
 
-    private class updateMachineStatusCallable implements Runnable {
+    class updateMachineStatusCallable implements Runnable {
         Handler handler = new Handler();
         @Override
         public void run() {
