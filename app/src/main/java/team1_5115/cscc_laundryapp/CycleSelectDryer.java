@@ -16,7 +16,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
-    int selectdMachineId = 0;
+    int selectedMachineId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
