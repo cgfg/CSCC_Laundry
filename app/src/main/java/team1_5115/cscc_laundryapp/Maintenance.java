@@ -1,5 +1,7 @@
 package team1_5115.cscc_laundryapp;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.Typeface;
 import android.net.Uri;
@@ -90,6 +92,20 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void resetPassword(View view) {
+        String message = "A new password has sent to your email address";
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage(message)
+                .setCancelable(true)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                    }
+                });
+        AlertDialog alert = builder.create();
+        alert.show();
     }
 
 }

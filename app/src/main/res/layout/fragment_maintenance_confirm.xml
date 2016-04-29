@@ -65,7 +65,9 @@
                 android:layout_gravity="center"
                 android:gravity="right"
                 android:textSize="15dp"
-                android:textColor="@android:color/holo_blue_dark" />
+                android:textColor="@android:color/holo_blue_dark"
+                android:onClick="resetPassword"
+                android:contextClickable="true" />
         </LinearLayout>
 
         <TableRow
