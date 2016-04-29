@@ -8,6 +8,7 @@ import android.content.DialogInterface;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -17,10 +18,17 @@ import android.widget.Toast;
  * Created by Leet on 4/26/2016.
  */
 public class MaintenanceDryer extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
+    int selectdMachineId = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maintenance_dryer);
+        Bundle extras = getIntent().getExtras();
+        if (extras.containsKey("id")) {
+            selectdMachineId = extras.getInt("id");
+            Button icon = (Button)findViewById(selectdMachineId);
+            icon.setAlpha(1);
+        }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
         transaction.add(R.id.maintenance_dryer_container, issueFragment, "dryer_fragment");
