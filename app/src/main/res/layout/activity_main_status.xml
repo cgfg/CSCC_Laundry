@@ -232,16 +232,14 @@
                             android:layout_height="wrap_content"
                             android:text="0min"
                             android:id="@+id/dryer_text_1"
-                            android:gravity="center"
-                            android:textColor="@color/background_floating_material_dark" />
+                            android:gravity="center" />
 
                         <TextView
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:text="1min"
                             android:id="@+id/dryer_text_2"
-                            android:gravity="center"
-                            android:textColor="@color/background_floating_material_dark" />
+                            android:gravity="center" />
                     </TableRow>
 
                     <TableRow
@@ -292,16 +290,14 @@
                             android:layout_height="wrap_content"
                             android:text="Free"
                             android:id="@+id/dryer_text_3"
-                            android:gravity="center"
-                            android:textColor="@color/background_floating_material_dark" />
+                            android:gravity="center" />
 
                         <TextView
                             android:layout_width="85dp"
                             android:layout_height="wrap_content"
                             android:text="Broken"
                             android:id="@+id/dryer_text_4"
-                            android:gravity="center"
-                            android:textColor="@color/background_floating_material_dark" />
+                            android:gravity="center" />
                     </TableRow>
                 </TableLayout>
             </LinearLayout>
