@@ -2,6 +2,7 @@ package team1_5115.cscc_laundryapp;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
@@ -12,6 +13,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.TextureView;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.concurrent.Executor;
@@ -40,7 +42,7 @@ public class MainStatus extends AppCompatActivity {
                 @Override
                 public void run() {
                     LaundryMachines laundryMachines = LaundryMachines.getInstance();
-                    // washers
+                    // washer timers
                     TextView washer_text_1 = (TextView) findViewById(R.id.washer_text_1);
                     TextView washer_text_2 = (TextView) findViewById(R.id.washer_text_2);
                     TextView washer_text_3 = (TextView) findViewById(R.id.washer_text_3);
@@ -49,7 +51,7 @@ public class MainStatus extends AppCompatActivity {
                     washer_text_2.setText(laundryMachines.getWasherStatus(2));
                     washer_text_3.setText(laundryMachines.getWasherStatus(3));
                     washer_text_4.setText(laundryMachines.getWasherStatus(4));
-                    // dryers
+                    // dryer timers
                     TextView dryer_text_1 = (TextView) findViewById(R.id.dryer_text_1);
                     TextView dryer_text_2 = (TextView) findViewById(R.id.dryer_text_2);
                     TextView dryer_text_3 = (TextView) findViewById(R.id.dryer_text_3);
@@ -58,6 +60,26 @@ public class MainStatus extends AppCompatActivity {
                     dryer_text_2.setText(laundryMachines.getDryerStatus(2));
                     dryer_text_3.setText(laundryMachines.getDryerStatus(3));
                     dryer_text_4.setText(laundryMachines.getDryerStatus(4));
+
+//                    // washer icons
+//                    Button washer_button_1 = (Button) findViewById(R.id.washer_1);
+//                    Button washer_button_2 = (Button) findViewById(R.id.washer_2);
+//                    Button washer_button_3 = (Button) findViewById(R.id.washer_3);
+//                    Button washer_button_4 = (Button) findViewById(R.id.washer_4);
+//                    washer_button_1.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(1)));
+//                    washer_button_2.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(2)));
+//                    washer_button_3.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(3)));
+//                    washer_button_4.setBackground(Drawable.createFromPath(laundryMachines.getWasherStatusIcon(4)));
+//
+//                    // dryer icons
+//                    Button dryer_button_1 = (Button) findViewById(R.id.dryer_1);
+//                    Button dryer_button_2 = (Button) findViewById(R.id.dryer_2);
+//                    Button dryer_button_3 = (Button) findViewById(R.id.dryer_3);
+//                    Button dryer_button_4 = (Button) findViewById(R.id.dryer_4);
+//                    dryer_button_1.setBackground(Drawable.createFromPath(laundryMachines.getDryerStatusIcon(1)));
+//                    dryer_button_2.setBackground(Drawable.createFromPath(laundryMachines.getDryerStatusIcon(2)));
+//                    dryer_button_3.setBackground(Drawable.createFromPath(laundryMachines.getDryerStatusIcon(3)));
+//                    dryer_button_4.setBackground(Drawable.createFromPath(laundryMachines.getDryerStatusIcon(4)));
                 }
             });
         }
