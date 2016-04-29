@@ -138,9 +138,21 @@ public class LaundryMachines {
         }
     }
 
-//    public Boolean[] getMyLoadsText() {
-//        return userTrackedMachines;
-//    }
+    public void issueWasherMaintenanceRequest(int washerId) {
+        final int id = washerId-1;
+        if (id >= 0 && id < 4) {
+            washer_status[id] = "REPAIR";
+//            washer_timers[id].cancel();
+        }
+    }
+
+    public void issueDryerMaintenanceRequest(int dryerId) {
+        final int id = dryerId-1;
+        if (id >= 0 && id < 4) {
+            dryer_status[id] = "REPAIR";
+//            dryer_timers[id].cancel();
+        }
+    }
 
     public static LaundryMachines getInstance(){
         if (machines == null) {

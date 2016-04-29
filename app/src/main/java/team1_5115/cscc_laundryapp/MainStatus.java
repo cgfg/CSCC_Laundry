@@ -165,6 +165,7 @@ public class MainStatus extends AppCompatActivity {
 
                     // update My Loads area
                     TextView myLoads_text = (TextView) findViewById(R.id.my_loads_text);
+                    // washers
                     for (int i=0; i < 4; i++) {
                         if (laundryMachines.userTrackedWashers[i] != null) {
                             if (laundryMachines.userTrackedWashers[i] == true) {
@@ -173,6 +174,8 @@ public class MainStatus extends AppCompatActivity {
                             }
                         }
                     }
+                    // TODO: dryer tracking causing problems
+//                    // dryers
 //                    for (int i=0; i < 4; i++) {
 //                        if (laundryMachines.userTrackedWashers[i] != null) {
 //                            if (laundryMachines.userTrackedDryers[i] == true) {

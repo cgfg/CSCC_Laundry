@@ -24,6 +24,7 @@ import java.util.concurrent.TimeUnit;
 
 public class Maintenance extends AppCompatActivity implements MaintenanceIssueFragment.OnFragmentInteractionListener, MaintenanceConfirmFragment.OnFragmentInteractionListener {
     int selectdMachineId = 0;
+    private int button_id_num;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +38,8 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
             selectdMachineId = extras.getInt("id");
             Button icon = (Button)findViewById(selectdMachineId);
             icon.setAlpha(1);
+
+            button_id_num = Integer.parseInt(icon.getTag().toString());
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         MaintenanceIssueFragment issueFragment = new MaintenanceIssueFragment();
@@ -140,8 +143,11 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
     }
 
     public void onConfirmSubmitButtonClicked(View view) {
-        Toast.makeText(this.getBaseContext(), "A maintenance request has sent", Toast.LENGTH_LONG).show();
-        finish();
+        LaundryMachines laundryMachines = LaundryMachines.getInstance();
+        laundryMachines.issueWasherMaintenanceRequest(button_id_num);
+        Toast.makeText(this.getBaseContext(), "A maintenance request has issued", Toast.LENGTH_LONG).show();
+        Intent intent = new Intent(Maintenance.this, MainStatus.class);
+        startActivity(intent);
     }
 
     public void onCancelButtonClicked(View view) {
