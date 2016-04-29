@@ -91,7 +91,8 @@
                         android:textSize="30dp"
                         android:shadowColor="@color/button_material_dark"
                         android:paddingTop="10dp"
-                        android:alpha="0.2" />
+                        android:alpha="0.2"
+                        android:text="4" />
                 </TableRow>
 
                 <TableRow

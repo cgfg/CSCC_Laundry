@@ -99,7 +99,8 @@
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
                         android:onClick="onMachineClicked"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:text="4" />
                 </TableRow>
 
                 <TableRow

@@ -20,14 +20,14 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cycle_select_dryer);
+//        setContentView(R.layout.activity_cycle_select_dryer);
+        setContentView(R.layout.fragment_cycle_select_dryers);
         Bundle extras = getIntent().getExtras();
         if (extras.containsKey("id")) {
             selectedMachineId = extras.getInt("id");
             Button icon = (Button)findViewById(selectedMachineId);
             icon.setAlpha(1);
         }
-        setContentView(R.layout.fragment_cycle_select_dryers);
         // TODO: get dynamic transparency to work for dryers
 //        Bundle extras = getIntent().getExtras();
 //        if (extras.containsKey("id")) {

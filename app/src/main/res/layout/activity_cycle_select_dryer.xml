@@ -68,7 +68,6 @@
                         android:typeface="normal"
                         android:layout_column="0"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked"
                         android:paddingTop="10dp"
                         android:alpha="0.2" />
 
@@ -85,7 +84,6 @@
                         android:typeface="normal"
                         android:layout_column="1"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked"
                         android:paddingTop="10dp"
                         android:alpha="0.2" />
 
@@ -129,7 +127,6 @@
                         android:typeface="normal"
                         android:layout_column="0"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked"
                         android:paddingTop="10dp"
                         android:alpha="0.2" />
 
@@ -145,7 +142,6 @@
                         android:typeface="normal"
                         android:layout_column="1"
                         android:nestedScrollingEnabled="false"
-                        android:onClick="onMachineClicked"
                         android:paddingTop="10dp"
                         android:alpha="0.2"
                         android:text="4" />
