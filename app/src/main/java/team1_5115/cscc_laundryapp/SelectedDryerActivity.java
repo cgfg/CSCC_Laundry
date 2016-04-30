@@ -32,25 +32,26 @@ public class SelectedDryerActivity extends AppCompatActivity {
             Button icon = (Button)findViewById(selectdMachineId);
             if (icon != null) icon.setAlpha(1);
         }
-        int id = 0;
+        int tmp = 0;
         switch(selectdMachineId) {
             case R.id.dryer_1:
-                id = 1;
+                tmp = 1;
                 break;
             case R.id.dryer_2:
-                id = 2;
+                tmp = 2;
                 break;
             case R.id.dryer_3:
-                id = 3;
+                tmp = 3;
                 break;
             case R.id.dryer_4:
-                id = 4;
+                tmp = 4;
                 break;
             default:
                 break;
         }
-        LaundryMachines laundryMachines = LaundryMachines.getInstance();
-        String status = laundryMachines.getDryerStatus(id);
+        final int id = tmp;
+        final LaundryMachines laundryMachines = LaundryMachines.getInstance();
+        String status = laundryMachines.getDryerStatus(tmp);
         Handler handler = new Handler();
         if (status.equals("REPAIR")) {
             handler.post(new Runnable() {
@@ -77,6 +78,10 @@ public class SelectedDryerActivity extends AppCompatActivity {
                     if (quick_start_button != null) quick_start_button.setEnabled(false);
                     Button select_cycle_button = (Button) findViewById(R.id.selected_cycle_button);
                     if (select_cycle_button != null) select_cycle_button.setEnabled(false);
+                    if (laundryMachines.userTrackedWashers[id-1]) {
+                        Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
+                        if (notify_user_button != null) notify_user_button.setEnabled(false);
+                    }
                 }
             });
         }

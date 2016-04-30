@@ -12,8 +12,8 @@ public class LaundryMachines {
     private CountDownTimer[] washer_timers = new CountDownTimer[4];
     private String[] dryer_status = new String[4];
     private CountDownTimer[] dryer_timers = new CountDownTimer[4];
-    public Boolean userTrackedWashers[] = new Boolean[4];
-    public Boolean userTrackedDryers[] = new Boolean[4];
+    public Boolean userTrackedWashers[] = new Boolean[] {false, false, false, false};
+    public Boolean userTrackedDryers[] = new Boolean[] {false, false, false, false};
     LaundryMachines() {
         washer_status[0] = "10 min";
         washer_status[1] = "15 min";
