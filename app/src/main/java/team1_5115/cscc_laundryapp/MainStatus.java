@@ -172,7 +172,7 @@ public class MainStatus extends AppCompatActivity {
                     // washers
                     for (int i=0; i < 4; i++) {
                         if (laundryMachines.userTrackedWashers[i] != null) {
-                            if (laundryMachines.userTrackedWashers[i] == true) {
+                            if (laundryMachines.userTrackedWashers[i] == true && (laundryMachines.getWasherStatus(1 + i) != "REPAIR")) {
                                 String formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");
                                 if (laundryMachines.getWasherStatus(i+1).equals("FREE")) {
                                     formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");

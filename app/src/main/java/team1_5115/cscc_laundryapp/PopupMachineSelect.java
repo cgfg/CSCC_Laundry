@@ -18,9 +18,13 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
+import org.w3c.dom.Text;
+import java.util.zip.Inflater;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+
 
 public class PopupMachineSelect extends AppCompatActivity implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
     public static int totalTime = 0;
@@ -152,6 +156,34 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
     }
 
     public void onIssueSubmitButtonClicked(View view) {
+        // update the confirmation screen accordingly
+//        Inflater inflater = new Inflater();
+//        View cycleConfirm = inflater.inflate(R.layout.fragment_cycle_confirm);
+
+        // get text from the selected RadioButton
+        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.cycle_radio_group);
+        RadioButton selectedRadio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
+        String cycle = selectedRadio.getText().toString();
+
+        // super cycle on or off?
+        ToggleButton scOnOff = (ToggleButton) findViewById(R.id.sc_toggle);
+        String scWithWithout = "";
+        if (scOnOff.isChecked()) {
+            scWithWithout = "with";
+        }
+        else {
+            scWithWithout = "without";
+        }
+
+        // set the text fields on the confirm cycle page
+        // TODO: These views come back as null for some reason
+//        TextView whichMachineMessage = (TextView) findViewById(R.id.cycle_confirm_which_machine);
+//        TextView whichCycleMessage = (TextView) findViewById(R.id.cycle_confirm_which_cycle);
+//        TextView scWithWithoutMessage = (TextView) findViewById(R.id.cycle_confirm_with_without);
+//        whichMachineMessage.setText("You have selected Washer " + button_id_num + " with the cycle:");
+//        whichCycleMessage.setText(cycle);
+//        scWithWithoutMessage.setText(scWithWithout);
+
         CycleSelectFragment oldFragment = (CycleSelectFragment) getSupportFragmentManager().findFragmentById(R.id.cycle_options_fragment);
         CycleConfirmFragment newFragment = new CycleConfirmFragment();
         Bundle args = new Bundle();
