@@ -9,7 +9,8 @@
         android:background="@drawable/toggle_washer_dryer_selector"
         android:textOff=""
         android:textOn=""
-        android:layout_gravity="left" />
+        android:layout_gravity="left"
+        android:id="@+id/preferenceWaherOrDryer"/>
 
     <LinearLayout
         android:orientation="vertical"

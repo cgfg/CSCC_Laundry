@@ -119,9 +119,10 @@ public class SelectedMachineActivity extends AppCompatActivity {
 
     public void onQuickStartSelected(View view){
         Intent intent = new Intent(SelectedMachineActivity.this, PopupMachineSelect.class);
-        Bundle extras = new Bundle();
-        extras.putInt("id", selectdMachineId);
-
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", selectdMachineId);
+        bundle.putBoolean("isQuickStart", true);
+        intent.putExtras(bundle);
         startActivity(intent);
     }
 

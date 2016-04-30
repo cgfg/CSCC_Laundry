@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 public class CycleConfirmFragment extends Fragment {
     // TODO: Rename parameter arguments, choose names that match
@@ -54,8 +55,24 @@ public class CycleConfirmFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_cycle_confirm, container, false);
+        Bundle args = getArguments();
+        if(args.containsKey("isQuickStart")){
+            TextView textView = (TextView)view.findViewById(R.id.cycle_confirm_which_cycle);
+            textView.setText(args.getString("preClothes"));
+            textView = (TextView)view.findViewById(R.id.cycle_confirm_with_without);
+            if(args.getBoolean("preSuperCycle")){
+                textView.setText("With");
+            }
+            textView = (TextView)view.findViewById(R.id.cycle_confirm_selected_machine);
+            if(args.containsKey("washerID")){
+                textView.setText(String.format("You have selected Washer %s with the cycle:", args.getString("washerID")));
+            }else if (args.containsKey("dryerID")){
+                textView.setText(String.format("You have selected Dryer %s with the cycle:", args.getString("dryerID")));
+            }
+        }
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_cycle_confirm, container, false);
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

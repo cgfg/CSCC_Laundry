@@ -89,6 +89,44 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     private void setPreferences(final View convertView){
         final RadioGroup radioGroup = (RadioGroup)convertView.findViewById(R.id.preference_group);
+        final ToggleButton superCycle = (ToggleButton) convertView.findViewById(R.id.preference5);
+        final ToggleButton washerOrDryer = (ToggleButton) convertView.findViewById(R.id.preferenceWaherOrDryer);
+        final Context context = convertView.getContext();
+        final SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key),Context.MODE_PRIVATE);
+        int washerPreID = sharedPref.getInt("washerPreID", -1);
+        int dryerPreID = sharedPref.getInt("dryerPreID", -1);
+        if(washerPreID != -1){
+            radioGroup.check(washerPreID);
+            superCycle.setChecked(sharedPref.getBoolean("washerPreSuperCycle", false));
+        }else{
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("washerPreID", radioGroup.getCheckedRadioButtonId());
+            editor.commit();
+        }
+        if(dryerPreID != -1){
+            radioGroup.check(dryerPreID);
+            superCycle.setChecked(sharedPref.getBoolean("dryerPreSuperCycle", false));
+        }else{
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putInt("dryerPreID", radioGroup.getCheckedRadioButtonId());
+            editor.commit();
+        }
+        washerOrDryer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked){
+                    int dryerPreID = sharedPref.getInt("dryerPreID", -1);
+                    radioGroup.check(dryerPreID);
+                    superCycle.setChecked(sharedPref.getBoolean("dryerPreSuperCycle", false));
+                }else{
+                    int washerPreID = sharedPref.getInt("washerPreID", -1);
+                    radioGroup.check(washerPreID);
+                    superCycle.setChecked(sharedPref.getBoolean("washerPreSuperCycle", false));
+                }
+            }
+        });
+
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
@@ -99,22 +137,29 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                 RadioButton checkedButton = (RadioButton) group.findViewById(checkedId);
                 checkedButton.setTypeface(null, Typeface.BOLD);
 
-                Context context = convertView.getContext();
-                SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putString("clothesType", checkedButton.getText().toString());
+                if(washerOrDryer.isChecked()){
+                    editor.putString("dryerPreClothes", checkedButton.getText().toString());
+                    editor.putInt("dryerPreID", checkedId);
+                }else{
+                    editor.putString("washerPreClothes", checkedButton.getText().toString());
+                    editor.putInt("washerPreID", checkedId);
+                }
                 editor.commit();
             }
         });
-
-        final ToggleButton toggleButton = (ToggleButton) convertView.findViewById(R.id.preference5);
-        toggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        superCycle.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 Context context = convertView.getContext();
                 SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key), Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPref.edit();
-                editor.putBoolean("isSuperCycle", isChecked);
+                if(washerOrDryer.isChecked()){
+                    editor.putBoolean("dryerPreSuperCycle", isChecked);
+                }else{
+                    editor.putBoolean("washerPreSuperCycle", isChecked);
+                }
+                editor.commit();
             }
         });
     }

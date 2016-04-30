@@ -1,6 +1,8 @@
 package team1_5115.cscc_laundryapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
@@ -48,8 +50,23 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
 //            icon.setAlpha(1);
 //        }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        CycleSelectFragment issueFragment = new CycleSelectFragment();
-        transaction.add(R.id.cycle_select_dryer_container, issueFragment, "issue_fragment");
+        if(extras.containsKey("isQuickStart")){
+            CycleConfirmFragment confirmFragment = new CycleConfirmFragment();
+            Bundle args = new Bundle();
+            args.putBoolean("isQuickStart", true);
+            String dryerID = ((Button)findViewById(selectedMachineId)).getText().toString();
+            args.putString("dryerID", dryerID);
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+            String washerPreClothes = sharedPref.getString("dryerPreClothes", "Whites");
+            boolean preSuperCycle = sharedPref.getBoolean("dryerPreSuperCycle", false);
+            args.putString("preClothes", washerPreClothes);
+            args.putBoolean("preSuperCycle", preSuperCycle);
+            confirmFragment.setArguments(args);
+            transaction.add(R.id.cycle_select_dryer_container, confirmFragment, "confirm_fragment");
+        }else{
+            CycleSelectFragment issueFragment = new CycleSelectFragment();
+            transaction.add(R.id.cycle_select_dryer_container, issueFragment, "issue_fragment");
+        }
         transaction.commit();
 
     }

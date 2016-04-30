@@ -116,6 +116,15 @@ public class SelectedDryerActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+    public void onQuickStartSelected(View view){
+        Intent intent = new Intent(SelectedDryerActivity.this, CycleSelectDryer.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("id", selectdMachineId);
+        bundle.putBoolean("isQuickStart", true);
+        intent.putExtras(bundle);
+        startActivity(intent);
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();

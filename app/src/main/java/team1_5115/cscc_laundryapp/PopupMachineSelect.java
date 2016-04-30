@@ -1,13 +1,14 @@
 package team1_5115.cscc_laundryapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -17,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
@@ -43,8 +45,23 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
             button_id_num = Integer.parseInt(icon.getTag().toString());
         }
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        CycleSelectFragment issueFragment = new CycleSelectFragment();
-        transaction.add(R.id.cycle_select_washer_container, issueFragment, "issue_fragment");
+        if(extras.containsKey("isQuickStart")){
+            CycleConfirmFragment confirmFragment = new CycleConfirmFragment();
+            Bundle args = new Bundle();
+            args.putBoolean("isQuickStart", true);
+            String washerID = ((Button)findViewById(selectedMachineId)).getText().toString();
+            args.putString("washerID", washerID);
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+            String washerPreClothes = sharedPref.getString("washerPreClothes", "Whites");
+            boolean preSuperCycle = sharedPref.getBoolean("washerPreSuperCycle", false);
+            args.putString("preClothes", washerPreClothes);
+            args.putBoolean("preSuperCycle", preSuperCycle);
+            confirmFragment.setArguments(args);
+            transaction.add(R.id.cycle_select_washer_container, confirmFragment, "confirm_fragment");
+        }else{
+            CycleSelectFragment issueFragment = new CycleSelectFragment();
+            transaction.add(R.id.cycle_select_washer_container, issueFragment, "issue_fragment");
+        }
         transaction.commit();
     }
 
