@@ -1,25 +1,29 @@
 package team1_5115.cscc_laundryapp;
 
 import android.annotation.SuppressLint;
+import android.app.Notification;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.drawable.Drawable;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.app.NotificationCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.TextureView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import java.util.concurrent.Executor;
+import android.widget.Toast;
+
 import java.util.concurrent.ScheduledThreadPoolExecutor;
-import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class MainStatus extends AppCompatActivity {
@@ -170,7 +174,14 @@ public class MainStatus extends AppCompatActivity {
                         if (laundryMachines.userTrackedWashers[i] != null) {
                             if (laundryMachines.userTrackedWashers[i] == true) {
                                 String formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");
-                                myLoads_text.setText(formattedText);
+                                if (laundryMachines.getWasherStatus(i+1).equals("FREE")) {
+                                    formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");
+                                    laundryMachines.userTrackedWashers[i] = false;
+                                    myLoads_text.setText(formattedText);
+                                    notification("washing");
+                                } else {
+                                    myLoads_text.setText(formattedText);
+                                }
                             }
                         }
                     }
@@ -287,5 +298,19 @@ public class MainStatus extends AppCompatActivity {
         String balanceVal = sharedPref.getString("balanceVal", "");
         TextView textView = (TextView) findViewById(R.id.main_screen_balanceVal);
         textView.setText(balanceVal);
+    }
+
+    public void notification(String type) {
+        Notification.Builder mBuilder =
+                new Notification.Builder(this)
+                        .setSmallIcon(R.drawable.ic_smiling_face_24dp)
+                        .setContentTitle("CSCC Laundry")
+                        .setContentText("Your " + type + " cycle has finished!");
+        Intent resultIntent = new Intent(this, MainStatus.class);
+        mBuilder.setContentIntent(null);
+        NotificationManager mNotificationManager =
+                (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
+// mId allows you to update the notification later on.
+        mNotificationManager.notify(001, mBuilder.build());
     }
 }
