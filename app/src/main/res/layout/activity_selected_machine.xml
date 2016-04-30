@@ -156,9 +156,10 @@
                 android:layout_margin="5dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_2"
+                android:background="@drawable/my_round_button_background_0"
                 android:textSize="15dp"
-                android:onClick="onQuickStartSelected" />
+                android:onClick="onQuickStartSelected"
+                android:enabled="true" />
 
             <Button
                 android:layout_width="match_parent"
@@ -170,9 +171,10 @@
                 android:layout_margin="5dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_2"
+                android:background="@drawable/my_round_button_background_0"
                 android:textSize="15dp"
-                android:onClick="onCycleSelected" />
+                android:onClick="onCycleSelected"
+                android:enabled="true" />
 
             <Button
                 android:layout_width="match_parent"
@@ -183,9 +185,10 @@
                 android:layout_margin="5dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_2"
+                android:background="@drawable/my_round_button_background_0"
                 android:textSize="15dp"
-                android:onClick="onMaintenanceSelected" />
+                android:onClick="onMaintenanceSelected"
+                android:enabled="true" />
 
             <Button
                 android:layout_width="match_parent"
@@ -196,8 +199,9 @@
                 android:layout_margin="5dp"
                 android:textColor="#ffffff"
                 android:shadowColor="#CCCCCB"
-                android:background="@drawable/my_round_button_background_1"
-                android:textSize="15dp" />
+                android:background="@drawable/my_round_button_background_0"
+                android:textSize="15dp"
+                android:enabled="true" />
         </LinearLayout>
 
     </LinearLayout>

@@ -24,12 +24,59 @@ public class SelectedMachineActivity extends AppCompatActivity {
         // start threads to update machine status
         ScheduledThreadPoolExecutor updateThreadPool = new ScheduledThreadPoolExecutor(1);
         updateThreadPool.scheduleAtFixedRate(new updateMachineStatusCallable(), 0, 1, TimeUnit.SECONDS);
-
         Bundle extras = getIntent().getExtras();
         if (extras.containsKey("id")) {
             selectdMachineId = extras.getInt("id");
             Button icon = (Button)findViewById(selectdMachineId);
             if (icon != null) icon.setAlpha(1);
+        }
+        int id = 0;
+        switch(selectdMachineId) {
+            case R.id.washer_1:
+                id = 1;
+                break;
+            case R.id.washer_2:
+                id = 2;
+                break;
+            case R.id.washer_3:
+                id = 3;
+                break;
+            case R.id.washer_4:
+                id = 4;
+                break;
+            default:
+                    break;
+        }
+        LaundryMachines laundryMachines = LaundryMachines.getInstance();
+        String status = laundryMachines.getWasherStatus(id);
+        Handler handler = new Handler();
+        if (status.equals("REPAIR")) {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    Button quick_start_button = (Button) findViewById(R.id.quick_cycle_button);
+                    if (quick_start_button != null) quick_start_button.setEnabled(false);
+                    Button select_cycle_button = (Button) findViewById(R.id.selected_cycle_button);
+                    if (select_cycle_button != null) select_cycle_button.setEnabled(false);
+                    Button maintenance_button = (Button) findViewById(R.id.maintenance_button);
+                    if (maintenance_button != null) maintenance_button.setEnabled(false);
+                    Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
+                    if (notify_user_button != null) notify_user_button.setEnabled(false);
+                }
+            });
+        } else if (status.equals("FREE")) {
+            Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
+            if (notify_user_button != null) notify_user_button.setEnabled(false);
+        } else {
+            handler.post(new Runnable() {
+                @Override
+                public void run() {
+                    Button quick_start_button = (Button) findViewById(R.id.quick_cycle_button);
+                    if (quick_start_button != null) quick_start_button.setEnabled(false);
+                    Button select_cycle_button = (Button) findViewById(R.id.selected_cycle_button);
+                    if (select_cycle_button != null) select_cycle_button.setEnabled(false);
+                }
+            });
         }
     }
 
