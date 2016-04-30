@@ -97,7 +97,7 @@ public class LaundryMachines {
         final int id = washerId-1;
         if (id >= 0 && id < 4 && washer_timers[id] == null && !washer_status[id].equals("REAPIR")) {
             userTrackedWashers[id] = true;
-            washer_timers[washerId] = new CountDownTimer(time, 1000) {
+            washer_timers[id] = new CountDownTimer(time, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     washer_status[id] = String.format("%d min", millisUntilFinished / 60000);
