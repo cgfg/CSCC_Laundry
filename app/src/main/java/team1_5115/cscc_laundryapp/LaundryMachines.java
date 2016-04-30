@@ -95,7 +95,7 @@ public class LaundryMachines {
 
     public Boolean setWasherTimer(int washerId, Long time){
         final int id = washerId-1;
-        if (id >= 0 && id < 4 && washer_timers[id] == null) {
+        if (id >= 0 && id < 4 && washer_timers[id] == null && !washer_status[id].equals("REAPIR")) {
             userTrackedWashers[id] = true;
             washer_timers[washerId] = new CountDownTimer(time, 1000) {
                 @Override
@@ -118,9 +118,9 @@ public class LaundryMachines {
 
     public Boolean setDryerTimer(int dryerId, Long time){
         final int id = dryerId-1;
-        if (id >= 0 && id < 4 && washer_timers[id] == null) {
+        if (id >= 0 && id < 4 && dryer_timers[id] == null  && !dryer_status[id].equals("REAPIR") ) {
             userTrackedDryers[id] = true;
-            washer_timers[id] = new CountDownTimer(time, 1000) {
+            dryer_timers[id] = new CountDownTimer(time, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     dryer_status[id] = String.format("%d min", millisUntilFinished / 60000);
@@ -142,7 +142,10 @@ public class LaundryMachines {
         final int id = washerId-1;
         if (id >= 0 && id < 4) {
             washer_status[id] = "REPAIR";
-//            washer_timers[id].cancel();
+            if (washer_timers[id] != null) {
+                washer_timers[id].cancel();
+                washer_timers[id] = null;
+            }
         }
     }
 
@@ -150,7 +153,10 @@ public class LaundryMachines {
         final int id = dryerId-1;
         if (id >= 0 && id < 4) {
             dryer_status[id] = "REPAIR";
-//            dryer_timers[id].cancel();
+            if (dryer_timers[id] != null) {
+                dryer_timers[id].cancel();
+                dryer_timers[id] = null;
+            }
         }
     }
 
