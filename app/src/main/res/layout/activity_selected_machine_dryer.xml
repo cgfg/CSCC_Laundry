@@ -244,7 +244,8 @@
                 android:shadowColor="#CCCCCB"
                 android:background="@drawable/my_round_button_background_0"
                 android:textSize="15dp"
-                android:enabled="true" />
+                android:enabled="true"
+                android:onClick="onNotifyUserClicked" />
         </LinearLayout>
 
     </LinearLayout>
