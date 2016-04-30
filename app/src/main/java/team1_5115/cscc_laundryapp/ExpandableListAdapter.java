@@ -98,6 +98,7 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         if(washerPreID != -1){
             radioGroup.check(washerPreID);
             superCycle.setChecked(sharedPref.getBoolean("washerPreSuperCycle", false));
+            changeTextColorOfCheckedButton(radioGroup, radioGroup.getCheckedRadioButtonId());
         }else{
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("washerPreID", radioGroup.getCheckedRadioButtonId());
@@ -114,7 +115,6 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         washerOrDryer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-
                 if(isChecked){
                     int dryerPreID = sharedPref.getInt("dryerPreID", -1);
                     radioGroup.check(dryerPreID);
@@ -130,13 +130,8 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup group, int checkedId) {
-                ((RadioButton)group.findViewById(R.id.preference1)).setTypeface(null, Typeface.NORMAL);
-                ((RadioButton)group.findViewById(R.id.preference2)).setTypeface(null, Typeface.NORMAL);
-                ((RadioButton)group.findViewById(R.id.preference3)).setTypeface(null, Typeface.NORMAL);
-                ((RadioButton)group.findViewById(R.id.preference4)).setTypeface(null, Typeface.NORMAL);
+                changeTextColorOfCheckedButton(group, checkedId);
                 RadioButton checkedButton = (RadioButton) group.findViewById(checkedId);
-                checkedButton.setTypeface(null, Typeface.BOLD);
-
                 SharedPreferences.Editor editor = sharedPref.edit();
                 if(washerOrDryer.isChecked()){
                     editor.putString("dryerPreClothes", checkedButton.getText().toString());
@@ -204,5 +199,14 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
 
     public boolean isChildSelectable(int groupPosition, int childPosition) {
         return true;
+    }
+
+    private void changeTextColorOfCheckedButton(RadioGroup group, int checkedId){
+        ((RadioButton)group.findViewById(R.id.preference1)).setTypeface(null, Typeface.NORMAL);
+        ((RadioButton)group.findViewById(R.id.preference2)).setTypeface(null, Typeface.NORMAL);
+        ((RadioButton)group.findViewById(R.id.preference3)).setTypeface(null, Typeface.NORMAL);
+        ((RadioButton)group.findViewById(R.id.preference4)).setTypeface(null, Typeface.NORMAL);
+        RadioButton checkedButton = (RadioButton) group.findViewById(checkedId);
+        checkedButton.setTypeface(null, Typeface.BOLD);
     }
 }
