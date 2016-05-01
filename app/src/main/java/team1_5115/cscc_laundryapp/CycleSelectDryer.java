@@ -1,6 +1,8 @@
 package team1_5115.cscc_laundryapp;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Typeface;
@@ -26,6 +28,7 @@ import java.util.concurrent.TimeUnit;
 public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFragment.OnFragmentInteractionListener, CycleConfirmFragment.OnFragmentInteractionListener {
     int selectedMachineId = 0;
     private int button_id_num;
+    private boolean isSuperCycle = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +65,7 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
             boolean preSuperCycle = sharedPref.getBoolean("dryerPreSuperCycle", false);
             args.putString("preClothes", dryerPreClothes);
             args.putBoolean("preSuperCycle", preSuperCycle);
+            this.isSuperCycle = preSuperCycle;
             confirmFragment.setArguments(args);
             transaction.add(R.id.cycle_select_dryer_container, confirmFragment, "confirm_fragment");
         }else{
@@ -166,9 +170,35 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         }
         else {
             Toast.makeText(this.getBaseContext(), "Tracking Dryer " + button_id_num, Toast.LENGTH_LONG).show();
-            Intent intent = new Intent(CycleSelectDryer.this, MainStatus.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
+            SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key),Context.MODE_PRIVATE);
+            Float balanceVal = Float.parseFloat(sharedPref.getString("balanceVal", ""));
+            if (isSuperCycle)
+                balanceVal -= 2.5f;
+            else
+                balanceVal -= 1.75f;
+            SharedPreferences.Editor editor = sharedPref.edit();
+            editor.putString("balanceVal", Float.toString(balanceVal));
+            editor.commit();
+            if (balanceVal < 5) {
+                String message = "Low balance ! Please reload money card soon.";
+                AlertDialog.Builder builder = new AlertDialog.Builder(this);
+                builder.setMessage(message)
+                        .setCancelable(true)
+                        .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.dismiss();
+                                Intent intent = new Intent(CycleSelectDryer.this, MainStatus.class);
+                                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+                            }
+                        });
+                AlertDialog alert = builder.create();
+                alert.show();
+            } else {
+                Intent intent = new Intent(CycleSelectDryer.this, MainStatus.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
         }
     }
 
@@ -183,6 +213,7 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         args.putString("preClothes", dryerPreClothes);
         boolean preSuperCycle = ((ToggleButton)findViewById(R.id.sc_toggle)).isChecked();
         args.putBoolean("preSuperCycle", preSuperCycle);
+        this.isSuperCycle = preSuperCycle;
         newFragment.setArguments(args);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.cycle_select_dryer_container, newFragment);
