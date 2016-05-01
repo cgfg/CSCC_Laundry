@@ -1,5 +1,6 @@
 package team1_5115.cscc_laundryapp;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Timer;
 import java.util.concurrent.TimeUnit;
@@ -111,7 +112,7 @@ public class LaundryMachines {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     //washer_status[id] = String.format("%d min", millisUntilFinished / 60000);
-                    washer_status[id] = String.format("%02d:%02d m",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
+                    washer_status[id] = String.format("%02d:%02d",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
                 }
 
                 @Override
@@ -135,7 +136,7 @@ public class LaundryMachines {
                 @Override
                 public void onTick(long millisUntilFinished) {
                     //dryer_status[id] = String.format("%d min", millisUntilFinished / 60000);
-                    dryer_status[id] = String.format("%02d:%02d m",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
+                    dryer_status[id] = String.format("%02d:%02d",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
 
                 }
 
