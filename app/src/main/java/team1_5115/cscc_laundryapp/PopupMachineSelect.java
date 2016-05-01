@@ -195,7 +195,7 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
         transaction.commit();
     }
 
-    public void onWasherCycleConfirmButtonClicked(View view) {
+    public void onCycleConfirmButtonClicked(View view) {
         // update the status time and icon
         LaundryMachines laundryMachines = LaundryMachines.getInstance();
         if (laundryMachines.setWasherTimer(button_id_num, Long.valueOf(2400000)) == false) {

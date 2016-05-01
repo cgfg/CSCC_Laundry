@@ -157,14 +157,14 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         newRadio.setTypeface(null, Typeface.BOLD);
     }
 
-    public void onDryerCycleConfirmButtonClicked(View view) {
+    public void onCycleConfirmButtonClicked(View view) {
         // update the status time and icon
         LaundryMachines laundryMachines = LaundryMachines.getInstance();
         if (laundryMachines.setDryerTimer(button_id_num, Long.valueOf(3600000)) == false) {
             Toast.makeText(this.getBaseContext(), "Tracking Request Failed", Toast.LENGTH_LONG).show();
         }
         else {
-            Toast.makeText(this.getBaseContext(), "Tracking Washer " + button_id_num, Toast.LENGTH_LONG).show();
+            Toast.makeText(this.getBaseContext(), "Tracking Dryer " + button_id_num, Toast.LENGTH_LONG).show();
             Intent intent = new Intent(CycleSelectDryer.this, MainStatus.class);
             startActivity(intent);
         }
