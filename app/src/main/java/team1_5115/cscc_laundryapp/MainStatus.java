@@ -179,7 +179,7 @@ public class MainStatus extends AppCompatActivity {
                     for (int i=0; i < 4; i++) {
                         if (laundryMachines.userTrackedWashers[i] != null) {
                             if (laundryMachines.userTrackedWashers[i] == true && (!laundryMachines.getWasherStatus(1 + i).equals("REPAIR"))) {
-                                String formattedText = String.format("%-16s%12s", "Washer " + (i+1),  laundryMachines.getWasherStatus(1 + i));
+                                String formattedText = String.format("%-12s%12s", "Washer " + (i+1),  laundryMachines.getWasherStatus(1 + i));
                                 if (laundryMachines.getWasherStatus(i+1).equals("FREE")) {
                                     formattedText = String.format("%-16s%12s", "Washer " + (i+1),  "FINISHED");
                                     laundryMachines.userTrackedWashers[i] = false;
@@ -197,7 +197,7 @@ public class MainStatus extends AppCompatActivity {
                     for (int i=0; i < 4; i++) {
                         if (laundryMachines.userTrackedDryers[i] != null) {
                             if (laundryMachines.userTrackedDryers[i] == true  && (!laundryMachines.getDryerStatus(1 + i).equals("REPAIR"))) {
-                                String formattedText = String.format("%-16s   %12s", "Dryer " + (i+1),  laundryMachines.getDryerStatus(1 + i));
+                                String formattedText = String.format("%-12s   %12s", "Dryer " + (i+1),  laundryMachines.getDryerStatus(1 + i));
                                 if (laundryMachines.getDryerStatus(i+1).equals("FREE")) {
                                     formattedText = String.format("%-16s   %12s", "Dryer " + (i+1),  "FINISHED");
                                     laundryMachines.userTrackedDryers[i] = false;
