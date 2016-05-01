@@ -18,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -174,9 +175,15 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         CycleSelectFragment oldFragment = (CycleSelectFragment) getSupportFragmentManager().findFragmentById(R.id.cycle_options_fragment);
         CycleConfirmFragment newFragment = new CycleConfirmFragment();
         Bundle args = new Bundle();
+        String dryerID = ((Button)findViewById(selectedMachineId)).getText().toString();
+        args.putString("dryerID", dryerID);
+        int checkedRadioButtonId = ((RadioGroup)findViewById(R.id.cycle_radio_group)).getCheckedRadioButtonId();
+        String dryerPreClothes = ((RadioButton)findViewById(checkedRadioButtonId)).getText().toString();
+        args.putString("preClothes", dryerPreClothes);
+        boolean preSuperCycle = ((ToggleButton)findViewById(R.id.sc_toggle)).isChecked();
+        args.putBoolean("preSuperCycle", preSuperCycle);
         newFragment.setArguments(args);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
         transaction.replace(R.id.cycle_select_dryer_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
