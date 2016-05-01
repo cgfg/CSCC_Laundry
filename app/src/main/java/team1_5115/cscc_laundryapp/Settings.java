@@ -63,6 +63,7 @@ public class Settings extends AppCompatActivity {
         switch (item.getItemId()) {
             case R.id.home:
                 Intent intent = new Intent(this, MainStatus.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 this.finish();
                 return true;

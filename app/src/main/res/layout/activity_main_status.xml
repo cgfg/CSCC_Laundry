@@ -324,12 +324,13 @@
                     android:paddingTop="15dp"
                     android:paddingBottom="15dp"
                     android:textColor="@color/background_floating_material_dark" />
-                <TextView
-                    android:layout_width="wrap_content"
+
+                <ListView
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="You are not tracking any machine"
-                    android:gravity="center"
-                    android:id="@+id/my_loads_text" />
+                    android:id="@+id/my_loads_list"
+                    android:divider="@null"
+                    android:dividerHeight="0dp" />
 
             </LinearLayout>
 

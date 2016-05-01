@@ -13,20 +13,25 @@ import android.os.Handler;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.app.NotificationCompat;
+import android.support.v7.widget.ListViewCompat;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 public class MainStatus extends AppCompatActivity {
+    ArrayList myLoadTracking = new ArrayList();
 
     @SuppressLint("InlinedApi") @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -168,19 +173,20 @@ public class MainStatus extends AppCompatActivity {
                     }
 
                     // update My Loads area
-                    TextView myLoads_text = (TextView) findViewById(R.id.my_loads_text);
+                    ListView myLoadList = (ListView) findViewById(R.id.my_loads_list);
+                    myLoadTracking.clear();
                     // washers
                     for (int i=0; i < 4; i++) {
                         if (laundryMachines.userTrackedWashers[i] != null) {
-                            if (laundryMachines.userTrackedWashers[i] == true && (laundryMachines.getWasherStatus(1 + i) != "REPAIR")) {
-                                String formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");
+                            if (laundryMachines.userTrackedWashers[i] == true && (!laundryMachines.getWasherStatus(1 + i).equals("REPAIR"))) {
+                                String formattedText = String.format("%-12s%12s", "Washer " + (i+1),  laundryMachines.getWasherStatus(1 + i));
                                 if (laundryMachines.getWasherStatus(i+1).equals("FREE")) {
-                                    formattedText = ("Washer " + (i+1) + "... " + laundryMachines.getWasherStatus(1 + i) + "\n");
+                                    formattedText = String.format("%-16s%12s", "Washer " + (i+1),  "FINISHED");
                                     laundryMachines.userTrackedWashers[i] = false;
-                                    myLoads_text.setText(formattedText);
+                                    myLoadTracking.add(formattedText);
                                     notification("washing");
                                 } else {
-                                    myLoads_text.setText(formattedText);
+                                    myLoadTracking.add(formattedText);
                                 }
                             }
                         }
@@ -188,16 +194,31 @@ public class MainStatus extends AppCompatActivity {
 
                     // TODO: dryer tracking causing problems
 //                    // dryers
-//                    for (int i=0; i < 4; i++) {
-//                        if (laundryMachines.userTrackedWashers[i] != null) {
-//                            if (laundryMachines.userTrackedDryers[i] == true) {
-//                                String formattedText = ("Dryer " + i + ": " + laundryMachines.getDryerStatus(1 + i) + "\n");
-//                                myLoads_text.setText(formattedText);
-//                            }
-//                        }
-//                    }
+                    for (int i=0; i < 4; i++) {
+                        if (laundryMachines.userTrackedDryers[i] != null) {
+                            if (laundryMachines.userTrackedDryers[i] == true  && (!laundryMachines.getDryerStatus(1 + i).equals("REPAIR"))) {
+                                String formattedText = String.format("%-12s   %12s", "Dryer " + (i+1),  laundryMachines.getDryerStatus(1 + i));
+                                if (laundryMachines.getDryerStatus(i+1).equals("FREE")) {
+                                    formattedText = String.format("%-16s   %12s", "Dryer " + (i+1),  "FINISHED");
+                                    laundryMachines.userTrackedDryers[i] = false;
+                                    myLoadTracking.add(formattedText);
+                                    notification("drying");
+                                } else {
+                                    myLoadTracking.add(formattedText);
+                                }
+                            }
+                        }
+                    }
+                    String[] myLoadTrackingArray = null;
+                    if (myLoadTracking.isEmpty()) {
+                        myLoadTrackingArray = new String[] {"You are not tracking any machine"};
+                    } else {
+                        myLoadTrackingArray = new String[myLoadTracking.size()];
+                        myLoadTracking.toArray(myLoadTrackingArray);
+                    }
 
-//                    myLoads_text.setText(laundryMachines.userTrackedMachines);
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), R.layout.simple_list_text,  myLoadTrackingArray);
+                    myLoadList.setAdapter(adapter);
 
 //                    // washer icons
 //                    Button washer_button_1 = (Button) findViewById(R.id.washer_1);
