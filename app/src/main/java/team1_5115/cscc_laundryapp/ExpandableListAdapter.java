@@ -141,20 +141,20 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         if(washerPreID != -1){
             radioGroup.check(washerPreID);
             superCycle.setChecked(sharedPref.getBoolean("washerPreSuperCycle", false));
-            changeTextColorOfCheckedButton(radioGroup, radioGroup.getCheckedRadioButtonId());
+            changeTextColorOfCheckedButton(radioGroup, washerPreID);
         }else{
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("washerPreID", radioGroup.getCheckedRadioButtonId());
             editor.commit();
         }
-        if(dryerPreID != -1){
-            radioGroup.check(dryerPreID);
-            superCycle.setChecked(sharedPref.getBoolean("dryerPreSuperCycle", false));
-        }else{
-            SharedPreferences.Editor editor = sharedPref.edit();
-            editor.putInt("dryerPreID", radioGroup.getCheckedRadioButtonId());
-            editor.commit();
-        }
+//        if(dryerPreID != -1){
+//            radioGroup.check(dryerPreID);
+//            superCycle.setChecked(sharedPref.getBoolean("dryerPreSuperCycle", false));
+//        }else{
+//            SharedPreferences.Editor editor = sharedPref.edit();
+//            editor.putInt("dryerPreID", radioGroup.getCheckedRadioButtonId());
+//            editor.commit();
+//        }
         washerOrDryer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
