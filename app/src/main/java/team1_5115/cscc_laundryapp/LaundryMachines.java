@@ -2,6 +2,8 @@ package team1_5115.cscc_laundryapp;
 
 import java.util.Arrays;
 import java.util.Timer;
+import java.util.concurrent.TimeUnit;
+
 import android.os.CountDownTimer;
 /**
  * Created by chenxi on 4/28/2016.
@@ -15,18 +17,21 @@ public class LaundryMachines {
     public Boolean userTrackedWashers[] = new Boolean[] {false, false, false, false};
     public Boolean userTrackedDryers[] = new Boolean[] {false, false, false, false};
     LaundryMachines() {
-        washer_status[0] = "10 min";
-        washer_status[1] = "15 min";
+        washer_status[0] = "FREE";
+        washer_status[1] = "FREE";
         washer_status[2] = "FREE";
-        washer_status[3] = "REPAIR";
+        washer_status[3] = "FREE";
         dryer_status[0] = "FREE";
-        dryer_status[1] = "FREE";
+        dryer_status[1] = "REPAIR";
         dryer_status[2] = "FREE";
         dryer_status[3] = "FREE";
+
+
         washer_timers[0] = new CountDownTimer(600000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                washer_status[0] = String.format("%d min", millisUntilFinished / 60000);
+                //washer_status[0] = String.format("%d min", millisUntilFinished / 60000);
+                washer_status[0] = String.format("%02d:%02d",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
             }
 
             @Override
@@ -34,10 +39,12 @@ public class LaundryMachines {
                 washer_status[0] = "FREE";
             }
         }.start();
+
         washer_timers[1] = new CountDownTimer(900000, 1000) {
             @Override
             public void onTick(long millisUntilFinished) {
-                washer_status[1] = String.format("%d min", millisUntilFinished / 60000);
+                //washer_status[1] = String.format("%d min", millisUntilFinished / 60000);
+                washer_status[1] = String.format("%02d:%02d",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
             }
 
             @Override
@@ -47,6 +54,9 @@ public class LaundryMachines {
             }
 
         }.start();
+
+        washer_timers[0] = null;
+        washer_timers[1] = null;
         washer_timers[2] = null;
         washer_timers[3] = null;
     }
@@ -100,7 +110,8 @@ public class LaundryMachines {
             washer_timers[id] = new CountDownTimer(time, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    washer_status[id] = String.format("%d min", millisUntilFinished / 60000);
+                    //washer_status[id] = String.format("%d min", millisUntilFinished / 60000);
+                    washer_status[id] = String.format("%02d:%02d m",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
                 }
 
                 @Override
@@ -123,7 +134,9 @@ public class LaundryMachines {
             dryer_timers[id] = new CountDownTimer(time, 1000) {
                 @Override
                 public void onTick(long millisUntilFinished) {
-                    dryer_status[id] = String.format("%d min", millisUntilFinished / 60000);
+                    //dryer_status[id] = String.format("%d min", millisUntilFinished / 60000);
+                    dryer_status[id] = String.format("%02d:%02d m",  millisUntilFinished / 60000 % 60, millisUntilFinished / 1000 % 60);
+
                 }
 
                 @Override

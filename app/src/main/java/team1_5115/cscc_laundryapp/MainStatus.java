@@ -185,6 +185,7 @@ public class MainStatus extends AppCompatActivity {
                             }
                         }
                     }
+
                     // TODO: dryer tracking causing problems
 //                    // dryers
 //                    for (int i=0; i < 4; i++) {
@@ -314,3 +315,4 @@ public class MainStatus extends AppCompatActivity {
         mNotificationManager.notify(001, mBuilder.build());
     }
 }
+

@@ -4,8 +4,8 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label=""
+        android:icon="@drawable/cscc_logo"
+        android:label="CSCC Laundry"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MainStatus" android:screenOrientation="portrait">

@@ -57,9 +57,9 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
             String dryerID = ((Button)findViewById(selectedMachineId)).getText().toString();
             args.putString("dryerID", dryerID);
             SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-            String washerPreClothes = sharedPref.getString("dryerPreClothes", "Whites");
+            String dryerPreClothes = sharedPref.getString("dryerPreClothes", "Whites");
             boolean preSuperCycle = sharedPref.getBoolean("dryerPreSuperCycle", false);
-            args.putString("preClothes", washerPreClothes);
+            args.putString("preClothes", dryerPreClothes);
             args.putBoolean("preSuperCycle", preSuperCycle);
             confirmFragment.setArguments(args);
             transaction.add(R.id.cycle_select_dryer_container, confirmFragment, "confirm_fragment");
