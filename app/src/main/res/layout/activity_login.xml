@@ -86,7 +86,8 @@ android:layout_height="match_parent"
             android:layout_centerVertical="true"
             android:layout_alignLeft="@+id/editText2"
             android:layout_alignStart="@+id/editText2"
-            android:hint="Passcode" />
+            android:hint="Passcode"
+                android:password="true" />
         </TableRow>
 
         <TableRow
