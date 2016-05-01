@@ -51,7 +51,7 @@ public class SelectedDryerActivity extends AppCompatActivity {
         }
         final int id = tmp;
         final LaundryMachines laundryMachines = LaundryMachines.getInstance();
-        String status = laundryMachines.getDryerStatus(tmp);
+        String status = laundryMachines.getDryerStatus(id);
         Handler handler = new Handler();
         if (status.equals("REPAIR")) {
             handler.post(new Runnable() {

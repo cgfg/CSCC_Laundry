@@ -51,7 +51,7 @@ public class SelectedMachineActivity extends AppCompatActivity {
         }
         final LaundryMachines laundryMachines = LaundryMachines.getInstance();
         final int id = tmp;
-        String status = laundryMachines.getWasherStatus(id);
+        String status = laundryMachines.getWasherStatus(tmp);
         Handler handler = new Handler();
         if (status.equals("REPAIR")) {
             handler.post(new Runnable() {

@@ -36,12 +36,12 @@
 
             <TableLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
 
                 <TableRow
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center" >
+                    android:gravity="center">
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -86,7 +86,8 @@
                         android:typeface="normal"
                         android:nestedScrollingEnabled="false"
                         android:onClick="onMachineClicked"
-                        android:paddingTop="10dp" />
+                        android:paddingTop="10dp"
+                        android:contextClickable="false" />
 
                     <Button
                         style="@android:style/Widget.DeviceDefault.Light.Button.Borderless.Small"
@@ -329,6 +330,7 @@
                     android:text="You are not tracking any machine"
                     android:gravity="center"
                     android:id="@+id/my_loads_text" />
+
             </LinearLayout>
 
         </LinearLayout>
