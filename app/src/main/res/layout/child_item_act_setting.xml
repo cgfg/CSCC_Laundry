@@ -2,7 +2,8 @@
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:columnCount="2">
+    android:columnCount="2"
+    android:useDefaultMargins="true">
 
     <TextView
         android:text="Profile:"
@@ -28,7 +29,8 @@
         android:width="180dp"
         android:inputType="textNoSuggestions"
         android:layout_marginTop="0dp"
-        android:text="@string/usernameText" />
+        android:text="@string/usernameText"
+        android:enabled="false" />
 
     <TextView
         android:id="@+id/phoneNum"
@@ -44,7 +46,8 @@
         android:width="180dp"
         android:inputType="textNoSuggestions|phone"
         android:text="@string/phoneNumText"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:enabled="false" />
 
     <TextView
         android:id="@+id/email"
@@ -60,7 +63,8 @@
         android:width="180dp"
         android:inputType="textEmailAddress|textNoSuggestions"
         android:text="@string/emailText"
-        android:layout_marginTop="0dp" />
+        android:layout_marginTop="0dp"
+        android:enabled="false" />
 
     <!--<TextView-->
         <!--android:id="@+id/password"-->
@@ -90,6 +94,22 @@
         <!--android:inputType="textPassword|textNoSuggestions"-->
         <!--android:ems="10"-->
         <!--android:layout_marginTop="0dp" />-->
+
+    <Button
+        style="@android:style/Widget.Holo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Edit"
+        android:layout_column="0"
+        android:id="@+id/editButton"
+        android:layout_gravity="left"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="20dp"
+        android:background="@drawable/my_round_button_background_2"
+        android:textColor="#DFE6FE"
+        android:layout_marginLeft="20dp" />
 
     <Button
         android:layout_width="wrap_content"

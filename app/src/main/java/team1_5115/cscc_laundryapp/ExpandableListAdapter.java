@@ -72,6 +72,18 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
             }
         }
         Button bt = (Button)convertView.findViewById(R.id.saveButton);
+        Button editButton = (Button)convertView.findViewById(R.id.editButton);
+        editButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                EditText userName = (EditText)convertView.findViewById(R.id.usernameEdit);
+                userName.setEnabled(true);
+                EditText email = (EditText)convertView.findViewById(R.id.emailEdit);
+                email.setEnabled(true);
+                EditText phoneNum = (EditText)convertView.findViewById(R.id.phoneNumEdit);
+                phoneNum.setEnabled(true);
+            }
+        });
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,10 +102,13 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
                                 SharedPreferences.Editor editor = sharedPref.edit();
                                 EditText userName = (EditText)convertView.findViewById(R.id.usernameEdit);
                                 editor.putString("userName", userName.getText().toString());
+                                userName.setEnabled(false);
                                 EditText email = (EditText)convertView.findViewById(R.id.emailEdit);
                                 editor.putString("email", email.getText().toString());
+                                email.setEnabled(false);
                                 EditText phoneNum = (EditText)convertView.findViewById(R.id.phoneNumEdit);
                                 editor.putString("phoneNum", phoneNum.getText().toString());
+                                phoneNum.setEnabled(false);
                                 editor.commit();
                                 dialog.dismiss();
                             }
