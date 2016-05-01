@@ -79,6 +79,12 @@ public class Payment extends AppCompatActivity {
                 final AlertDialog.Builder builder = new AlertDialog.Builder(v.getContext());
                 builder.setMessage(message)
                         .setCancelable(true)
+                        .setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int id) {
                                 if(isRest){

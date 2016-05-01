@@ -26,9 +26,9 @@
         android:id="@+id/usernameEdit"
         android:layout_gravity="left"
         android:width="180dp"
-        android:inputType="textNoSuggestions|textPersonName"
+        android:inputType="textNoSuggestions"
         android:layout_marginTop="0dp"
-        android:hint="@string/usernameText" />
+        android:text="@string/usernameText" />
 
     <TextView
         android:id="@+id/phoneNum"
@@ -43,7 +43,7 @@
         android:layout_gravity="left"
         android:width="180dp"
         android:inputType="textNoSuggestions|phone"
-        android:hint="@string/phoneNumText"
+        android:text="@string/phoneNumText"
         android:layout_marginTop="0dp" />
 
     <TextView
@@ -59,7 +59,7 @@
         android:layout_gravity="left"
         android:width="180dp"
         android:inputType="textEmailAddress|textNoSuggestions"
-        android:hint="@string/emailText"
+        android:text="@string/emailText"
         android:layout_marginTop="0dp" />
 
     <!--<TextView-->

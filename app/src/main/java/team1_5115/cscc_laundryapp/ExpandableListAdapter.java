@@ -13,6 +13,7 @@ import android.view.Window;
 import android.widget.BaseExpandableListAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -58,15 +59,42 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
     }
 
     private void setAccountSetting(final View convertView){
+        int[] viewIDs = new int[]{R.id.usernameEdit,R.id.emailEdit, R.id.phoneNumEdit};
+        SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+        if(sharedPref.contains("userName")){
+            for(int viewID : viewIDs){
+                EditText editText = (EditText)convertView.findViewById(viewID);
+                switch (viewID){
+                    case R.id.usernameEdit: editText.setText(sharedPref.getString("userName", "")); break;
+                    case R.id.emailEdit: editText.setText(sharedPref.getString("email", "")); break;
+                    case R.id.phoneNumEdit: editText.setText(sharedPref.getString("phoneNum", "")); break;
+                }
+            }
+        }
         Button bt = (Button)convertView.findViewById(R.id.saveButton);
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(convertView.getContext());
-                builder.setMessage("Your profile will be changed !")
+                builder.setMessage("Are you sure to save your changes ?")
+                        .setNegativeButton("CANCEL", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                dialog.dismiss();
+                            }
+                        })
                         .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
+                                SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key), Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPref.edit();
+                                EditText userName = (EditText)convertView.findViewById(R.id.usernameEdit);
+                                editor.putString("userName", userName.getText().toString());
+                                EditText email = (EditText)convertView.findViewById(R.id.emailEdit);
+                                editor.putString("email", email.getText().toString());
+                                EditText phoneNum = (EditText)convertView.findViewById(R.id.phoneNumEdit);
+                                editor.putString("phoneNum", phoneNum.getText().toString());
+                                editor.commit();
                                 dialog.dismiss();
                             }
                         });

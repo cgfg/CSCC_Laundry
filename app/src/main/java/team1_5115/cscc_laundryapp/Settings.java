@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.ViewGroup;
 import android.widget.ExpandableListView;
 
 import java.util.ArrayList;
@@ -31,7 +32,7 @@ public class Settings extends AppCompatActivity {
         final ExpandableListAdapter expListAdapter = new ExpandableListAdapter(
                 this, groupList, childList);
         expListView.setAdapter(expListAdapter);
-
+        expListView.setDescendantFocusability(ViewGroup.FOCUS_AFTER_DESCENDANTS);
 
         //setGroupIndicatorToRight();
 
@@ -86,4 +87,6 @@ public class Settings extends AppCompatActivity {
         childList.get("Preferences").add(R.layout.child_preferences);
         childList.get("Account Setting").add(R.layout.child_item_act_setting);
     }
+
+
 }
