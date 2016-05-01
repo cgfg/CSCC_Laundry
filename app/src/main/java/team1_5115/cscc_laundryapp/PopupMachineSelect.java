@@ -19,8 +19,6 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
-import org.w3c.dom.Text;
-import java.util.zip.Inflater;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -156,40 +154,18 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
     }
 
     public void onIssueSubmitButtonClicked(View view) {
-        // update the confirmation screen accordingly
-//        Inflater inflater = new Inflater();
-//        View cycleConfirm = inflater.inflate(R.layout.fragment_cycle_confirm);
-
-        // get text from the selected RadioButton
-        RadioGroup radioGroup = (RadioGroup) findViewById(R.id.cycle_radio_group);
-        RadioButton selectedRadio = (RadioButton) findViewById(radioGroup.getCheckedRadioButtonId());
-        String cycle = selectedRadio.getText().toString();
-
-        // super cycle on or off?
-        ToggleButton scOnOff = (ToggleButton) findViewById(R.id.sc_toggle);
-        String scWithWithout = "";
-        if (scOnOff.isChecked()) {
-            scWithWithout = "with";
-        }
-        else {
-            scWithWithout = "without";
-        }
-
-        // set the text fields on the confirm cycle page
-        // TODO: These views come back as null for some reason
-//        TextView whichMachineMessage = (TextView) findViewById(R.id.cycle_confirm_which_machine);
-//        TextView whichCycleMessage = (TextView) findViewById(R.id.cycle_confirm_which_cycle);
-//        TextView scWithWithoutMessage = (TextView) findViewById(R.id.cycle_confirm_with_without);
-//        whichMachineMessage.setText("You have selected Washer " + button_id_num + " with the cycle:");
-//        whichCycleMessage.setText(cycle);
-//        scWithWithoutMessage.setText(scWithWithout);
-
         CycleSelectFragment oldFragment = (CycleSelectFragment) getSupportFragmentManager().findFragmentById(R.id.cycle_options_fragment);
         CycleConfirmFragment newFragment = new CycleConfirmFragment();
         Bundle args = new Bundle();
+        String washerID = ((Button)findViewById(selectedMachineId)).getText().toString();
+        args.putString("washerID", washerID);
+        int checkedRadioButtonId = ((RadioGroup)findViewById(R.id.cycle_radio_group)).getCheckedRadioButtonId();
+        String washerPreClothes = ((RadioButton)findViewById(checkedRadioButtonId)).getText().toString();
+        args.putString("preClothes", washerPreClothes);
+        boolean preSuperCycle = ((ToggleButton)findViewById(R.id.sc_toggle)).isChecked();
+        args.putBoolean("preSuperCycle", preSuperCycle);
         newFragment.setArguments(args);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
         transaction.replace(R.id.cycle_select_washer_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();

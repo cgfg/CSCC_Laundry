@@ -57,19 +57,17 @@ public class CycleConfirmFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_cycle_confirm, container, false);
         Bundle args = getArguments();
-        if(args.containsKey("isQuickStart")){
-            TextView textView = (TextView)view.findViewById(R.id.cycle_confirm_which_cycle);
-            textView.setText(args.getString("preClothes"));
-            textView = (TextView)view.findViewById(R.id.cycle_confirm_with_without);
-            if(args.getBoolean("preSuperCycle")){
-                textView.setText("With");
-            }
-            textView = (TextView)view.findViewById(R.id.cycle_confirm_selected_machine);
-            if(args.containsKey("washerID")){
-                textView.setText(String.format("You have selected Washer %s with the cycle:", args.getString("washerID")));
-            }else if (args.containsKey("dryerID")){
-                textView.setText(String.format("You have selected Dryer %s with the cycle:", args.getString("dryerID")));
-            }
+        TextView textView = (TextView)view.findViewById(R.id.cycle_confirm_which_cycle);
+        textView.setText(args.getString("preClothes"));
+        textView = (TextView)view.findViewById(R.id.cycle_confirm_with_without);
+        if(args.getBoolean("preSuperCycle")){
+            textView.setText("With");
+        }
+        textView = (TextView)view.findViewById(R.id.cycle_confirm_selected_machine);
+        if(args.containsKey("washerID")){
+            textView.setText(String.format("You have selected Washer %s with the cycle:", args.getString("washerID")));
+        }else if (args.containsKey("dryerID")){
+            textView.setText(String.format("You have selected Dryer %s with the cycle:", args.getString("dryerID")));
         }
         // Inflate the layout for this fragment
         return view;

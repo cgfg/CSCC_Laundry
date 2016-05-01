@@ -18,6 +18,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
@@ -57,9 +58,9 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
             String dryerID = ((Button)findViewById(selectedMachineId)).getText().toString();
             args.putString("dryerID", dryerID);
             SharedPreferences sharedPref = getSharedPreferences(getString(R.string.preference_file_key), Context.MODE_PRIVATE);
-            String washerPreClothes = sharedPref.getString("dryerPreClothes", "Whites");
+            String dryerPreClothes = sharedPref.getString("dryerPreClothes", "Whites");
             boolean preSuperCycle = sharedPref.getBoolean("dryerPreSuperCycle", false);
-            args.putString("preClothes", washerPreClothes);
+            args.putString("preClothes", dryerPreClothes);
             args.putBoolean("preSuperCycle", preSuperCycle);
             confirmFragment.setArguments(args);
             transaction.add(R.id.cycle_select_dryer_container, confirmFragment, "confirm_fragment");
@@ -174,9 +175,15 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         CycleSelectFragment oldFragment = (CycleSelectFragment) getSupportFragmentManager().findFragmentById(R.id.cycle_options_fragment);
         CycleConfirmFragment newFragment = new CycleConfirmFragment();
         Bundle args = new Bundle();
+        String dryerID = ((Button)findViewById(selectedMachineId)).getText().toString();
+        args.putString("dryerID", dryerID);
+        int checkedRadioButtonId = ((RadioGroup)findViewById(R.id.cycle_radio_group)).getCheckedRadioButtonId();
+        String dryerPreClothes = ((RadioButton)findViewById(checkedRadioButtonId)).getText().toString();
+        args.putString("preClothes", dryerPreClothes);
+        boolean preSuperCycle = ((ToggleButton)findViewById(R.id.sc_toggle)).isChecked();
+        args.putBoolean("preSuperCycle", preSuperCycle);
         newFragment.setArguments(args);
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-
         transaction.replace(R.id.cycle_select_dryer_container, newFragment);
         transaction.addToBackStack(null);
         transaction.commit();
