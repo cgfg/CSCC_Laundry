@@ -167,6 +167,7 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         else {
             Toast.makeText(this.getBaseContext(), "Tracking Dryer " + button_id_num, Toast.LENGTH_LONG).show();
             Intent intent = new Intent(CycleSelectDryer.this, MainStatus.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
     }
@@ -216,6 +217,7 @@ public class CycleSelectDryer extends AppCompatActivity implements CycleSelectFr
         switch (item.getItemId()) {
             case R.id.home:
                 Intent intent = new Intent(this, MainStatus.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 this.finish();
                 return true;

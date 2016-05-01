@@ -147,6 +147,7 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
         laundryMachines.issueWasherMaintenanceRequest(button_id_num);
         Toast.makeText(this.getBaseContext(), "A maintenance request has issued", Toast.LENGTH_LONG).show();
         Intent intent = new Intent(Maintenance.this, MainStatus.class);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
 
@@ -172,6 +173,7 @@ public class Maintenance extends AppCompatActivity implements MaintenanceIssueFr
         switch (item.getItemId()) {
             case R.id.home:
                 Intent intent = new Intent(this, MainStatus.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 this.finish();
                 return true;

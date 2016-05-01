@@ -180,6 +180,7 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
         else {
             Toast.makeText(this.getBaseContext(), "Tracking Washer " + button_id_num, Toast.LENGTH_LONG).show();
             Intent intent = new Intent(PopupMachineSelect.this, MainStatus.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
         }
     }
@@ -211,6 +212,7 @@ public class PopupMachineSelect extends AppCompatActivity implements CycleSelect
         switch (item.getItemId()) {
             case R.id.home:
                 Intent intent = new Intent(this, MainStatus.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
                 this.finish();
                 return true;
