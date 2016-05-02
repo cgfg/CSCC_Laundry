@@ -6,15 +6,20 @@ import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import java.util.concurrent.ScheduledThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
+import java.util.zip.Inflater;
 
 public class SelectedMachineActivity extends AppCompatActivity {
     int selectdMachineId = 0;
@@ -50,7 +55,7 @@ public class SelectedMachineActivity extends AppCompatActivity {
                     break;
         }
         final LaundryMachines laundryMachines = LaundryMachines.getInstance();
-        final int id = tmp;
+        final int mId = tmp;
         String status = laundryMachines.getWasherStatus(tmp);
         Handler handler = new Handler();
         if (status.equals("REPAIR")) {
@@ -68,8 +73,8 @@ public class SelectedMachineActivity extends AppCompatActivity {
                 }
             });
         } else if (status.equals("FREE")) {
-            Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
-            if (notify_user_button != null) notify_user_button.setEnabled(false);
+//            Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
+//            if (notify_user_button != null) notify_user_button.setEnabled(false);
         } else {
             handler.post(new Runnable() {
                 @Override
@@ -78,7 +83,34 @@ public class SelectedMachineActivity extends AppCompatActivity {
                     if (quick_start_button != null) quick_start_button.setEnabled(false);
                     Button select_cycle_button = (Button) findViewById(R.id.selected_cycle_button);
                     if (select_cycle_button != null) select_cycle_button.setEnabled(false);
-                    if (laundryMachines.userTrackedWashers[id-1]) {
+
+                    if (laundryMachines.userTrackedWashers[mId-1]) {
+//                        Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
+//                        notify_user_button.setText("ADD NOTE");
+//                        if (notify_user_button != null) {
+//                            notify_user_button.setOnClickListener(new View.OnClickListener() {
+//                                @Override
+//                                public void onClick(View v) {
+//                                    AlertDialog.Builder builder = new AlertDialog.Builder(SelectedMachineActivity.this);
+//                                    LayoutInflater layoutInflater = (LayoutInflater) getBaseContext().getSystemService(LAYOUT_INFLATER_SERVICE);
+//                                    final View dialogView = layoutInflater.inflate(R.layout.note_layout, null);
+//                                    builder.setView(dialogView)
+//                                            .setCancelable(true)
+//                                            .setPositiveButton("OK", new DialogInterface.OnClickListener(){
+//                                                public void onClick(DialogInterface dialog, int id) {
+//                                                    String note = "";
+//                                                    EditText noteEditText = (EditText) dialogView.findViewById(R.id.note_text);
+//                                                    if (noteEditText != null) note = noteEditText.getText().toString();
+//                                                    laundryMachines.noteWashers[mId-1] = note;
+//                                                    dialog.dismiss();
+//                                                }
+//                                            });
+//                                    AlertDialog alert = builder.create();
+//                                    alert.show();
+//                                }
+//                            });
+//                        }
+//                    } else {
                         Button notify_user_button = (Button) findViewById(R.id.notify_user_button);
                         if (notify_user_button != null) notify_user_button.setEnabled(false);
                     }
@@ -153,6 +185,13 @@ public class SelectedMachineActivity extends AppCompatActivity {
                             washer_button_4.setBackgroundResource(R.drawable.w_busy);
                             break;
                     }
+//                    for (int i = 0; i < 4; i++) {
+//                        if (laundryMachines.userTrackedWashers[i]) {
+//                            TextView noteText = (TextView)findViewById(R.id.user_note);
+//                            if (noteText != null) noteText.setText(laundryMachines.noteWashers[i]);
+//                            break;
+//                        }
+//                    }
                 }
             });
         }

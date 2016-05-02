@@ -17,6 +17,8 @@ public class LaundryMachines {
     private CountDownTimer[] dryer_timers = new CountDownTimer[4];
     public Boolean userTrackedWashers[] = new Boolean[] {false, false, false, false};
     public Boolean userTrackedDryers[] = new Boolean[] {false, false, false, false};
+    public String[] noteWashers = new String[] {"", "", "", ""};
+    public String[] noteDryers = new String[] {"", "", "", ""};
     LaundryMachines() {
         washer_status[0] = "FREE";
         washer_status[1] = "FREE";
@@ -106,6 +108,7 @@ public class LaundryMachines {
 
     public Boolean setWasherTimer(int washerId, Long time){
         final int id = washerId-1;
+        noteWashers[id] = "";
         if (id >= 0 && id < 4 && washer_timers[id] == null && !washer_status[id].equals("REPAIR")) {
             userTrackedWashers[id] = true;
             washer_timers[id] = new CountDownTimer(time, 1000) {
@@ -130,6 +133,7 @@ public class LaundryMachines {
 
     public Boolean setDryerTimer(int dryerId, Long time){
         final int id = dryerId-1;
+        noteDryers[id] = "";
         if (id >= 0 && id < 4 && dryer_timers[id] == null  && !dryer_status[id].equals("REPAIR") ) {
             userTrackedDryers[id] = true;
             dryer_timers[id] = new CountDownTimer(time, 1000) {
@@ -154,6 +158,7 @@ public class LaundryMachines {
 
     public void issueWasherMaintenanceRequest(int washerId) {
         final int id = washerId-1;
+        noteWashers[id] = "";
         if (id >= 0 && id < 4) {
             washer_status[id] = "REPAIR";
             if (washer_timers[id] != null) {
@@ -165,6 +170,7 @@ public class LaundryMachines {
 
     public void issueDryerMaintenanceRequest(int dryerId) {
         final int id = dryerId-1;
+        noteDryers[id] = "";
         if (id >= 0 && id < 4) {
             dryer_status[id] = "REPAIR";
             if (dryer_timers[id] != null) {
