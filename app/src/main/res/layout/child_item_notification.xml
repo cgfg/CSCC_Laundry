@@ -4,7 +4,7 @@
     android:columnCount="2">
 
     <TextView
-        android:text="Family Messages"
+        android:text="Phone Messages"
         android:padding="10dip"
         android:textSize="18dp"
         android:layout_width="wrap_content"
@@ -20,7 +20,7 @@
         android:checked="true" />
 
     <TextView
-        android:text="Member Messages"
+        android:text="Email Messages"
         android:padding="10dip"
         android:textSize="18dp"
         android:layout_width="wrap_content"

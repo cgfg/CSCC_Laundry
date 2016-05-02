@@ -137,24 +137,21 @@ public class ExpandableListAdapter extends BaseExpandableListAdapter {
         final Context context = convertView.getContext();
         final SharedPreferences sharedPref = context.getSharedPreferences(convertView.getResources().getString(R.string.preference_file_key),Context.MODE_PRIVATE);
         int washerPreID = sharedPref.getInt("washerPreID", -1);
-        int dryerPreID = sharedPref.getInt("dryerPreID", -1);
         if(washerPreID != -1){
             radioGroup.check(washerPreID);
             superCycle.setChecked(sharedPref.getBoolean("washerPreSuperCycle", false));
+            System.out.println(washerPreID);
+            System.out.println(R.id.preference1);
+            System.out.println(R.id.preference_group);
             changeTextColorOfCheckedButton(radioGroup, washerPreID);
         }else{
             SharedPreferences.Editor editor = sharedPref.edit();
             editor.putInt("washerPreID", radioGroup.getCheckedRadioButtonId());
+            editor.putInt("dryerPreID", radioGroup.getCheckedRadioButtonId());
+            editor.putBoolean("washerPreSuperCycle", false);
+            editor.putBoolean("dryerPreSuperCycle", false);
             editor.commit();
         }
-//        if(dryerPreID != -1){
-//            radioGroup.check(dryerPreID);
-//            superCycle.setChecked(sharedPref.getBoolean("dryerPreSuperCycle", false));
-//        }else{
-//            SharedPreferences.Editor editor = sharedPref.edit();
-//            editor.putInt("dryerPreID", radioGroup.getCheckedRadioButtonId());
-//            editor.commit();
-//        }
         washerOrDryer.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
